@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  border: 1px solid white;
+  background-color: black;
+  position: fixed;
+  width: 100vw;
+  z-index: 9;
+}
+.header__p {
+  margin-left: 100px;
+}
