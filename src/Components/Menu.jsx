@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { closeMenu } from "../State/Actions/menu.actions";
 import styles from "../Styles/Menu.module.css";

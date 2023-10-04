@@ -2,8 +2,9 @@
   display: flex;
   border: 1px solid white;
   background-color: black;
-  position: fixed;
+
   width: 100vw;
+  height: 60px;
   z-index: 9;
 }
 .header__p {

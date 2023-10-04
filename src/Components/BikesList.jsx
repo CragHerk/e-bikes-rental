@@ -1,34 +1,40 @@
-import React, { useState } from "react";
 import "react-multi-carousel/lib/styles.css";
-import bikeList from "../assets/bikelist";
+import bikeList from "../Utils/bikelist";
 import styles from "../Styles/BikesList.module.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import responsive from "../Utils/carouselConfig";
 import { useSelector, useDispatch } from "react-redux";
-import { setActiveIndex } from "../State/Reducers/bikesSlice.js";
-import { DayPicker } from "react-day-picker";
+import {
+  setActiveIndex,
+  setReservedIndex,
+  setBikeInfo,
+} from "../State/Reducers/bikesSlice.js";
+import "react-datepicker/dist/react-datepicker.css";
+
+import Reservation from "./Reservation";
 
 const BikesList = () => {
   const activeIndex = useSelector((state) => state.bikes.activeIndex);
+  const reservedIndex = useSelector((state) => state.bikes.reservedIndex);
+
   const dispatch = useDispatch();
-  const [reservedIndex, setReservedIndex] = useState(-1);
-  const [selectedDate, setSelectedDate] = useState({});
 
   const handleReservationClick = (index) => {
-    setReservedIndex(index);
+    dispatch(setReservedIndex(index));
   };
 
   const handleCarouselItemClick = (index) => {
     dispatch(setActiveIndex(index));
-  };
 
-  const handleInputClick = (inputName) => {
-    setSelectedDate({ ...selectedDate, [inputName]: null });
-  };
-
-  const handleDaySelect = (date, inputName) => {
-    setSelectedDate({ ...selectedDate, [inputName]: date });
+    const selectedBike = bikeList[index];
+    dispatch(
+      setBikeInfo({
+        price: selectedBike.price,
+        name: selectedBike.name,
+        img: selectedBike.img,
+      })
+    );
   };
 
   return (
@@ -45,56 +51,37 @@ const BikesList = () => {
       itemClass={`carousel-item ${styles.custom_item}`}
     >
       {bikeList.map((bike, index) => {
-        const isActive = index === activeIndex; // Sprawdzamy, czy element jest aktywny
-        const isReserved = index === reservedIndex; // Sprawdzamy, czy element jest zarezerwowany
+        const isActive = index === activeIndex;
+        const isReserved = index === reservedIndex;
 
         return (
           <div
             key={index}
             className={`carousel-item ${isActive ? "active" : ""} ${
               isReserved ? styles.reserved : ""
-            }`}
+            } ${styles.item_container}`}
             onClick={() => handleCarouselItemClick(index)}
           >
-            <div className={styles.date__inputs}>
-              <input
-                className={styles.input__from}
-                type="text"
-                onClick={() => handleInputClick("from")}
-                value={
-                  isActive && selectedDate["from"]
-                    ? selectedDate["from"].toLocaleDateString()
-                    : ""
-                }
-              />
-              <input
-                className={styles.input__to}
-                type="text"
-                onClick={() => handleInputClick("to")}
-                value={
-                  isActive && selectedDate["to"]
-                    ? selectedDate["to"].toLocaleDateString()
-                    : ""
-                }
-              />
+            <div className={styles.container}>
+              <img src={bikeList[index].img} alt="bike" />
+              <h2>{bikeList[index].name}</h2>
+              <p>{bikeList[index].price}</p>
             </div>
-            {isActive && (
-              <DayPicker
-                className={styles.picker}
-                mode="single"
-                selected={null}
-                onSelect={(date) =>
-                  handleDaySelect(date, selectedDate["from"] ? "to" : "from")
-                }
-              />
-            )}
-            <p className={styles.bike_name}>{bike.name}</p>
             <button
               className={styles.button}
               onClick={() => handleReservationClick(index)}
             >
               Zarezerwuj
             </button>
+
+            {isReserved && (
+              <Reservation
+                bike={bikeList[index].name}
+                price={bikeList[index].price}
+                img={bikeList[index].img}
+                index={index}
+              />
+            )}
           </div>
         );
       })}

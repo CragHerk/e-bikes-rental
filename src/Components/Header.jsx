@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { openMenu } from "../State/Actions/menu.actions.js";
 import styles from "../Styles/Header.module.css";

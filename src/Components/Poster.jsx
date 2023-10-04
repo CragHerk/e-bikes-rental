@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../Styles/Poster.module.css";
 const Poster = () => {
   return (
