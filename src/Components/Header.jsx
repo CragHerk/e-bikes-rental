@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { openMenu } from "../State/Actions/menu.actions.js";
+import Menu from "./Menu";
+import { Link } from "react-router-dom";
 import styles from "../Styles/Header.module.css";
 import { FaBars } from "react-icons/fa";
-import Menu from "./Menu";
 
 const Header = () => {
   const isMenuOpen = useSelector((state) => state.menu.isMenuOpen);
@@ -14,10 +15,12 @@ const Header = () => {
 
   return (
     <div className={styles.header}>
-      <button className={styles.hamburgerButton} onClick={handleOpenMenu}>
-        <FaBars className={styles.hamburgerIcon} />
+      <button className={styles.hamburger_button} onClick={handleOpenMenu}>
+        <FaBars className={styles.hamburger_icon} />
       </button>
-      <p className={styles.header__p}>Wypożyczalnia rowerów elektrycznych</p>
+      <Link to={"/"}>
+        <p className={styles.header_p}>Wypożyczalnia rowerów elektrycznych</p>
+      </Link>
       {isMenuOpen && <Menu />}
     </div>
   );

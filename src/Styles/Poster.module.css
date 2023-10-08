@@ -1,5 +1,17 @@
 .poster {
-  height: 500px;
+  height: 1056px;
   width: 100vw;
-  border: 1px solid white;
+  background-image: url("/assets/poster-mobile.jpg");
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (min-width: 768px) {
+  .poster {
+    background-image: url("/assets/poster-tablet.jpg");
+    height: 1536px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .poster {
+  }
 }

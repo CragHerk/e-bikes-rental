@@ -64,8 +64,8 @@ const BikesList = () => {
           >
             <div className={styles.container}>
               <img src={bikeList[index].img} alt="bike" />
-              <h2>{bikeList[index].name}</h2>
-              <p>{bikeList[index].price}</p>
+              <h2 className={styles.h2}>{bikeList[index].name}</h2>
+              {/* <p>{bikeList[index].price}</p> */}
             </div>
             <button
               className={styles.button}

@@ -1,12 +1,23 @@
 .header {
   display: flex;
-  border: 1px solid white;
-  background-color: black;
+
+  background-color: transparent;
+  color: black;
 
   width: 100vw;
   height: 60px;
   z-index: 9;
 }
-.header__p {
+.header_p {
   margin-left: 100px;
+  text-decoration: underline;
+  color: black;
+}
+.hamburger_button {
+  width: 56px;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  color: black;
 }

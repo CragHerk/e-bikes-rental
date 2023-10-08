@@ -1,11 +1,42 @@
 .checkout {
-  width: 100vw;
   min-height: 100vh;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  position: relative;
 }
 .checkout_container {
-  min-height: calc(100vh - 80px - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.checkout_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.checkout_label {
+  margin-top: 10px;
+  text-align: left;
+}
+.checkout_input {
+  width: 244px;
+  height: 40px;
+}
+.checkout_input:last-child {
+  margin-bottom: 15px;
+}
+.checkout_item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: self-start;
+  width: 250px;
+}
+.checkout_span {
+  display: flex;
+  justify-content: space-between;
+}
+.checkout_span p {
+  margin: 0;
+}
+.checkout_sumbit {
+  width: 250px;
+  height: 60px;
 }

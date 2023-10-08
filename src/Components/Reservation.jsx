@@ -7,7 +7,6 @@ import {
   setPeriod,
   setSelectedDates,
   setReservedIndex,
-  setCheckoutData,
 } from "../State/Reducers/bikesSlice.js";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "../Styles/Reservation.module.css";
@@ -16,21 +15,16 @@ const Reservation = ({ index }) => {
   const dispatch = useDispatch();
   const selectedDates = useSelector((state) => state.bikes.selectedDates);
   const period = useSelector((state) => state.bikes.period);
-
-  const handleChange = (date) => {
+  const handleChange = (date, key) => {
     const timestamp = date.getTime();
-    dispatch(setSelectedDates({ index, from: timestamp }));
+    dispatch(setSelectedDates({ index, [key]: timestamp }));
   };
   const handleClose = () => {
     dispatch(setReservedIndex(-1));
   };
   const handlePeriodChange = (e) => {
-    const newPeriod = parseInt(e.target.value, 10);
-    dispatch(setPeriod(newPeriod));
-  };
-  const handleCheckout = () => {
-    const selectedFromDate = selectedDates[index]?.from;
-    dispatch(setCheckoutData(selectedFromDate, period));
+    const selectedPeriod = parseInt(e.target.value, 10);
+    dispatch(setPeriod(selectedPeriod));
   };
 
   return (
@@ -57,10 +51,8 @@ const Reservation = ({ index }) => {
           </div>
         </div>
         <button className={styles.close_button} onClick={handleClose}></button>
-        <Link to={"/checkout"}>
-          <button className={styles.reservation_btn} onClick={handleCheckout}>
-            Zarezerwój teraz
-          </button>
+        <Link to={"/cart"}>
+          <button className={styles.reservation_btn}>Zarezerwój teraz</button>
         </Link>
       </div>
     </div>

@@ -1,0 +1,18 @@
+.checkout {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+.checkout_container {
+  min-height: calc(100vh - 80px - 60px);
+  width: 320px;
+  border: 1px solid white;
+}
+.checkout_list {
+  list-style: none;
+  padding: 0;
+}
