@@ -6,11 +6,14 @@ const Checkout = () => {
   const location = useLocation();
   const { totalPrice, formattedStartDate, formattedEndDate, name } =
     location.state;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className={styles.checkout}>
       <Header />
       <div className={styles.checkout_container}>
-        <form className={styles.checkout_form}>
+        <form onSubmit={handleSubmit} className={styles.checkout_form}>
           <h2> Rezerwacja</h2>
           <label className={styles.checkout_label}>
             <p>Imię *</p>

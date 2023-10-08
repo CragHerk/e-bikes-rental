@@ -1,5 +1,6 @@
 .checkout {
   min-height: 100vh;
+  color: #14453d;
 }
 .checkout_container {
   display: flex;
@@ -17,7 +18,12 @@
 }
 .checkout_input {
   width: 244px;
-  height: 40px;
+  height: 30px;
+  border-bottom: 2px solid #14453d;
+  background-color: transparent;
+  color: #14453d;
+  font-weight: bold;
+  font-size: 20px;
 }
 .checkout_input:last-child {
   margin-bottom: 15px;
@@ -39,4 +45,10 @@
 .checkout_sumbit {
   width: 250px;
   height: 60px;
+}
+.checkout_checkbox {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid #14453d;
 }

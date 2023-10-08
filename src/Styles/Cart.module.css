@@ -6,13 +6,17 @@
   flex-direction: column;
   position: relative;
   align-items: center;
+  color: #14453d;
 }
 .checkout_container {
   min-height: calc(100vh - 80px - 60px);
   width: 320px;
-  border: 1px solid white;
 }
 .checkout_list {
   list-style: none;
   padding: 0;
+}
+.cart_order {
+  width: 250px;
+  height: 60px;
 }

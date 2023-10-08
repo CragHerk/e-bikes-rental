@@ -10,6 +10,7 @@ import {
 } from "../State/Reducers/bikesSlice.js";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "../Styles/Reservation.module.css";
+import { FaCalendar } from "react-icons/fa";
 
 const Reservation = ({ index }) => {
   const dispatch = useDispatch();
@@ -38,23 +39,30 @@ const Reservation = ({ index }) => {
               selected={selectedDates[index]?.from || null}
               onChange={(date) => handleChange(date, "from")}
               dateFormat="dd/MM/yyyy"
-              className="form-control"
+              className={styles.datepicker}
             />
+            <FaCalendar className={styles.date_calendar} />
           </div>
           <div className={styles.date_input}>
             <label>Okres:</label>
-            <select value={period} onChange={handlePeriodChange}>
+            <select
+              className={styles.select}
+              value={period}
+              onChange={handlePeriodChange}
+            >
               <option value={1}>1 dzień</option>
               <option value={2}>2 dni</option>
               <option value={3}>3 dni</option>
             </select>
+            <FaCalendar className={styles.select_calendar} />
           </div>
         </div>
-        <button className={styles.close_button} onClick={handleClose}></button>
+
         <Link to={"/cart"}>
           <button className={styles.reservation_btn}>Zarezerwój teraz</button>
         </Link>
       </div>
+      <button className={styles.close_button} onClick={handleClose}></button>
     </div>
   );
 };

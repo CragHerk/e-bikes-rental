@@ -39,7 +39,7 @@ const Cart = () => {
       <div className={styles.checkout_container}>
         <div className={styles.checkout_wrapper}>
           <ul className={styles.checkout_list}>
-            <li>Rezerwacja</li>
+            <h2>Rezerwacja</h2>
             <li className={styles.name}>{name}</li>
             <li className={styles.start}>
               Data rozpoczęcia:{formattedStartDate}
@@ -52,7 +52,9 @@ const Cart = () => {
           <h2>Podsumowanie</h2>
           <h3>Suma {totalPrice} zł</h3>
 
-          <button onClick={handleOrderClick}>Zamówienie</button>
+          <button className={styles.cart_order} onClick={handleOrderClick}>
+            Zamówienie
+          </button>
         </div>
       </div>
       <Footer />

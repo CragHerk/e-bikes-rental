@@ -21,4 +21,9 @@ body {
 }
 button {
   cursor: pointer;
+  color: #14453d;
+  background-color: #43c59e;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
 }
