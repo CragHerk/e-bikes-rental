@@ -21,6 +21,7 @@
 }
 .custom_item {
   border: 1px solid #14453d;
+  border-radius: 10px;
   width: auto;
   height: 500px;
   position: relative;
