@@ -3,7 +3,7 @@ import { openMenu } from "../State/Actions/menu.actions.js";
 import Menu from "./Menu";
 import { Link } from "react-router-dom";
 import styles from "../Styles/Header.module.css";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
   const isMenuOpen = useSelector((state) => state.menu.isMenuOpen);
@@ -20,6 +20,14 @@ const Header = () => {
       </button>
       <Link to={"/"}>
         <p className={styles.header_p}>Wypożyczalnia rowerów elektrycznych</p>
+      </Link>
+      <Link to={"/"}>
+        <div className={styles.logo}>LOGO</div>
+      </Link>
+      <Link to={"/cart"}>
+        <button className={styles.cart}>
+          <FaShoppingCart />
+        </button>
       </Link>
       {isMenuOpen && <Menu />}
     </div>

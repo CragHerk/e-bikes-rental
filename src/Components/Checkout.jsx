@@ -1,13 +1,37 @@
-import styles from "../Styles/Checkout.module.css";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { bookReservation } from "../State/Reducers/reservations.slice";
 import Header from "./Header";
 import Footer from "./Footer";
-import { useLocation } from "react-router-dom";
+import styles from "../Styles/Checkout.module.css";
 const Checkout = () => {
   const location = useLocation();
   const { totalPrice, formattedStartDate, formattedEndDate, name } =
     location.state;
+  const dispatch = useDispatch();
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const formData = {
+      firstName: event.target.elements.firstName.value,
+      lastName: event.target.elements.lastName.value,
+      companyName: event.target.elements.companyName.value,
+      country: event.target.elements.country.value,
+      street: event.target.elements.street.value,
+      postalCode: event.target.elements.postalCode.value,
+      city: event.target.elements.city.value,
+      phone: event.target.elements.phone.value,
+      email: event.target.elements.email.value,
+    };
+
+    dispatch(
+      bookReservation(
+        formData,
+        totalPrice,
+        formattedStartDate,
+        formattedEndDate
+      )
+    );
   };
   return (
     <div className={styles.checkout}>
@@ -72,7 +96,7 @@ const Checkout = () => {
                 <input className={styles.checkout_checkbox} type="checkbox" />
                 Płatność na miejscu
               </span>
-              <button type="sumbit" className={styles.checkout_sumbit}>
+              <button type="submit" className={styles.checkout_sumbit}>
                 Kupuję i płacę
               </button>
             </div>

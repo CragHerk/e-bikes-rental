@@ -9,7 +9,7 @@ import {
   setActiveIndex,
   setReservedIndex,
   setBikeInfo,
-} from "../State/Reducers/bikesSlice.js";
+} from "../State/Reducers/bikes.slice.js";
 import "react-datepicker/dist/react-datepicker.css";
 
 import Reservation from "./Reservation";

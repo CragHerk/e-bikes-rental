@@ -7,7 +7,7 @@ import {
   setPeriod,
   setSelectedDates,
   setReservedIndex,
-} from "../State/Reducers/bikesSlice.js";
+} from "../State/Reducers/bikes.slice.js";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "../Styles/Reservation.module.css";
 import { FaCalendar } from "react-icons/fa";
@@ -16,6 +16,8 @@ const Reservation = ({ index }) => {
   const dispatch = useDispatch();
   const selectedDates = useSelector((state) => state.bikes.selectedDates);
   const period = useSelector((state) => state.bikes.period);
+  const price = useSelector((state) => state.bikes.bikeInfo.price);
+  const totalPrice = period * price;
   const handleChange = (date, key) => {
     const timestamp = date.getTime();
     dispatch(setSelectedDates({ index, [key]: timestamp }));
@@ -56,6 +58,7 @@ const Reservation = ({ index }) => {
             </select>
             <FaCalendar className={styles.select_calendar} />
           </div>
+          <h3 className={styles.price}>Cena : {totalPrice}zł</h3>
         </div>
 
         <Link to={"/cart"}>

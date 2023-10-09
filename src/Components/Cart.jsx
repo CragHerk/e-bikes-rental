@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import {} from "../State/Reducers/bikesSlice";
+import {} from "../State/Reducers/bikes.slice";
 import styles from "../Styles/Cart.module.css";
 import { useNavigate } from "react-router-dom";
 

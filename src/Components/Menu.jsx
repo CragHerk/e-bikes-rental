@@ -10,7 +10,7 @@ const Menu = () => {
   const handleCloseMenu = () => {
     dispatch(closeMenu());
   };
-  console.log("Stan menu:", isMenuOpen);
+
   const menuClassName = isMenuOpen
     ? `${styles.menu} ${styles.menuOpen}`
     : styles.menu;
