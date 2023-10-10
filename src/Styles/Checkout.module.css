@@ -27,6 +27,7 @@
   color: #14453d;
   font-weight: bold;
   font-size: 20px;
+  padding-left: 10px;
 }
 .checkout_input:last-child {
   margin-bottom: 15px;
@@ -86,4 +87,8 @@
 }
 .price p {
   font-size: 25px;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
 }

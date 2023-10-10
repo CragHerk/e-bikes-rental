@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { bookReservation } from "../State/Reducers/reservations.slice";
 import { Link } from "react-router-dom";
+import Checkbox from "../Utils/checkbox/checkbox";
 import Header from "./Header";
 import Footer from "./Footer";
 import styles from "../Styles/Checkout.module.css";
@@ -112,10 +113,10 @@ const Checkout = () => {
             <h3 className={styles.price}>
               SUMA : <p>{totalAmount}zł</p>
             </h3>
-            <span>
-              <input className={styles.checkout_checkbox} type="checkbox" />
+            <div className={styles.checkbox}>
+              <Checkbox />
               Płatność na miejscu
-            </span>
+            </div>
             <button
               type="submit"
               className={styles.checkout_sumbit}

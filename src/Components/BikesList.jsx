@@ -63,9 +63,12 @@ const BikesList = () => {
             onClick={() => handleCarouselItemClick(index)}
           >
             <div className={styles.container}>
-              <img src={bikeList[index].img} alt="bike" />
+              <img
+                src={bikeList[index].img}
+                alt="bike"
+                className={styles.img}
+              />
               <h2 className={styles.h2}>{bikeList[index].name}</h2>
-              {/* <p>{bikeList[index].price}</p> */}
             </div>
             <button
               className={styles.button}

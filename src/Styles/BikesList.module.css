@@ -32,8 +32,8 @@
 }
 
 .button {
-  width: 120px;
-  height: 40px;
+  width: 280px;
+  height: 60px;
   background-color: #43c59e;
   color: #14453d;
   border: none;
@@ -50,4 +50,9 @@
 }
 .h2 {
   color: #14453d;
+}
+.img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
 }
