@@ -1,61 +1,91 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-import {} from "../State/Reducers/bikes.slice";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import styles from "../Styles/Cart.module.css";
 import { useNavigate } from "react-router-dom";
+import { removeFromCart } from "../State/Reducers/addToCart.slice";
+import { FaTimesCircle } from "react-icons/fa";
 
 const Cart = () => {
   const navigate = useNavigate();
-  const bikeInfo = useSelector((state) => state.bikes.bikeInfo);
-  const { price, name } = bikeInfo;
-  const period = useSelector((state) => state.bikes.period);
+  const dispatch = useDispatch();
 
-  const startDate = useSelector(
-    (state) => new Date(state.bikes.selectedFromDate)
-  );
+  const reservationData = useSelector((state) => state.addToCart.data);
 
-  const endDate = new Date(startDate);
-  endDate.setDate(startDate.getDate() + period);
+  console.log({ reservationData });
 
-  const formattedStartDate = startDate.toLocaleDateString("pl-PL");
-  const formattedEndDate = endDate.toLocaleDateString("pl-PL");
-
-  const totalPrice = period * price;
   const handleOrderClick = () => {
-    navigate("/checkout", {
-      state: {
-        formattedStartDate,
-        formattedEndDate,
-        totalPrice,
-        name,
-      },
-    });
+    if (reservationData.length > 0) {
+      navigate("/checkout", {});
+    } else {
+      alert("Koszyk jest pusty. Dodaj produkty do koszyka przed kontynuacją.");
+    }
+  };
+  const handleRemove = (index) => {
+    dispatch(removeFromCart(index));
   };
 
   return (
     <div className={styles.checkout}>
       <Header />
       <div className={styles.checkout_container}>
-        <div className={styles.checkout_wrapper}>
-          <ul className={styles.checkout_list}>
-            <h2>Rezerwacja</h2>
-            <li className={styles.name}>{name}</li>
-            <li className={styles.start}>
-              Data rozpoczęcia:{formattedStartDate}
-            </li>
-            <li className={styles.end}>Data zakończenia{formattedEndDate}</li>
-            <li className={styles.total}>Cena:{totalPrice}zł</li>
-          </ul>
+        <div className={styles.cart_wrapper}>
+          <h1 className={styles.cart_header}>KOSZYK</h1>
+          <Link to={"/"}>
+            <button className={styles.home_btn}>Strona Główna</button>
+          </Link>
         </div>
-        <div className={styles.overview}>
-          <h2>Podsumowanie</h2>
-          <h3>Suma {totalPrice} zł</h3>
+        <h2>Rezerwacja </h2>
+        {reservationData.length > 0 ? (
+          <div className={styles.checkout_wrapper}>
+            {reservationData.map((reservation, index) => (
+              <div key={index} className={styles.cart_element}>
+                <div className={styles.checkout_list}>
+                  <button
+                    type="button"
+                    className={styles.cart_remove}
+                    onClick={() => handleRemove(index)}
+                  >
+                    <FaTimesCircle size={24} />
+                  </button>
 
-          <button className={styles.cart_order} onClick={handleOrderClick}>
-            Zamówienie
-          </button>
-        </div>
+                  <div className={styles.summary}>
+                    <span className={styles.name}>{reservation.name}</span>
+                    <span className={styles.start}>
+                      <p className={styles.p}>Data rozpoczęcia:</p>{" "}
+                      {reservation.formattedStartDate}
+                    </span>
+                    <span className={styles.end}>
+                      <p className={styles.p}>Data zakończenia:</p>{" "}
+                      {reservation.formattedEndDate}
+                    </span>
+                  </div>
+                  <h3 className={styles.total}>{reservation.totalPrice} zł</h3>
+                </div>
+              </div>
+            ))}
+            <div className={styles.overview}>
+              <h2>Podsumowanie</h2>
+              <h3>
+                Suma:{" "}
+                {reservationData.reduce(
+                  (total, reservation) => total + reservation.totalPrice,
+                  0
+                )}{" "}
+                zł
+              </h3>
+
+              <button className={styles.cart_order} onClick={handleOrderClick}>
+                Zamówienie
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className={styles.empty_cart_message}>
+            Koszyk jest pusty. Dodaj produkty do koszyka przed kontynuacją.
+          </div>
+        )}
       </div>
       <Footer />
     </div>

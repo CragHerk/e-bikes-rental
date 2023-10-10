@@ -8,6 +8,7 @@ import {
   setSelectedDates,
   setReservedIndex,
 } from "../State/Reducers/bikes.slice.js";
+import { addToCart } from "../State/Reducers/addToCart.slice.js";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "../Styles/Reservation.module.css";
 import { FaCalendar } from "react-icons/fa";
@@ -17,7 +18,17 @@ const Reservation = ({ index }) => {
   const selectedDates = useSelector((state) => state.bikes.selectedDates);
   const period = useSelector((state) => state.bikes.period);
   const price = useSelector((state) => state.bikes.bikeInfo.price);
+  const name = useSelector((state) => state.bikes.bikeInfo.name);
   const totalPrice = period * price;
+  const startDate = useSelector(
+    (state) => new Date(state.bikes.selectedFromDate)
+  );
+
+  const endDate = new Date(startDate);
+  endDate.setDate(startDate.getDate() + period);
+
+  const formattedStartDate = startDate.toLocaleDateString("pl-PL");
+  const formattedEndDate = endDate.toLocaleDateString("pl-PL");
   const handleChange = (date, key) => {
     const timestamp = date.getTime();
     dispatch(setSelectedDates({ index, [key]: timestamp }));
@@ -28,6 +39,17 @@ const Reservation = ({ index }) => {
   const handlePeriodChange = (e) => {
     const selectedPeriod = parseInt(e.target.value, 10);
     dispatch(setPeriod(selectedPeriod));
+  };
+  const handleReservation = () => {
+    const reservationData = {
+      formattedStartDate,
+      formattedEndDate,
+      totalPrice,
+      period,
+      price,
+      name,
+    };
+    dispatch(addToCart(reservationData));
   };
 
   return (
@@ -58,11 +80,17 @@ const Reservation = ({ index }) => {
             </select>
             <FaCalendar className={styles.select_calendar} />
           </div>
+          <h4 className={styles.name}>{name}</h4>
           <h3 className={styles.price}>Cena : {totalPrice}zł</h3>
         </div>
 
         <Link to={"/cart"}>
-          <button className={styles.reservation_btn}>Zarezerwój teraz</button>
+          <button
+            onClick={handleReservation}
+            className={styles.reservation_btn}
+          >
+            Zarezerwój teraz
+          </button>
         </Link>
       </div>
       <button className={styles.close_button} onClick={handleClose}></button>

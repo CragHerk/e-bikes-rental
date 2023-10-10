@@ -1,15 +1,19 @@
-import { useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { bookReservation } from "../State/Reducers/reservations.slice";
+import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import styles from "../Styles/Checkout.module.css";
+
 const Checkout = () => {
-  const location = useLocation();
-  const { totalPrice, formattedStartDate, formattedEndDate, name } =
-    location.state;
+  const reservationData = useSelector((state) => state.addToCart.data);
   const dispatch = useDispatch();
-  const handleSubmit = (event) => {
+  const totalAmount = reservationData.reduce(
+    (total, reservation) => total + reservation.totalPrice,
+    0
+  );
+
+  const handleSubmit = (event, reservation) => {
     event.preventDefault();
 
     const formData = {
@@ -27,18 +31,23 @@ const Checkout = () => {
     dispatch(
       bookReservation(
         formData,
-        totalPrice,
-        formattedStartDate,
-        formattedEndDate
+        reservation.name,
+        reservation.totalPrice,
+        reservation.formattedStartDate,
+        reservation.formattedEndDate
       )
     );
   };
+
   return (
     <div className={styles.checkout}>
       <Header />
       <div className={styles.checkout_container}>
         <form onSubmit={handleSubmit} className={styles.checkout_form}>
           <h2> Rezerwacja</h2>
+          <Link to={"/"}>
+            <button className={styles.home_btn}>Strona Główna</button>
+          </Link>
           <label className={styles.checkout_label}>
             <p>Imię *</p>
             <input className={styles.checkout_input} type="text" />
@@ -76,35 +85,51 @@ const Checkout = () => {
             <input className={styles.checkout_input} type="text" />
           </label>
         </form>
-        <div className={styles.checkout_order}>
-          <h4>Twoje zamówienie</h4>
-          <div className={styles.checkout_cart}>
-            <div className={styles.checkout_item}>
-              <span className={styles.checkout_span}>
-                <p>Rower:</p> {name}
-              </span>
-              <span className={styles.checkout_span}>
-                <p>Data startu:</p> {formattedStartDate}
-              </span>
-              <span className={styles.checkout_span}>
-                <p>Data Zakończenia:</p> {formattedEndDate}
-              </span>
-              <span className={styles.checkout_span}>
-                <p>Cena:</p> {totalPrice}zł
-              </span>
-              <span className={styles.checkout_span}>
-                <input className={styles.checkout_checkbox} type="checkbox" />
-                Płatność na miejscu
-              </span>
-              <button type="submit" className={styles.checkout_sumbit}>
-                Kupuję i płacę
-              </button>
+        <div className={styles.summary}>
+          <h2>Twoje zamówienie </h2>
+          {reservationData.map((reservation, index) => (
+            <div key={index} className={styles.checkout_order}>
+              <div className={styles.checkout_cart}>
+                <div className={styles.checkout_item}>
+                  <span className={styles.checkout_span}>
+                    <p>Rower:</p> {reservation.name}
+                  </span>
+                  <span className={styles.checkout_span}>
+                    <p>Data startu:</p> {reservation.formattedStartDate}
+                  </span>
+                  <span className={styles.checkout_span}>
+                    <p>Data Zakończenia:</p> {reservation.formattedEndDate}
+                  </span>
+                  <span className={styles.checkout_span}>
+                    <p>Cena:</p> {reservation.totalPrice}zł
+                  </span>
+                </div>
+              </div>
             </div>
+          ))}
+
+          <div className={styles.checkout_overview}>
+            <h3 className={styles.price}>
+              SUMA : <p>{totalAmount}zł</p>
+            </h3>
+            <span>
+              <input className={styles.checkout_checkbox} type="checkbox" />
+              Płatność na miejscu
+            </span>
+            <button
+              type="submit"
+              className={styles.checkout_sumbit}
+              onClick={(event) => handleSubmit(event, reservationData)}
+            >
+              Kupuję i płacę
+            </button>
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );
 };
+
 export default Checkout;
