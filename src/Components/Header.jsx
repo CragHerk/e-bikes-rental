@@ -18,15 +18,13 @@ const Header = () => {
       <button className={styles.hamburger_button} onClick={handleOpenMenu}>
         <FaBars className={styles.hamburger_icon} />
       </button>
-      <Link to={"/"}>
-        <p className={styles.header_p}>Wypożyczalnia rowerów elektrycznych</p>
-      </Link>
+
       <Link to={"/"}>
         <div className={styles.logo}>LOGO</div>
       </Link>
       <Link to={"/cart"}>
         <button className={styles.cart}>
-          <FaShoppingCart />
+          <FaShoppingCart size={24} />
         </button>
       </Link>
       {isMenuOpen && <Menu />}

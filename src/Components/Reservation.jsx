@@ -49,7 +49,7 @@ const Reservation = ({ index }) => {
       price,
       name,
     };
-    dispatch(addToCart(reservationData));
+    dispatch(addToCart(reservationData)), dispatch(setReservedIndex(-1));
   };
 
   return (

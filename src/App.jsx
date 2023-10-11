@@ -24,7 +24,9 @@ const Home = () => {
     <div>
       <Header />
       <Poster />
-      <BikesList />;
+      <div id="bikeslist">
+        <BikesList />
+      </div>
       <AboutUs />
       <Footer />
     </div>

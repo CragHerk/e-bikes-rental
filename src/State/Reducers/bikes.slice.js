@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createSelector } from "reselect";
 
 const initialState = {
   activeIndex: -1,
@@ -19,20 +18,15 @@ const bikesSlice = createSlice({
   initialState,
   reducers: {
     setActiveIndex: (state, action) => {
-      return { ...state, activeIndex: action.payload };
+      state.activeIndex = action.payload;
     },
     setReservedIndex: (state, action) => {
       state.reservedIndex = action.payload;
     },
     setSelectedDates: (state, action) => {
       const { index, from } = action.payload;
-      const updatedSelectedDates = [...state.selectedDates];
-      updatedSelectedDates[index] = { from, to: null };
-      return {
-        ...state,
-        selectedDates: updatedSelectedDates,
-        selectedFromDate: from,
-      };
+      state.selectedDates[index] = { from, to: null };
+      state.selectedFromDate = from;
     },
     setBikeInfo: (state, action) => {
       state.bikeInfo = action.payload;
@@ -50,27 +44,5 @@ export const {
   setBikeInfo,
   setPeriod,
 } = bikesSlice.actions;
-
-export const selectBikesState = (state) => state.bikes;
-
-export const selectPeriod = createSelector(
-  [selectBikesState],
-  (bikes) => bikes.period
-);
-
-export const selectSelectedFromDate = createSelector(
-  [selectBikesState],
-  (bikes) => bikes.selectedFromDate
-);
-
-export const selectSelectedDates = createSelector(
-  [selectBikesState],
-  (bikes) => bikes.selectedDates
-);
-
-export const selectBikeInfo = createSelector(
-  [selectBikesState],
-  (bikes) => bikes.bikeInfo
-);
 
 export default bikesSlice.reducer;
