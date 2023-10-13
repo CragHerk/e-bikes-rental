@@ -1,6 +1,6 @@
-import { images } from "./Gallery/images";
-import Gallery from "./Gallery/Gallery/Gallery";
-import styles from "../Styles/AboutUs.module.css";
+import { images } from "../Gallery/images";
+import Gallery from "../Gallery/Gallery/Gallery";
+import styles from "./AboutUs.module.css";
 const AboutUs = () => {
   return (
     <div className={styles.aboutus}>

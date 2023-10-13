@@ -1,11 +1,12 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import styles from "../Styles/Cart.module.css";
+
 import { useNavigate } from "react-router-dom";
-import { removeFromCart } from "../State/Reducers/addToCart.slice";
+import { removeFromCart } from "../../State/Reducers/addToCart.slice";
 import { FaTimesCircle } from "react-icons/fa";
+import styles from "./Cart.module.css";
 
 const Cart = () => {
   const navigate = useNavigate();

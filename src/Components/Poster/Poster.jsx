@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
-import styles from "../Styles/Poster.module.css";
+import styles from "./Poster.module.css";
 
 const Poster = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -18,6 +18,11 @@ const Poster = () => {
         <Link to="bikeslist">
           <button className={styles.button}>Znajdź rower</button>
         </Link>
+        <div className={styles.bike_wrapper}>
+          <img className={styles.bike} src="assets/bike-green.svg" />
+          <span className={styles.price}>Ceny od ...</span>
+          <span className={styles.value}> 240zł/dzień</span>
+        </div>
       </div>
 
       {!imageLoaded && <div className={styles.placeholder}></div>}

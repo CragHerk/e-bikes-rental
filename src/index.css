@@ -36,3 +36,15 @@ span {
 html {
   scroll-behavior: smooth;
 }
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h4 {
+  margin: 0;
+  color: #14453d;
+}
+a {
+  color: #14453d;
+}

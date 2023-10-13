@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { bookReservation } from "../State/Reducers/reservations.slice";
+import { bookReservation } from "../../State/Reducers/reservations.slice";
 import { Link } from "react-router-dom";
-import Checkbox from "../Utils/checkbox/checkbox";
-import Header from "./Header";
-import Footer from "./Footer";
-import styles from "../Styles/Checkout.module.css";
+import Checkbox from "../../Utils/checkbox/checkbox";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import styles from "./Checkout.module.css";
 
 const Checkout = () => {
   const reservationData = useSelector((state) => state.addToCart.data);

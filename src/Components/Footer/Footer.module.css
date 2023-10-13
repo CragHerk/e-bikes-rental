@@ -1,0 +1,59 @@
+.footer {
+  width: 100vw;
+
+  text-align: left;
+  margin-top: 20px;
+  background-color: rgba(20, 69, 61, 0.2);
+}
+.open {
+  margin-left: 20px;
+  margin-top: 25px;
+  padding-bottom: 50px;
+  padding-top: 25px;
+}
+
+.footer_wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+}
+.social_media {
+  margin-left: 20px;
+  margin-bottom: 35px;
+  display: flex;
+}
+.icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #14453d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+.contact {
+  margin-left: 20px;
+}
+.adress_wrapper {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+.email_wrapper {
+  display: flex;
+  margin-bottom: 15px;
+}
+.email_wrapper a {
+  text-decoration: none;
+}
+.phone_wrapper {
+  display: flex;
+}
+.foot {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+}

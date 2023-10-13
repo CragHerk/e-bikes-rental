@@ -1,18 +1,18 @@
 import "react-multi-carousel/lib/styles.css";
-import bikeList from "../Utils/bikelist";
-import styles from "../Styles/BikesList.module.css";
+import bikeList from "../../Utils/bikelist";
+import styles from "./BikesList.module.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import responsive from "../Utils/carouselConfig";
+import responsive from "../../Utils/carouselConfig";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setActiveIndex,
   setReservedIndex,
   setBikeInfo,
-} from "../State/Reducers/bikes.slice.js";
+} from "../../State/Reducers/bikes.slice.js";
 import "react-datepicker/dist/react-datepicker.css";
 
-import Reservation from "./Reservation";
+import Reservation from "../Reservation/Reservation";
 
 const BikesList = () => {
   const activeIndex = useSelector((state) => state.bikes.activeIndex);

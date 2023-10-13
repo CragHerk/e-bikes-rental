@@ -14,11 +14,10 @@
 }
 
 .checkboxInput:checked {
-  background-image: url("/assets/check-lg.svg");
+  background-image: url("/assets/check.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 3px;
+  background-size: contain;
 }
 
 .closeIcon {

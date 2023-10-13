@@ -7,10 +7,10 @@ import {
   setPeriod,
   setSelectedDates,
   setReservedIndex,
-} from "../State/Reducers/bikes.slice.js";
-import { addToCart } from "../State/Reducers/addToCart.slice.js";
+} from "../../State/Reducers/bikes.slice.js";
+import { addToCart } from "../../State/Reducers/addToCart.slice.js";
 import "react-datepicker/dist/react-datepicker.css";
-import styles from "../Styles/Reservation.module.css";
+import styles from "./Reservation.module.css";
 import { FaCalendar } from "react-icons/fa";
 
 const Reservation = ({ index }) => {

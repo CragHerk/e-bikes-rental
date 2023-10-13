@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { closeMenu } from "../State/Actions/menu.actions";
-import styles from "../Styles/Menu.module.css";
+import { closeMenu } from "../../State/Actions/menu.actions";
+import styles from "./Menu.module.css";
 import { FaTimes } from "react-icons/fa";
 
 const Menu = () => {

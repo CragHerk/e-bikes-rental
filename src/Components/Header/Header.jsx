@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { openMenu } from "../State/Actions/menu.actions.js";
-import Menu from "./Menu";
+import { openMenu } from "../../State/Actions/menu.actions.js";
+import Menu from "../Menu/Menu.jsx";
 import { Link } from "react-router-dom";
-import styles from "../Styles/Header.module.css";
+import styles from "./Header.module.css";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {

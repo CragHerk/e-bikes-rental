@@ -1,6 +1,10 @@
 .checkout {
   min-height: 100vh;
   color: #14453d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .checkout_container {
   display: flex;

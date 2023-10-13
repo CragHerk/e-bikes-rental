@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Header from "./Components/Header";
-import BikesList from "./Components/BikesList.jsx";
-import AboutUs from "./Components/AboutUs";
-import Footer from "./Components/Footer";
-import Poster from "./Components/Poster";
-import Cart from "./Components/Cart";
-import Checkout from "./Components/Checkout";
+import Header from "./Components/Header/Header";
+import BikesList from "./Components/BikesList/BikesList";
+import AboutUs from "./Components/AboutUs/AboutUs";
+import Footer from "./Components/Footer/Footer";
+import Poster from "./Components/Poster/Poster";
+import Cart from "./Components/Cart/Cart";
+import Checkout from "./Components/Checkout/Checkout";
 
 function App() {
   return (
