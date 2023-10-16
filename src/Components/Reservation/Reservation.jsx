@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ReactDatePicker from "react-datepicker";
 import PropTypes from "prop-types";
@@ -7,6 +7,7 @@ import {
   setPeriod,
   setSelectedDates,
   setReservedIndex,
+  setInitialStartDate,
 } from "../../State/Reducers/bikes.slice.js";
 import { addToCart } from "../../State/Reducers/addToCart.slice.js";
 import "react-datepicker/dist/react-datepicker.css";
@@ -40,6 +41,9 @@ const Reservation = ({ index }) => {
     const selectedPeriod = parseInt(e.target.value, 10);
     dispatch(setPeriod(selectedPeriod));
   };
+  useEffect(() => {
+    dispatch(setInitialStartDate());
+  }, [dispatch]);
   const handleReservation = () => {
     const reservationData = {
       formattedStartDate,
@@ -60,7 +64,7 @@ const Reservation = ({ index }) => {
           <div className={styles.date_input}>
             <label>Początek:</label>
             <ReactDatePicker
-              selected={selectedDates[index]?.from || null}
+              selected={selectedDates[index]?.from || new Date()}
               onChange={(date) => handleChange(date, "from")}
               dateFormat="dd/MM/yyyy"
               className={styles.datepicker}

@@ -2,13 +2,12 @@ import PropTypes from "prop-types";
 import { FaTimes } from "react-icons/fa";
 import styles from "./Checkbox.module.css";
 
-const Checkbox = ({ checked, onChange }) => {
+const Checkbox = ({ checked }) => {
   return (
     <label className={styles.checkboxLabel}>
       <input
         type="checkbox"
         checked={checked}
-        onChange={onChange}
         className={styles.checkboxInput}
       />
 
@@ -19,7 +18,6 @@ const Checkbox = ({ checked, onChange }) => {
 
 Checkbox.propTypes = {
   checked: PropTypes.bool.isRequired,
-  onChange: PropTypes.func.isRequired,
 };
 
 export default Checkbox;

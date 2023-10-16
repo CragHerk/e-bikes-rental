@@ -29,10 +29,10 @@ const Poster = () => {
       <img
         src={
           isDesktop
-            ? "/assets/desktop-shaped.jpg"
+            ? "/assets/computer.jpg"
             : isTablet
-            ? "/assets/tablet-shaped.jpg"
-            : "/assets/mobile-shaped.jpg"
+            ? "/assets/tablet.jpg"
+            : "/assets/mobile.jpg"
         }
         alt="Poster"
         onLoad={handleImageLoad}

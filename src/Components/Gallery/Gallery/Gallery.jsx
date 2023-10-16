@@ -6,7 +6,13 @@ const Gallery = ({ images }) => {
   return (
     <div className={styles.gallery}>
       {images.map((image, index) => (
-        <GalleryItem key={index} image={image} />
+        <GalleryItem
+          key={index}
+          image={image}
+          index={index}
+          total={images.length}
+          images={images}
+        />
       ))}
     </div>
   );

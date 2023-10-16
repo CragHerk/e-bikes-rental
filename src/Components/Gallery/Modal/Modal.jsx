@@ -1,13 +1,43 @@
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import styles from "./Modal.module.css";
 
-const Modal = ({ image, onClose }) => {
+const Modal = ({ onClose, images, currentIndex }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex);
+
+  useEffect(() => {
+    setCurrentImageIndex(currentIndex);
+  }, [currentIndex]);
+
+  const handlePrev = () => {
+    const prevIndex = (currentImageIndex - 1 + images.length) % images.length;
+    setCurrentImageIndex(prevIndex);
+  };
+
+  const handleNext = () => {
+    const nextIndex = (currentImageIndex + 1) % images.length;
+    setCurrentImageIndex(nextIndex);
+  };
+
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <span className="close" onClick={onClose}>
-          &times;
-        </span>
-        <img src={image.src} alt={image.alt} className="modal-image" />
+    <div className={styles.modal_wrapper}>
+      <div className={styles.modal}>
+        <div className={styles.content}>
+          <span className={styles.close} onClick={onClose}>
+            &times;
+          </span>
+          <img
+            src={images[currentImageIndex].src}
+            alt={images[currentImageIndex].alt}
+            className={styles.image}
+          />
+          <button className={styles.prev} onClick={handlePrev}>
+            &#8249;
+          </button>
+          <button className={styles.next} onClick={handleNext}>
+            &#8250;
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -19,6 +49,13 @@ Modal.propTypes = {
     alt: PropTypes.string.isRequired,
   }).isRequired,
   onClose: PropTypes.func.isRequired,
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  currentIndex: PropTypes.number.isRequired,
 };
 
 export default Modal;

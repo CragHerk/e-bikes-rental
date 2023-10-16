@@ -1,7 +1,14 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { closeMenu } from "../../State/Actions/menu.actions";
+import { useSpring, animated } from "react-spring";
 import styles from "./Menu.module.css";
-import { FaTimes } from "react-icons/fa";
+import {
+  FaTimes,
+  FaFacebook,
+  FaInstagram,
+  FaEnvelope,
+  FaPhone,
+} from "react-icons/fa";
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -11,21 +18,30 @@ const Menu = () => {
     dispatch(closeMenu());
   };
 
-  const menuClassName = isMenuOpen
-    ? `${styles.menu} ${styles.menuOpen}`
-    : styles.menu;
+  const menuAnimation = useSpring({
+    transform: isMenuOpen ? `translateX(-19%)` : `translateX(-150%)`,
+  });
 
   return (
-    <div className={menuClassName}>
+    <animated.div style={menuAnimation} className={styles.menu}>
       <button className={styles.closeButton} onClick={handleCloseMenu}>
         <FaTimes className={styles.closeIcon} />
       </button>
       <ul className={styles.menuList}>
-        <li>Link 1</li>
-        <li>Link 2</li>
-        <li>Link 3</li>
+        <li className={styles.menuElement}>
+          <FaFacebook /> Facebook
+        </li>
+        <li className={styles.menuElement}>
+          <FaInstagram /> Instagram
+        </li>
+        <li className={styles.menuElement}>
+          <FaEnvelope /> Email
+        </li>
+        <li className={styles.menuElement}>
+          <FaPhone /> Telefon
+        </li>
       </ul>
-    </div>
+    </animated.div>
   );
 };
 

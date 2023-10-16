@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Modal from "../Modal/Modal";
 import styles from "./GalleryItem.module.css";
 
-const GalleryItem = ({ image }) => {
+const GalleryItem = ({ image, index, images }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -22,7 +22,14 @@ const GalleryItem = ({ image }) => {
         className={styles.image}
         onClick={handleOpenModal}
       />
-      {modalOpen && <Modal image={image} onClose={handleCloseModal} />}
+      {modalOpen && (
+        <Modal
+          image={image}
+          onClose={handleCloseModal}
+          images={images}
+          currentIndex={index}
+        />
+      )}
     </div>
   );
 };
@@ -32,6 +39,14 @@ GalleryItem.propTypes = {
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
   }).isRequired,
+  index: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default GalleryItem;
