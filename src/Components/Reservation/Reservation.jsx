@@ -9,6 +9,7 @@ import {
   setReservedIndex,
   setInitialStartDate,
 } from "../../State/Reducers/bikes.slice.js";
+import { pullReservedDates } from "../../State/Reducers/bikes.slice.js";
 import { addToCart } from "../../State/Reducers/addToCart.slice.js";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Reservation.module.css";
@@ -21,6 +22,7 @@ const Reservation = ({ index }) => {
   const price = useSelector((state) => state.bikes.bikeInfo.price);
   const name = useSelector((state) => state.bikes.bikeInfo.name);
   const totalPrice = period * price;
+  const reservedDates = useSelector((state) => state.bikes.reservations);
   const startDate = useSelector(
     (state) => new Date(state.bikes.selectedFromDate)
   );
@@ -55,6 +57,9 @@ const Reservation = ({ index }) => {
     };
     dispatch(addToCart(reservationData)), dispatch(setReservedIndex(-1));
   };
+  useEffect(() => {
+    dispatch(pullReservedDates());
+  }, [dispatch]);
 
   return (
     <div className={styles.reservation_container}>
@@ -67,7 +72,11 @@ const Reservation = ({ index }) => {
               selected={selectedDates[index]?.from || new Date()}
               onChange={(date) => handleChange(date, "from")}
               dateFormat="dd/MM/yyyy"
+              timeFormat="HH:mm"
               className={styles.datepicker}
+              minDate={new Date()}
+              excludeDates={reservedDates}
+              selectsDisabledDaysInRange
             />
             <FaCalendar className={styles.date_calendar} />
           </div>

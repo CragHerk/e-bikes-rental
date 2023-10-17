@@ -1,4 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+
+export const pullReservedDates = createAsyncThunk(
+  "bikes/pullReservedDates",
+  async () => {
+    const response = await axios.get(
+      `https://e-bikes-mu2k.onrender.com/api/availability/`
+    );
+    return response.data;
+  }
+);
 
 const initialState = {
   activeIndex: -1,
@@ -11,6 +22,7 @@ const initialState = {
     img: "",
   },
   period: 1,
+  reservations: [],
 };
 
 const bikesSlice = createSlice({
@@ -41,6 +53,12 @@ const bikesSlice = createSlice({
     setPeriod: (state, action) => {
       state.period = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(pullReservedDates.fulfilled, (state, action) => {
+      const { reservedDates } = action.payload;
+      state.reservations = reservedDates;
+    });
   },
 });
 

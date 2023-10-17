@@ -12,10 +12,9 @@
 }
 .modal {
   position: absolute;
-  left: 0px;
 }
 .image {
-  max-width: 100vw;
+  max-height: 100vh;
 }
 .close {
   position: absolute;

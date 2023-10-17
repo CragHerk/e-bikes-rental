@@ -31,7 +31,7 @@
   border: none;
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: 15px;
 }
 .date_inputs {
   display: flex;
@@ -104,4 +104,6 @@
   position: absolute;
   top: 201px;
   left: 18px;
+}
+@media screen and (min-width: 1200px) {
 }
