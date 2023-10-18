@@ -1,27 +1,34 @@
-import "react-multi-carousel/lib/styles.css";
-import bikeList from "../../Utils/bikelist";
-import styles from "./BikesList.module.css";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import responsive from "../../Utils/carouselConfig";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setActiveIndex,
   setReservedIndex,
   setBikeInfo,
 } from "../../State/Reducers/bikes.slice.js";
-import "react-datepicker/dist/react-datepicker.css";
-
 import Reservation from "../Reservation/Reservation";
+import Carousel from "react-multi-carousel";
+import BikesSpinner from "../BikesSpinner/BikesSpinner.jsx";
+import bikeList from "../../Utils/bikelist";
+import responsive from "../../Utils/carouselConfig";
+import "react-multi-carousel/lib/styles.css";
+import "react-datepicker/dist/react-datepicker.css";
+import styles from "./BikesList.module.css";
 
 const BikesList = () => {
   const activeIndex = useSelector((state) => state.bikes.activeIndex);
   const reservedIndex = useSelector((state) => state.bikes.reservedIndex);
+  const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
 
   const handleReservationClick = (index) => {
-    dispatch(setReservedIndex(index));
+    setIsLoading(true);
+
+    setTimeout(() => {
+      dispatch(setReservedIndex(index));
+
+      setIsLoading(false);
+    }, 2000);
   };
 
   const handleCarouselItemClick = (index) => {
@@ -72,9 +79,14 @@ const BikesList = () => {
             </div>
             <button
               className={styles.button}
-              onClick={() => handleReservationClick(index)}
+              onClick={() => !isLoading && handleReservationClick(index)}
+              disabled={isLoading}
             >
-              Zarezerwuj
+              {isLoading && index === activeIndex ? (
+                <BikesSpinner color="rgba(20, 69, 61, 0.2)" />
+              ) : (
+                "Zarezerwuj"
+              )}
             </button>
 
             {isReserved && (

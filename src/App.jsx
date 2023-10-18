@@ -1,4 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import BikesList from "./Components/BikesList/BikesList";
@@ -11,6 +17,7 @@ import Checkout from "./Components/Checkout/Checkout";
 function App() {
   return (
     <Router basename="/e-bikes-rental">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
@@ -19,6 +26,17 @@ function App() {
     </Router>
   );
 }
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const Home = () => {
   return (
     <div>
@@ -32,4 +50,5 @@ const Home = () => {
     </div>
   );
 };
+
 export default App;

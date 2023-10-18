@@ -22,10 +22,12 @@ body {
 button {
   cursor: pointer;
   color: #14453d;
-  background-color: #43c59e;
   border: none;
   border-radius: 8px;
   font-weight: bold;
+}
+button:hover {
+  background-color: rgba(20, 69, 61, 0.1);
 }
 h2 {
   color: #14453d;
@@ -46,5 +48,8 @@ h4 {
   color: #14453d;
 }
 a {
+  color: #14453d;
+}
+h6 {
   color: #14453d;
 }

@@ -20,8 +20,8 @@
   flex-direction: column;
 }
 .custom_item {
-  background-color: rgba(20, 69, 61, 0.2);
-  border-radius: 0 0 10px 10px;
+  background: linear-gradient(rgba(20, 69, 61, 0.2), rgba(20, 69, 61, 0.05));
+  box-shadow: 0px 20px rgba(20, 69, 61, 0.05);
   width: auto;
   height: 500px;
   position: relative;
@@ -34,9 +34,10 @@
 .button {
   width: 280px;
   height: 60px;
-  background-color: #43c59e;
-  color: #14453d;
-  border: none;
+  background-color: transparent;
+  border: 1px solid rgba(20, 69, 61, 0.3);
+  color: rgba(20, 69, 61, 0.8);
+  margin-top: 10px;
   border-radius: 8px;
   font-weight: bold;
 }
@@ -49,7 +50,8 @@
   align-items: center;
 }
 .h2 {
-  color: #14453d;
+  color: rgba(20, 69, 61, 0.8);
+  width: 100%;
 }
 .img {
   width: 300px;

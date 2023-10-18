@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import ReactDatePicker from "react-datepicker";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+
 import {
   setPeriod,
   setSelectedDates,
@@ -11,12 +12,15 @@ import {
 } from "../../State/Reducers/bikes.slice.js";
 import { pullReservedDates } from "../../State/Reducers/bikes.slice.js";
 import { addToCart } from "../../State/Reducers/addToCart.slice.js";
+import BikesSpinner from "../BikesSpinner/BikesSpinner.jsx";
+
+import { FaCalendar } from "react-icons/fa";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Reservation.module.css";
-import { FaCalendar } from "react-icons/fa";
 
 const Reservation = ({ index }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const selectedDates = useSelector((state) => state.bikes.selectedDates);
   const period = useSelector((state) => state.bikes.period);
   const price = useSelector((state) => state.bikes.bikeInfo.price);
@@ -26,6 +30,7 @@ const Reservation = ({ index }) => {
   const startDate = useSelector(
     (state) => new Date(state.bikes.selectedFromDate)
   );
+  const [isLoading, setIsLoading] = useState(false);
 
   const endDate = new Date(startDate);
   endDate.setDate(startDate.getDate() + period);
@@ -47,6 +52,7 @@ const Reservation = ({ index }) => {
     dispatch(setInitialStartDate());
   }, [dispatch]);
   const handleReservation = () => {
+    setIsLoading(true);
     const reservationData = {
       formattedStartDate,
       formattedEndDate,
@@ -55,7 +61,11 @@ const Reservation = ({ index }) => {
       price,
       name,
     };
-    dispatch(addToCart(reservationData)), dispatch(setReservedIndex(-1));
+    setTimeout(() => {
+      dispatch(addToCart(reservationData)), dispatch(setReservedIndex(-1));
+      setIsLoading(false);
+      navigate("/cart");
+    }, 2000);
   };
   useEffect(() => {
     dispatch(pullReservedDates());
@@ -64,7 +74,7 @@ const Reservation = ({ index }) => {
   return (
     <div className={styles.reservation_container}>
       <div className={styles.reservation_wrapper}>
-        <h3 className={styles.reservation_header}>Wybierz daty</h3>
+        <h3 className={styles.reservation_header}>Wybierz daty:</h3>
         <div className={styles.date_inputs}>
           <div className={styles.date_input}>
             <label>Początek:</label>
@@ -93,18 +103,19 @@ const Reservation = ({ index }) => {
             </select>
             <FaCalendar className={styles.select_calendar} />
           </div>
-          <h4 className={styles.name}>{name}</h4>
-          <h3 className={styles.price}>Cena : {totalPrice}zł</h3>
+          <div className={styles.overal}>
+            <h4 className={styles.name}>{name}:</h4>
+            <h3 className={styles.price}>Cena : {totalPrice}zł</h3>
+          </div>
         </div>
 
-        <Link to={"/cart"}>
-          <button
-            onClick={handleReservation}
-            className={styles.reservation_btn}
-          >
-            Zarezerwój teraz
-          </button>
-        </Link>
+        <button onClick={handleReservation} className={styles.reservation_btn}>
+          {isLoading ? (
+            <BikesSpinner color={"rgba(20, 69, 61, 0.8)"} />
+          ) : (
+            "Zarezerwuj"
+          )}
+        </button>
       </div>
       <button className={styles.close_button} onClick={handleClose}></button>
     </div>
