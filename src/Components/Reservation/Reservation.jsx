@@ -27,6 +27,7 @@ const Reservation = ({ index }) => {
   const name = useSelector((state) => state.bikes.bikeInfo.name);
   const totalPrice = period * price;
   const reservedDates = useSelector((state) => state.bikes.reservations);
+  const blockedDates = reservedDates.map((dateObj) => new Date(dateObj.date));
   const startDate = useSelector(
     (state) => new Date(state.bikes.selectedFromDate)
   );
@@ -85,7 +86,7 @@ const Reservation = ({ index }) => {
               timeFormat="HH:mm"
               className={styles.datepicker}
               minDate={new Date()}
-              excludeDates={reservedDates}
+              excludeDates={blockedDates}
               selectsDisabledDaysInRange
             />
             <FaCalendar className={styles.date_calendar} />
