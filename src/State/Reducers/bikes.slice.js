@@ -3,9 +3,9 @@ import axios from "axios";
 
 export const pullReservedDates = createAsyncThunk(
   "bikes/pullReservedDates",
-  async () => {
+  async (bikeModel) => {
     const response = await axios.get(
-      `https://e-bikes-mu2k.onrender.com/api/availability/`
+      `https://e-bikes-mu2k.onrender.com/api/availability/${bikeModel}`
     );
     return response.data;
   }

@@ -25,6 +25,7 @@ button {
   border: none;
   border-radius: 8px;
   font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 button:hover {
   background-color: rgba(20, 69, 61, 0.1);

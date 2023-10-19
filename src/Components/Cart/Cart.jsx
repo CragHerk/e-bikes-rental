@@ -14,8 +14,6 @@ const Cart = () => {
 
   const reservationData = useSelector((state) => state.addToCart.data);
 
-  console.log({ reservationData });
-
   const handleOrderClick = () => {
     if (reservationData.length > 0) {
       navigate("/checkout", {});

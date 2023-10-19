@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { bookReservation } from "../../State/Reducers/reservations.slice";
+import { sendReservation } from "../../State/Reducers/reservations.slice";
 import { Link } from "react-router-dom";
 import Checkbox from "../../Utils/checkbox/checkbox";
 import Header from "../Header/Header";
@@ -13,30 +14,33 @@ const Checkout = () => {
     (total, reservation) => total + reservation.totalPrice,
     0
   );
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    companyName: "",
+    country: "",
+    street: "",
+    postalCode: "",
+    city: "",
+    phone: "",
+    email: "",
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-  const handleSubmit = (event, reservation) => {
+  const handleSubmit = (event, reservationData) => {
     event.preventDefault();
 
-    const formData = {
-      firstName: event.target.elements.firstName.value,
-      lastName: event.target.elements.lastName.value,
-      companyName: event.target.elements.companyName.value,
-      country: event.target.elements.country.value,
-      street: event.target.elements.street.value,
-      postalCode: event.target.elements.postalCode.value,
-      city: event.target.elements.city.value,
-      phone: event.target.elements.phone.value,
-      email: event.target.elements.email.value,
-    };
-
     dispatch(
-      bookReservation(
-        formData,
-        reservation.name,
-        reservation.totalPrice,
-        reservation.formattedStartDate,
-        reservation.formattedEndDate
-      )
+      sendReservation({
+        ...formData,
+        bikeModel: reservationData[0].name,
+        totalPrice: reservationData[0].totalPrice,
+        startDate: reservationData[0].startDate,
+        endDate: reservationData[0].endDate,
+      })
     );
   };
 
@@ -51,39 +55,93 @@ const Checkout = () => {
           </Link>
           <label className={styles.checkout_label}>
             <p>Imię *</p>
-            <input className={styles.checkout_input} type="text" />
+            <input
+              className={styles.checkout_input}
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+            />
           </label>
           <label className={styles.checkout_label}>
             <p>Nazwisko *</p>
-            <input className={styles.checkout_input} type="text" />
+            <input
+              className={styles.checkout_input}
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+            />
           </label>
           <label className={styles.checkout_label}>
             <p>Nazwa firmy (opcjonalnie)</p>
-            <input className={styles.checkout_input} type="text" />
+            <input
+              className={styles.checkout_input}
+              type="text"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleChange}
+            />
           </label>
           <label className={styles.checkout_label}>
             <p> Kraj *</p>
-            <input className={styles.checkout_input} type="text" />
+            <input
+              className={styles.checkout_input}
+              type="text"
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+            />
           </label>
           <label className={styles.checkout_label}>
             <p>Ulica *</p>
-            <input className={styles.checkout_input} type="text" />
+            <input
+              className={styles.checkout_input}
+              type="text"
+              name="street"
+              value={formData.street}
+              onChange={handleChange}
+            />
           </label>
           <label className={styles.checkout_label}>
             <p>Kod Pocztowy *</p>
-            <input className={styles.checkout_input} type="text" />
+            <input
+              className={styles.checkout_input}
+              type="text"
+              name="postalCode"
+              value={formData.postalCode}
+              onChange={handleChange}
+            />
           </label>
           <label className={styles.checkout_label}>
             <p>Miasto *</p>
-            <input className={styles.checkout_input} type="text" />
+            <input
+              className={styles.checkout_input}
+              type="text"
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+            />
           </label>
           <label className={styles.checkout_label}>
             <p>Telefon *</p>
-            <input className={styles.checkout_input} type="text" />
+            <input
+              className={styles.checkout_input}
+              type="number"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+            />
           </label>
           <label className={styles.checkout_label}>
             <p>Adres e-mail *</p>
-            <input className={styles.checkout_input} type="text" />
+            <input
+              className={styles.checkout_input}
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </label>
         </form>
         <div className={styles.summary}>

@@ -28,6 +28,7 @@ const Reservation = ({ index }) => {
   const totalPrice = period * price;
   const reservedDates = useSelector((state) => state.bikes.reservations);
   const blockedDates = reservedDates.map((dateObj) => new Date(dateObj.date));
+
   const startDate = useSelector(
     (state) => new Date(state.bikes.selectedFromDate)
   );
@@ -61,6 +62,8 @@ const Reservation = ({ index }) => {
       period,
       price,
       name,
+      startDate: startDate.toISOString(), // Konwersja na format ISO
+      endDate: endDate.toISOString(), // Konwersja na format ISO
     };
     setTimeout(() => {
       dispatch(addToCart(reservationData)), dispatch(setReservedIndex(-1));
@@ -69,8 +72,8 @@ const Reservation = ({ index }) => {
     }, 2000);
   };
   useEffect(() => {
-    dispatch(pullReservedDates());
-  }, [dispatch]);
+    dispatch(pullReservedDates(name));
+  }, [dispatch, name]);
 
   return (
     <div className={styles.reservation_container}>
@@ -83,11 +86,9 @@ const Reservation = ({ index }) => {
               selected={selectedDates[index]?.from || new Date()}
               onChange={(date) => handleChange(date, "from")}
               dateFormat="dd/MM/yyyy"
-              timeFormat="HH:mm"
               className={styles.datepicker}
               minDate={new Date()}
               excludeDates={blockedDates}
-              selectsDisabledDaysInRange
             />
             <FaCalendar className={styles.date_calendar} />
           </div>
@@ -128,6 +129,7 @@ Reservation.propTypes = {
   price: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
+  bikeModel: PropTypes.string,
 };
 
 export default Reservation;
