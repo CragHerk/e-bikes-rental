@@ -13,6 +13,7 @@ import Footer from "./Components/Footer/Footer";
 import Poster from "./Components/Poster/Poster";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
+import Complete from "./Components/Complete/Complete";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/complete" element={<Complete />} />
       </Routes>
     </Router>
   );

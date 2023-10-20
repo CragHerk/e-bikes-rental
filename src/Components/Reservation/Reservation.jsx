@@ -62,8 +62,8 @@ const Reservation = ({ index }) => {
       period,
       price,
       name,
-      startDate: startDate.toISOString(), // Konwersja na format ISO
-      endDate: endDate.toISOString(), // Konwersja na format ISO
+      startDate: startDate.toISOString(),
+      endDate: endDate.toISOString(),
     };
     setTimeout(() => {
       dispatch(addToCart(reservationData)), dispatch(setReservedIndex(-1));
