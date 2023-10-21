@@ -1,5 +1,33 @@
 .complete {
   width: 100vw;
   height: 100vh;
-  background-color: aqua;
+  background-color: rgba(20, 69, 61, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper {
+  width: 50vw;
+  height: 50vw;
+  max-width: 500px;
+  max-height: 500px;
+  min-width: 160px;
+  min-height: 160px;
+  border-radius: 50%;
+  background-color: rgba(20, 69, 61, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tag {
+  font-size: 20px;
+}
+.btn {
+  margin-bottom: 100px;
+}
+@media screen and (min-width: 768px) {
+  .tag {
+    font-size: 30px;
+  }
 }
