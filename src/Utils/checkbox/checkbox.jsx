@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { FaTimes } from "react-icons/fa";
-import styles from "./checkbox.module.css";
+import styles from "./Checkbox.module.css";
 
 const Checkbox = ({ checked }) => {
   return (
