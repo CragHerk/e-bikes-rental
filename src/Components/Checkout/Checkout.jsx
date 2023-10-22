@@ -3,7 +3,7 @@ import { sendReservation } from "../../State/Reducers/reservations.slice";
 import { Link, useNavigate } from "react-router-dom";
 import { validationSchema } from "../../Utils/validationSchema";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import Checkbox from "../../Utils/checkbox/Checkbox";
+import { Checkbox } from "../../Utils/checkbox/checkbox";
 import BikesSpinner from "../BikesSpinner/BikesSpinner";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
