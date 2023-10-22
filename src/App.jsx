@@ -17,7 +17,7 @@ import Complete from "./Components/Complete/Complete";
 
 function App() {
   return (
-    <Router basename="/">
+    <Router basename="https://e-bikes-slotwina.netlify.app/">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
