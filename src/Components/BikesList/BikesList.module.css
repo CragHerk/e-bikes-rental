@@ -1,15 +1,19 @@
-.carousel {
-  margin-top: -50px;
-  overflow: hidden;
-  height: 600px;
+.carousel_container {
+  position: relative;
+  height: 900px;
   width: 100vw;
+  background: linear-gradient(rgba(20, 69, 61, 0.2), rgba(20, 69, 61, 0.01));
+  box-shadow: 0px 20px rgba(20, 69, 61, 0.01);
+}
+.carousel {
+  padding-top: 250px;
 }
 .item_container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
+
   width: 100%;
   height: 100%;
 }
@@ -20,11 +24,9 @@
   flex-direction: column;
 }
 .custom_item {
-  background: linear-gradient(rgba(20, 69, 61, 0.2), rgba(20, 69, 61, 0.05));
-  box-shadow: 0px 20px rgba(20, 69, 61, 0.05);
   width: auto;
   height: 500px;
-  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,7 +39,6 @@
   background-color: transparent;
   border: 1px solid rgba(20, 69, 61, 0.3);
   color: rgba(20, 69, 61, 0.8);
-  margin-top: 10px;
   border-radius: 8px;
   font-weight: bold;
 }
@@ -49,12 +50,34 @@
   justify-content: center;
   align-items: center;
 }
-.h2 {
+.name {
   color: rgba(20, 69, 61, 0.8);
-  width: 100%;
+  width: 280px;
+  padding-bottom: 20px;
+  margin: 15px 0;
 }
 .img {
   width: 300px;
   height: 200px;
   border-radius: 10px;
+}
+.wrapper {
+  border-bottom: 0.7px solid rgba(20, 69, 61, 0.15);
+}
+.bike {
+  display: flex;
+  align-items: center;
+  color: rgba(20, 69, 61, 0.8);
+  font-size: 12px;
+  width: 100%;
+  text-align: left;
+  margin: 30px 0 30px 20px;
+}
+.bike_svg {
+  margin-right: 10px;
+}
+.adv {
+  width: 100%;
+  height: 80px;
+  background-color: transparent;
 }

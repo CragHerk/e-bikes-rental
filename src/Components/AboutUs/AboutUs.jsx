@@ -4,7 +4,13 @@ import styles from "./AboutUs.module.css";
 const AboutUs = () => {
   return (
     <div className={styles.aboutus}>
+      <p className={styles.p}>
+        Słotwina – wieś w Polsce położona w województwie śląskim, w powiecie
+        żywieckim, w gminie Lipowa u stóp Skrzycznego.
+      </p>
+      <div className={styles.aboutus_poster}></div>
       <h2>O nas :</h2>
+
       <div className={styles.aboutus_container}>
         <Gallery images={images} />
       </div>

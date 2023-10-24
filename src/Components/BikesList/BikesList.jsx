@@ -45,62 +45,86 @@ const BikesList = () => {
   };
 
   return (
-    <Carousel
-      className={styles.carousel}
-      responsive={responsive}
-      autoPlay={false}
-      swipeable={true}
-      draggable={false}
-      showDots={true}
-      infinite={false}
-      partialVisible={false}
-      dotListClass="custom-dot-list-style"
-      itemClass={`carousel-item ${styles.custom_item}`}
-    >
-      {bikeList.map((bike, index) => {
-        const isActive = index === activeIndex;
-        const isReserved = index === reservedIndex;
+    <div className={styles.carousel_container}>
+      <div className={styles.adv}>
+        <h3>Przeżyj niezapomnianą przygodę, skorzystaj z naszej oferty</h3>
+      </div>
+      <Carousel
+        className={styles.carousel}
+        responsive={responsive}
+        autoPlay={false}
+        swipeable={true}
+        draggable={false}
+        showDots={false}
+        infinite={false}
+        partialVisible={false}
+        dotListClass="custom-dot-list-style"
+        itemClass={`carousel-item ${styles.custom_item}`}
+      >
+        {bikeList.map((bike, index) => {
+          const isActive = index === activeIndex;
+          const isReserved = index === reservedIndex;
 
-        return (
-          <div
-            key={index}
-            className={`carousel-item ${isActive ? "active" : ""} ${
-              isReserved ? styles.reserved : ""
-            } ${styles.item_container}`}
-            onClick={() => handleCarouselItemClick(index)}
-          >
-            <div className={styles.container}>
-              <img
-                src={bikeList[index].img}
-                alt="bike"
-                className={styles.img}
-              />
-              <h2 className={styles.h2}>{bikeList[index].name}</h2>
-            </div>
-            <button
-              className={styles.button}
-              onClick={() => !isLoading && handleReservationClick(index)}
-              disabled={isLoading}
+          return (
+            <div
+              id="bikeslist"
+              key={index}
+              className={`carousel-item ${isActive ? "active" : ""} ${
+                isReserved ? styles.reserved : ""
+              } ${styles.item_container}`}
+              onClick={() => handleCarouselItemClick(index)}
             >
-              {isLoading && index === activeIndex ? (
-                <BikesSpinner color="rgba(20, 69, 61, 0.2)" />
-              ) : (
-                "Zarezerwuj"
-              )}
-            </button>
+              <div className={styles.container}>
+                <img
+                  src={bikeList[index].img}
+                  alt="bike"
+                  className={styles.img}
+                />
+                <div className={styles.wrapper}>
+                  <h3 className={styles.name}>
+                    {bikeList[index].name +
+                      " - Rozmiar: " +
+                      bikeList[index].size +
+                      " (" +
+                      bikeList[index].battery +
+                      ") Kolor: " +
+                      bikeList[index].color}
+                  </h3>
+                </div>
+                <div className={styles.bike}>
+                  <img
+                    className={styles.bike_svg}
+                    src="assets/bike-green-carousel.svg"
+                    alt="bike"
+                  />
+                  <p>Rower full</p>
+                </div>
+              </div>
+              <button
+                className={styles.button}
+                onClick={() => !isLoading && handleReservationClick(index)}
+                disabled={isLoading}
+              >
+                {isLoading && index === activeIndex ? (
+                  <BikesSpinner color="rgba(20, 69, 61, 0.2)" />
+                ) : (
+                  "Zarezerwuj"
+                )}
+              </button>
 
-            {isReserved && (
-              <Reservation
-                bike={bikeList[index].name}
-                price={bikeList[index].price}
-                img={bikeList[index].img}
-                index={index}
-              />
-            )}
-          </div>
-        );
-      })}
-    </Carousel>
+              {isReserved && (
+                <Reservation
+                  bike={bikeList[index].name}
+                  price={bikeList[index].price}
+                  img={bikeList[index].img}
+                  index={index}
+                />
+              )}
+            </div>
+          );
+        })}
+      </Carousel>
+    </div>
   );
 };
 

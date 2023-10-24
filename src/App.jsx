@@ -44,9 +44,9 @@ const Home = () => {
     <div>
       <Header />
       <Poster />
-      <div id="bikeslist">
-        <BikesList />
-      </div>
+
+      <BikesList />
+
       <AboutUs />
       <Footer />
     </div>

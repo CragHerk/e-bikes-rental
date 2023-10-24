@@ -19,28 +19,33 @@ const Menu = () => {
   };
 
   const menuAnimation = useSpring({
-    transform: isMenuOpen ? `translateX(-19%)` : `translateX(-150%)`,
+    transform: isMenuOpen ? `translateX(-0%)` : `translateX(-100%)`,
   });
 
   return (
     <animated.div style={menuAnimation} className={styles.menu}>
-      <button className={styles.closeButton} onClick={handleCloseMenu}>
-        <FaTimes className={styles.closeIcon} />
-      </button>
-      <ul className={styles.menuList}>
-        <li className={styles.menuElement}>
-          <FaFacebook /> Facebook
-        </li>
-        <li className={styles.menuElement}>
-          <FaInstagram /> Instagram
-        </li>
-        <li className={styles.menuElement}>
-          <FaEnvelope /> Email
-        </li>
-        <li className={styles.menuElement}>
-          <FaPhone /> Telefon
-        </li>
-      </ul>
+      <div className={styles.menu_container}>
+        <button className={styles.closeButton} onClick={handleCloseMenu}>
+          <FaTimes className={styles.closeIcon} />
+        </button>
+        <ul className={styles.menuList}>
+          <li className={styles.menuElement}>
+            <FaFacebook /> Facebook
+          </li>
+          <li className={styles.menuElement}>
+            <FaInstagram /> Instagram
+          </li>
+          <li className={styles.menuElement}>
+            <FaEnvelope /> Email
+          </li>
+          <li className={styles.menuElement}>
+            <FaPhone /> Telefon
+          </li>
+        </ul>
+        <p className={styles.menu_p}>
+          © 2023 Wypożyczalnia rowerów elektrycznych w Słotwinie
+        </p>
+      </div>
     </animated.div>
   );
 };
