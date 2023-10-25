@@ -5,7 +5,7 @@
   z-index: 999;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--blur-black);
   opacity: 1;
   border-radius: 0 0 8px 0;
 }
@@ -13,7 +13,7 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: var(--white);
 }
 
 .close_btn {
@@ -21,12 +21,12 @@
   left: 0;
   width: 56px;
   height: 56px;
-  color: black;
+  color: var(--black);
   background-color: transparent;
   border: none;
 }
 .menu_list {
-  color: black;
+  color: var(--black);
   padding: 0px;
   list-style: none;
   display: flex;

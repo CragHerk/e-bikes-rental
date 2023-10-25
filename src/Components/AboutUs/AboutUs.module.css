@@ -16,7 +16,7 @@
   height: 360px;
 }
 .description {
-  color: rgba(20, 69, 61, 0.8);
+  color: var(--inside-text);
 }
 @media screen and (min-width: 768px) {
   .poster {

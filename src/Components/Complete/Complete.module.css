@@ -1,7 +1,7 @@
 .container {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(20, 69, 61, 0.2);
+  background-color: var(--background-02);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@
   min-width: 160px;
   min-height: 160px;
   border-radius: 50%;
-  background-color: rgba(20, 69, 61, 0.7);
+  background-color: var(--inside-text);
   display: flex;
   justify-content: center;
   align-items: center;

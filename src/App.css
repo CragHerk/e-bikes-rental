@@ -1,3 +1,19 @@
 #root {
   text-align: center;
 }
+:root {
+  --primary-color: #14453d;
+  --inside-text: rgba(20, 69, 61, 0.8);
+  --border-03: rgba(20, 69, 61, 0.3);
+  --border-15: rgba(20, 69, 61, 0.15);
+  --background-05: rgba(20, 69, 61, 0.5);
+  --background-01: rgba(20, 69, 61, 0.1);
+  --background-02: rgba(20, 69, 61, 0.2);
+  --error: rgba(254, 59, 59, 1);
+  --black: rgba(0, 0, 0, 1);
+  --blur-black: rgba(0, 0, 0, 0.4);
+  --white: rgba(255, 255, 255, 1);
+  --white-08: rgba(255, 255, 255, 0.8);
+  --white-02: rgba(255, 255, 255, 0.2);
+  --mint: #43c59e;
+}
