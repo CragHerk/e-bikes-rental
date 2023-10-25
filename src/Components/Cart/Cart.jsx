@@ -33,10 +33,10 @@ const Cart = () => {
   };
 
   return (
-    <div className={styles.checkout}>
+    <div className={styles.cart_container}>
       <Header />
-      <div className={styles.checkout_container}>
-        <div className={styles.cart_wrapper}>
+      <div className={styles.cart}>
+        <div className={styles.cart_heading}>
           <h1 className={styles.cart_header}>KOSZYK</h1>
           <Link to={"/"}>
             <button className={styles.home_btn}>Strona Główna</button>
@@ -44,31 +44,29 @@ const Cart = () => {
         </div>
         <h2>Rezerwacja </h2>
         {reservationData.length > 0 ? (
-          <div className={styles.checkout_wrapper}>
+          <div className={styles.cart_wrapper}>
             {reservationData.map((reservation, index) => (
               <div key={index} className={styles.cart_element}>
-                <div className={styles.checkout_list}>
-                  <button
-                    type="button"
-                    className={styles.cart_remove}
-                    onClick={() => handleRemove(index)}
-                  >
-                    <FaTimesCircle size={24} />
-                  </button>
+                <button
+                  type="button"
+                  className={styles.remove_btn}
+                  onClick={() => handleRemove(index)}
+                >
+                  <FaTimesCircle size={24} />
+                </button>
 
-                  <div className={styles.summary}>
-                    <span className={styles.name}>{reservation.name}</span>
-                    <span className={styles.start}>
-                      <p className={styles.p}>Data rozpoczęcia:</p>{" "}
-                      {reservation.formattedStartDate}
-                    </span>
-                    <span className={styles.end}>
-                      <p className={styles.p}>Data zakończenia:</p>{" "}
-                      {reservation.formattedEndDate}
-                    </span>
-                  </div>
-                  <h3 className={styles.total}>{reservation.totalPrice} zł</h3>
+                <div className={styles.element_content}>
+                  <span className={styles.bike_name}>{reservation.name}</span>
+                  <span className={styles.start_date}>
+                    <p className={styles.p}>Data rozpoczęcia:</p>{" "}
+                    {reservation.formattedStartDate}
+                  </span>
+                  <span className={styles.end_date}>
+                    <p className={styles.p}>Data zakończenia:</p>{" "}
+                    {reservation.formattedEndDate}
+                  </span>
                 </div>
+                <h3 className={styles.total}>{reservation.totalPrice} zł</h3>
               </div>
             ))}
             <div className={styles.overview}>

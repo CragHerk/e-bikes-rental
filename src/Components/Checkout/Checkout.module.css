@@ -1,4 +1,4 @@
-.checkout {
+.checkout_container {
   min-height: 100vh;
   color: #14453d;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
   flex-direction: column;
 }
-.checkout_container {
+.checkout_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,16 +18,16 @@
   align-items: center;
   width: 360px;
 }
-.checkout_div {
+.form_field {
   margin-top: 10px;
   text-align: left;
   width: 100%;
   position: relative;
 }
-.checkout_div p {
+.form_field p {
   margin-left: 10px;
 }
-.checkout_field {
+.field {
   width: 100%;
   height: 30px;
   background-color: transparent;
@@ -45,6 +45,21 @@
   left: 10px;
   font-size: 10px;
   color: rgb(254, 59, 59);
+}
+.summary {
+  background-color: rgba(20, 69, 61, 0.1);
+  width: 420px;
+  margin-top: 35px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.summary h2 {
+  border-bottom: 1px solid rgba(20, 69, 61, 0.3);
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .checkout_item {
   display: flex;
@@ -66,6 +81,19 @@
   margin-bottom: 0px;
   font-weight: 400;
 }
+.checkout_overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.price p {
+  font-size: 25px;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+}
 .checkout_sumbit {
   width: 250px;
   height: 60px;
@@ -74,37 +102,4 @@
   font-size: 18px;
   border: 1px solid rgba(20, 69, 61, 0.3);
   background-color: transparent;
-}
-.checkout_checkbox {
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-}
-.checkout_overview {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-.summary {
-  background-color: rgba(20, 69, 61, 0.1);
-  width: 420px;
-  margin-top: 35px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.summary h2 {
-  border-bottom: 1px solid rgba(20, 69, 61, 0.3);
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.price p {
-  font-size: 25px;
-}
-.checkbox {
-  display: flex;
-  align-items: center;
 }

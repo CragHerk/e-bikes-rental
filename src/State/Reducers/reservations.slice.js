@@ -1,14 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const apiEndpoint = import.meta.env.VITE_REACT_APP_API_ENDPOINT;
 export const sendReservation = createAsyncThunk(
   "reservations/sendReservation",
   async (payload) => {
     try {
-      const response = await axios.post(
-        "https://e-bikes-mu2k.onrender.com/api/book",
-        payload
-      );
+      const response = await axios.post(`${apiEndpoint}/book`, payload);
       return response.data;
     } catch (error) {
       throw Error(error.response.data.message);

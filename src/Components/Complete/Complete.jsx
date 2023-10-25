@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import MovingComponent from "react-moving-text";
 const Complete = () => {
   return (
-    <div className={styles.complete}>
+    <div className={styles.container}>
       <Link to={"/"}>
         <MovingComponent
           type="fadeInFromTop"

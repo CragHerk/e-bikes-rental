@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { sendReservation } from "../../State/Reducers/reservations.slice";
 import { Link, useNavigate } from "react-router-dom";
-import { validationSchema } from "../../Utils/validationSchema";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import Notiflix from "notiflix";
+import { validationSchema } from "../../Utils/validationSchema";
 import { Checkbox } from "../../Utils/checkbox/checkbox";
 import BikesSpinner from "../BikesSpinner/BikesSpinner";
 import Header from "../Header/Header";
@@ -17,7 +19,12 @@ const Checkout = () => {
     (total, reservation) => total + reservation.totalPrice,
     0
   );
-
+  const error = useSelector((state) => state.reservations.error);
+  useEffect(() => {
+    if (error) {
+      Notiflix.Notify.failure("Błąd, spróbuj ponownie " + error);
+    }
+  }, [error]);
   const handleSubmit = (values, reservationData) => {
     dispatch(
       sendReservation({
@@ -31,9 +38,9 @@ const Checkout = () => {
   };
 
   return (
-    <div className={styles.checkout}>
+    <div className={styles.checkout_container}>
       <Header />
-      <div className={styles.checkout_container}>
+      <div className={styles.checkout_wrapper}>
         <Formik
           initialValues={{
             firstName: "",
@@ -62,36 +69,28 @@ const Checkout = () => {
               <Link to={"/"}>
                 <button className={styles.home_btn}>Strona Główna</button>
               </Link>
-              <div className={styles.checkout_div}>
+              <div className={styles.form_field}>
                 <p>Imię *</p>
-                <Field
-                  className={styles.checkout_field}
-                  type="text"
-                  name="firstName"
-                />
+                <Field className={styles.field} type="text" name="firstName" />
                 <ErrorMessage
                   name="firstName"
                   component="div"
                   className={styles.error}
                 />
               </div>
-              <div className={styles.checkout_div}>
+              <div className={styles.form_field}>
                 <p>Nazwisko *</p>
-                <Field
-                  className={styles.checkout_field}
-                  type="text"
-                  name="lastName"
-                />
+                <Field className={styles.field} type="text" name="lastName" />
                 <ErrorMessage
                   name="lastName"
                   component="div"
                   className={styles.error}
                 />
               </div>
-              <div className={styles.checkout_div}>
+              <div className={styles.form_field}>
                 <p>Nazwa firmy (opcjonalnie)</p>
                 <Field
-                  className={styles.checkout_field}
+                  className={styles.field}
                   type="text"
                   name="companyName"
                 />
@@ -101,78 +100,54 @@ const Checkout = () => {
                   className={styles.error}
                 />
               </div>
-              <div className={styles.checkout_div}>
+              <div className={styles.form_field}>
                 <p> Kraj *</p>
-                <Field
-                  className={styles.checkout_field}
-                  type="text"
-                  name="country"
-                />
+                <Field className={styles.field} type="text" name="country" />
                 <ErrorMessage
                   name="country"
                   component="div"
                   className={styles.error}
                 />
               </div>
-              <div className={styles.checkout_div}>
+              <div className={styles.form_field}>
                 <p>Ulica *</p>
-                <Field
-                  className={styles.checkout_field}
-                  type="text"
-                  name="street"
-                />
+                <Field className={styles.field} type="text" name="street" />
                 <ErrorMessage
                   name="street"
                   component="div"
                   className={styles.error}
                 />
               </div>
-              <div className={styles.checkout_div}>
+              <div className={styles.form_field}>
                 <p>Kod Pocztowy *</p>
-                <Field
-                  className={styles.checkout_field}
-                  type="text"
-                  name="postalCode"
-                />
+                <Field className={styles.field} type="text" name="postalCode" />
                 <ErrorMessage
                   name="postalCode"
                   component="div"
                   className={styles.error}
                 />
               </div>
-              <div className={styles.checkout_div}>
+              <div className={styles.form_field}>
                 <p>Miasto *</p>
-                <Field
-                  className={styles.checkout_field}
-                  type="text"
-                  name="city"
-                />
+                <Field className={styles.field} type="text" name="city" />
                 <ErrorMessage
                   name="city"
                   component="div"
                   className={styles.error}
                 />
               </div>
-              <div className={styles.checkout_div}>
+              <div className={styles.form_field}>
                 <p>Telefon *</p>
-                <Field
-                  className={styles.checkout_field}
-                  type="number"
-                  name="phone"
-                />
+                <Field className={styles.field} type="number" name="phone" />
                 <ErrorMessage
                   name="phone"
                   component="div"
                   className={styles.error}
                 />
               </div>
-              <div className={styles.checkout_div}>
+              <div className={styles.form_field}>
                 <p>Adres e-mail *</p>
-                <Field
-                  className={styles.checkout_field}
-                  type="email"
-                  name="email"
-                />
+                <Field className={styles.field} type="email" name="email" />
                 <ErrorMessage
                   name="email"
                   component="div"

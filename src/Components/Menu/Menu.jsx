@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu } from "../../State/Actions/menu.actions";
+import { useImperativeDisableScroll } from "../../Utils/unseImperaticeDisabledScroll";
 import { useSpring, animated } from "react-spring";
 import styles from "./Menu.module.css";
 import {
@@ -13,6 +14,7 @@ import {
 const Menu = () => {
   const dispatch = useDispatch();
   const isMenuOpen = useSelector((state) => state.menu.isMenuOpen);
+  useImperativeDisableScroll({ element: document.body, disabled: isMenuOpen });
 
   const handleCloseMenu = () => {
     dispatch(closeMenu());
@@ -23,22 +25,22 @@ const Menu = () => {
   });
 
   return (
-    <animated.div style={menuAnimation} className={styles.menu}>
-      <div className={styles.menu_container}>
-        <button className={styles.closeButton} onClick={handleCloseMenu}>
-          <FaTimes className={styles.closeIcon} />
+    <animated.div style={menuAnimation} className={styles.menu_container}>
+      <div className={styles.container}>
+        <button className={styles.close_btn} onClick={handleCloseMenu}>
+          <FaTimes className={styles.close_icon} />
         </button>
-        <ul className={styles.menuList}>
-          <li className={styles.menuElement}>
+        <ul className={styles.menu_list}>
+          <li className={styles.menu_element}>
             <FaFacebook /> Facebook
           </li>
-          <li className={styles.menuElement}>
+          <li className={styles.menu_element}>
             <FaInstagram /> Instagram
           </li>
-          <li className={styles.menuElement}>
+          <li className={styles.menu_element}>
             <FaEnvelope /> Email
           </li>
-          <li className={styles.menuElement}>
+          <li className={styles.menu_element}>
             <FaPhone /> Telefon
           </li>
         </ul>

@@ -18,8 +18,8 @@ const Poster = () => {
   });
 
   return (
-    <div className={styles.poster}>
-      <div className={styles.poster_wrapper}>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
         <MovingComponent
           type="fadeInFromTop"
           duration="2600ms"
@@ -47,7 +47,7 @@ const Poster = () => {
         </Link>
         <MovingComponent
           className={styles.bike_wrapper}
-          type="fadeInFromRight"
+          type="fadeInFromBottom"
           duration="2300ms"
           delay="0s"
           direction="normal"

@@ -46,7 +46,7 @@ const BikesList = () => {
 
   return (
     <div className={styles.carousel_container}>
-      <div className={styles.adv}>
+      <div className={styles.header}>
         <h3>Przeżyj niezapomnianą przygodę, skorzystaj z naszej oferty</h3>
       </div>
       <Carousel
@@ -58,23 +58,19 @@ const BikesList = () => {
         showDots={false}
         infinite={false}
         partialVisible={false}
-        dotListClass="custom-dot-list-style"
-        itemClass={`carousel-item ${styles.custom_item}`}
+        itemClass={styles.carousel_li}
       >
         {bikeList.map((bike, index) => {
-          const isActive = index === activeIndex;
           const isReserved = index === reservedIndex;
 
           return (
             <div
               id="bikeslist"
               key={index}
-              className={`carousel-item ${isActive ? "active" : ""} ${
-                isReserved ? styles.reserved : ""
-              } ${styles.item_container}`}
+              className={styles.carousel_item}
               onClick={() => handleCarouselItemClick(index)}
             >
-              <div className={styles.container}>
+              <div className={styles.carousel_wrapper}>
                 <img
                   src={bikeList[index].img}
                   alt="bike"

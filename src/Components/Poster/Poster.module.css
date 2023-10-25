@@ -1,31 +1,16 @@
-.poster {
+.container {
   width: 100vw;
-
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.placeholder {
-  filter: blur(10px);
-  width: 100%;
-  height: 100%;
+.wrapper {
   position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.image {
-  width: 100%;
-  z-index: -1;
-  object-fit: cover;
-}
-
-.visible {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  top: 23%;
 }
 .head {
   font-weight: bold;
@@ -43,17 +28,26 @@
   margin-top: 65px;
   font-size: 20px;
 }
-.poster_wrapper {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 23%;
+.bike_wrapper {
+  display: none;
 }
 .bike {
   display: none;
 }
-.bike_wrapper {
-  display: none;
+
+.placeholder {
+  filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image {
+  width: 100%;
+  z-index: -1;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 768px) {
@@ -77,7 +71,7 @@
     background-color: #43c59e;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   }
-  .poster_wrapper {
+  .wrapper {
     background-color: rgba(20, 69, 61, 0.5);
     height: 70%;
     width: 52%;

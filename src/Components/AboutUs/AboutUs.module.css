@@ -1,4 +1,4 @@
-.aboutus {
+.container {
   width: 100vw;
   margin-top: 200px;
   position: relative;
@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
 }
-.aboutus_poster {
+.poster {
   background-image: url("assets/gallery/aboutus-mobile.jpg");
   background-position: center;
   background-size: cover;
@@ -15,16 +15,16 @@
   width: 100vw;
   height: 360px;
 }
-.p {
+.description {
   color: rgba(20, 69, 61, 0.8);
 }
 @media screen and (min-width: 768px) {
-  .aboutus_poster {
+  .poster {
     background-image: url("assets/gallery/aboutus-tab.jpg");
   }
 }
 @media screen and (min-width: 1200px) {
-  .aboutus_poster {
+  .poster {
     background-image: url("assets/gallery/aboutus-desk.jpg");
     height: 570px;
   }

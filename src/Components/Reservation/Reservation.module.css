@@ -8,8 +8,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  overflow: hidden;
 }
 .reservation_wrapper {
   width: 320px;
@@ -20,33 +18,15 @@
   margin-top: 30px;
   position: relative;
 }
-
-.close_button {
-  background-color: transparent;
-  background-image: url(/assets/x.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
-  outline: none;
-  border: none;
-  position: absolute;
-  top: 5px;
-  left: 5px;
+.reservation_header {
+  margin-left: 15px;
+  color: rgba(255, 255, 255, 0.8);
 }
 .date_inputs {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 290px;
-  color: rgba(255, 255, 255, 0.8);
-}
-.close_button:hover {
-  border: none;
-  outline: none;
-}
-.reservation_header {
-  margin-left: 15px;
   color: rgba(255, 255, 255, 0.8);
 }
 .date_input {
@@ -57,21 +37,6 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.reservation_btn {
-  width: 280px;
-  height: 60px;
-  font-weight: bold;
-  color: rgba(20, 69, 61, 0.8);
-  background-color: #43c59e;
-  border-radius: 8px;
-  border: none;
-  position: absolute;
-  bottom: 40px;
-  left: 20px;
-}
-.reservation_btn:hover {
-  background-color: #43c59e;
-}
 .datepicker {
   background-color: transparent;
   border: none;
@@ -79,6 +44,11 @@
   font-weight: bold;
   margin-left: 20px;
   color: rgba(255, 255, 255, 0.8);
+}
+.date_calendar {
+  position: absolute;
+  right: 15px;
+  top: 90px;
 }
 .select {
   background-color: transparent;
@@ -96,11 +66,6 @@
   right: 15px;
   top: 45px;
 }
-.date_calendar {
-  position: absolute;
-  right: 15px;
-  top: 90px;
-}
 .overal {
   display: flex;
   margin-top: 75px;
@@ -109,13 +74,44 @@
   width: 100%;
   margin-left: 15px;
 }
+.name {
+  color: rgba(255, 255, 255, 0.8);
+}
 .price {
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
 }
-.name {
-  color: rgba(255, 255, 255, 0.8);
+.reservation_btn {
+  width: 280px;
+  height: 60px;
+  font-weight: bold;
+  color: rgba(20, 69, 61, 0.8);
+  background-color: #43c59e;
+  border-radius: 8px;
+  border: none;
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+}
+.reservation_btn:hover {
+  background-color: #43c59e;
 }
 
-@media screen and (min-width: 1200px) {
+.close_button {
+  background-color: transparent;
+  background-image: url(/assets/x.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.close_button:hover {
+  border: none;
+  outline: none;
 }

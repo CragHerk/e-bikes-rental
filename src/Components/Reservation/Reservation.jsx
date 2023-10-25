@@ -35,7 +35,7 @@ const Reservation = ({ index }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const endDate = new Date(startDate);
-  endDate.setDate(startDate.getDate() + period);
+  endDate.setDate(startDate.getDate() + period - 1);
 
   const formattedStartDate = startDate.toLocaleDateString("pl-PL");
   const formattedEndDate = endDate.toLocaleDateString("pl-PL");

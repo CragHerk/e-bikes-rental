@@ -1,4 +1,4 @@
-.checkout {
+.cart_container {
   width: 100vw;
   min-height: 100vh;
   margin: 0;
@@ -8,17 +8,39 @@
   align-items: center;
   color: #14453d;
 }
-.checkout_container {
+.cart {
   min-height: calc(100vh - 80px - 60px);
   width: 340px;
 }
-.checkout_list {
+.cart_heading {
+  border-bottom: 1px solid rgba(20, 69, 61, 0.3);
+  padding-bottom: 10px;
+}
+.cart_header {
+  font-size: 30px;
+}
+.home_btn {
+  background-color: transparent;
+}
+.cart_wrapper {
+  margin-top: 50px;
+}
+.cart_element {
   list-style: none;
   display: flex;
   border-bottom: 1px solid rgba(20, 69, 61, 0.3);
   height: 80px;
   align-items: center;
   justify-content: space-between;
+}
+.remove_btn {
+  background-color: transparent;
+  height: 32px;
+}
+.element_content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .cart_order {
@@ -28,25 +50,19 @@
   border: 1px solid rgba(20, 69, 61, 0.3);
   background-color: transparent;
 }
-.cart_remove {
-  background-color: transparent;
-  height: 32px;
-}
-.summary {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
 
-.start {
+.start_date {
   font-size: 14px;
   display: flex;
   font-weight: bold;
 }
-.end {
+.end_date {
   font-size: 14px;
   display: flex;
   font-weight: bold;
+}
+.bike_name {
+  font-size: 19px;
 }
 .p {
   margin-top: 0;

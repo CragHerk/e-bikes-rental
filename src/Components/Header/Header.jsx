@@ -24,8 +24,8 @@ const Header = () => {
     : styles.menu;
 
   return (
-    <div className={styles.header}>
-      <button className={styles.hamburger_button} onClick={handleOpenMenu}>
+    <div className={styles.container}>
+      <button className={styles.hamburger} onClick={handleOpenMenu}>
         <FaBars className={styles.hamburger_icon} />
       </button>
       <Link to={"/"}>

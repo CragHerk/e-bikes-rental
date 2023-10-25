@@ -1,4 +1,4 @@
-.menu {
+.menu_container {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,14 +9,14 @@
   opacity: 1;
   border-radius: 0 0 8px 0;
 }
-.menu_container {
+.container {
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-color: white;
 }
 
-.closeButton {
+.close_btn {
   position: absolute;
   left: 0;
   width: 56px;
@@ -25,16 +25,15 @@
   background-color: transparent;
   border: none;
 }
-.menuList {
+.menu_list {
   color: black;
   padding: 0px;
   list-style: none;
   display: flex;
   flex-direction: column;
-
   margin-top: 100px;
 }
-.menuElement {
+.menu_element {
   padding: 10px;
   text-align: left;
   margin-left: 70px;
@@ -46,7 +45,7 @@
   left: 17px;
 }
 @media screen and (min-width: 768px) {
-  .menu_container {
+  .container {
     width: 300px;
   }
 }

@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
+const apiEndpoint = import.meta.env.VITE_REACT_APP_API_ENDPOINT;
 export const pullReservedDates = createAsyncThunk(
   "bikes/pullReservedDates",
   async (bikeModel) => {
     const response = await axios.get(
-      `https://e-bikes-mu2k.onrender.com/api/availability/${bikeModel}`
+      `${apiEndpoint}/availability/${bikeModel}`
     );
     return response.data;
   }
