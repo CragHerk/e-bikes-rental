@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setActiveIndex,
   setReservedIndex,
   setBikeInfo,
 } from "../../State/Reducers/bikes.slice.js";
+import { setLoading, selectLoading } from "../../State/Reducers/loading.slice";
 import Reservation from "../Reservation/Reservation";
 import Carousel from "react-multi-carousel";
 import BikesSpinner from "../BikesSpinner/BikesSpinner.jsx";
@@ -17,17 +17,15 @@ import styles from "./BikesList.module.css";
 const BikesList = () => {
   const activeIndex = useSelector((state) => state.bikes.activeIndex);
   const reservedIndex = useSelector((state) => state.bikes.reservedIndex);
-  const [isLoading, setIsLoading] = useState(false);
-
   const dispatch = useDispatch();
-
+  const isLoading = useSelector(selectLoading);
   const handleReservationClick = (index) => {
-    setIsLoading(true);
+    dispatch(setLoading(true));
 
     setTimeout(() => {
       dispatch(setReservedIndex(index));
 
-      setIsLoading(false);
+      dispatch(setLoading(false));
     }, 2000);
   };
 

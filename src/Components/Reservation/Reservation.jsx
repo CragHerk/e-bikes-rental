@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setLoading, selectLoading } from "../../State/Reducers/loading.slice";
 import ReactDatePicker from "react-datepicker";
 import PropTypes from "prop-types";
 
 import {
   setPeriod,
-  setSelectedDates,
+  setFromDate,
   setReservedIndex,
   setInitialStartDate,
 } from "../../State/Reducers/bikes.slice.js";
 import { pullReservedDates } from "../../State/Reducers/bikes.slice.js";
 import { addToCart } from "../../State/Reducers/addToCart.slice.js";
 import BikesSpinner from "../BikesSpinner/BikesSpinner.jsx";
-
 import { FaCalendar } from "react-icons/fa";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Reservation.module.css";
@@ -21,27 +21,24 @@ import styles from "./Reservation.module.css";
 const Reservation = ({ index }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isLoading = useSelector(selectLoading);
   const selectedDates = useSelector((state) => state.bikes.selectedDates);
   const period = useSelector((state) => state.bikes.period);
   const price = useSelector((state) => state.bikes.bikeInfo.price);
   const name = useSelector((state) => state.bikes.bikeInfo.name);
-  const totalPrice = period * price;
   const reservedDates = useSelector((state) => state.bikes.reservations);
+  const totalPrice = period * price;
   const blockedDates = reservedDates.map((dateObj) => new Date(dateObj.date));
-
   const startDate = useSelector(
     (state) => new Date(state.bikes.selectedFromDate)
   );
-  const [isLoading, setIsLoading] = useState(false);
-
   const endDate = new Date(startDate);
   endDate.setDate(startDate.getDate() + period - 1);
-
   const formattedStartDate = startDate.toLocaleDateString("pl-PL");
   const formattedEndDate = endDate.toLocaleDateString("pl-PL");
   const handleChange = (date, key) => {
     const timestamp = date.getTime();
-    dispatch(setSelectedDates({ index, [key]: timestamp }));
+    dispatch(setFromDate({ index, [key]: timestamp }));
   };
   const handleClose = () => {
     dispatch(setReservedIndex(-1));
@@ -54,7 +51,7 @@ const Reservation = ({ index }) => {
     dispatch(setInitialStartDate());
   }, [dispatch]);
   const handleReservation = () => {
-    setIsLoading(true);
+    dispatch(setLoading(true));
     const reservationData = {
       formattedStartDate,
       formattedEndDate,
@@ -67,7 +64,7 @@ const Reservation = ({ index }) => {
     };
     setTimeout(() => {
       dispatch(addToCart(reservationData)), dispatch(setReservedIndex(-1));
-      setIsLoading(false);
+      dispatch(setLoading(false));
       navigate("/cart");
     }, 2000);
   };
