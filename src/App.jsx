@@ -44,9 +44,7 @@ const Home = () => {
     <div>
       <Header />
       <Poster />
-
       <BikesList />
-
       <AboutUs />
       <Footer />
     </div>
