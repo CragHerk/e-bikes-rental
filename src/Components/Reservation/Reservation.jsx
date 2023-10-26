@@ -104,7 +104,7 @@ const Reservation = ({ index }) => {
           </div>
           <div className={styles.overal}>
             <h4 className={styles.name}>{name}:</h4>
-            <h3 className={styles.price}>Cena : {totalPrice}zł</h3>
+            <h3 className={styles.price}>Suma : {totalPrice}zł</h3>
           </div>
         </div>
 

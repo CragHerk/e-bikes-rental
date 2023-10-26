@@ -38,7 +38,7 @@ const Menu = () => {
             <FaInstagram /> Instagram
           </li>
           <li className={styles.menu_element}>
-            <FaEnvelope /> Email
+            <FaEnvelope /> kamrock36@gmail.com
           </li>
           <li className={styles.menu_element}>
             <FaPhone /> Telefon

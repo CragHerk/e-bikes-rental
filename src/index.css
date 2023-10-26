@@ -24,25 +24,25 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: white;
-  color: white;
+  background-color: var(--white);
+  color: var(--white);
 }
 button {
   cursor: pointer;
-  color: #14453d;
+  color: var(--primary-color);
   border: none;
   border-radius: 8px;
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 button:hover {
-  background-color: rgba(20, 69, 61, 0.1);
+  background-color: var(--background-01);
 }
 h2 {
-  color: #14453d;
+  color: var(--primary-color);
 }
 span {
-  color: #14453d;
+  color: var(--primary-color);
 }
 html {
   scroll-behavior: smooth;
@@ -54,15 +54,18 @@ html {
 }
 h3 {
   margin: 0;
-  color: #14453d;
+  color: var(--primary-color);
 }
 h4 {
   margin: 0;
-  color: #14453d;
+  color: var(--primary-color);
 }
 a {
-  color: #14453d;
+  color: var(--primary-color);
 }
 h6 {
-  color: #14453d;
+  color: var(--primary-color);
+}
+h1 {
+  color: var(--primary-color);
 }

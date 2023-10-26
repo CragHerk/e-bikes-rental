@@ -110,12 +110,12 @@
 }
 @media screen and (min-width: 1200px) {
   .head {
-    left: 120px;
+    left: 200px;
     font-size: 45px;
   }
   .button {
     top: 240px;
-    left: 250px;
+    left: 280px;
   }
   .bike_wrapper {
     top: 320px;

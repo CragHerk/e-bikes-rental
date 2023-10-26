@@ -1,31 +1,93 @@
 .container {
   width: 100vw;
-  margin-top: 200px;
+
   position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.poster {
-  background-image: url("assets/gallery/aboutus-mobile.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 360px;
+
+.header {
+  width: 100%;
+  padding-top: 70px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.description {
+.icon_element {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--mint);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  position: absolute;
+  left: 60px;
+  border-radius: 1px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--background-02);
+}
+.line2 {
+  position: absolute;
+  right: 60px;
+  border-radius: 1px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--background-02);
+}
+.header_h1 {
+  margin: 0;
+  padding: 10px 10px 0px 10px;
+}
+.header_img {
+  width: 100vw;
+  margin-top: 15px;
+}
+.header_h4 {
+  width: 375px;
+  text-align: center;
+  margin-top: 10px;
+  padding: 0px 10px 10px 10px;
+  color: var(--background-05);
+  font-size: 14px;
+}
+.header_h4 span {
   color: var(--inside-text);
+  font-size: 16px;
+}
+.socials_wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+  margin-bottom: 35px;
+}
+.svg {
+  transition: transform 0.1s ease-in-out;
+}
+.svg:hover {
+  transform: scale(1.05);
 }
 @media screen and (min-width: 768px) {
-  .poster {
-    background-image: url("assets/gallery/aboutus-tab.jpg");
+  .header_img {
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: -3px 3px 1px 1px rgba(0, 0, 0, 0.1);
   }
-}
-@media screen and (min-width: 1200px) {
-  .poster {
-    background-image: url("assets/gallery/aboutus-desk.jpg");
-    height: 570px;
+  .header_h4 {
+  }
+  .wrapper {
+    display: flex;
+    width: 100vw;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
   }
 }

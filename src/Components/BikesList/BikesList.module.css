@@ -7,11 +7,50 @@
 }
 .header {
   width: 100%;
-  height: 80px;
+  padding-top: 70px;
   background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.icon_element {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--mint);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  position: absolute;
+  left: 60px;
+  border-radius: 1px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--background-02);
+}
+.line2 {
+  position: absolute;
+  right: 60px;
+  border-radius: 1px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--background-02);
+}
+.header_h1 {
+  margin: 0;
+  padding: 10px 10px 0px 10px;
+}
+.header_h4 {
+  margin: 0;
+  padding: 0px 10px 10px 10px;
+  color: var(--inside-text);
 }
 .carousel {
-  padding-top: 250px;
+  padding-top: 50px;
 }
 .carousel_li {
   width: auto;

@@ -18,9 +18,12 @@
   width: 280px;
 }
 .social_media {
-  margin-left: 20px;
+  width: 100px;
+  margin-left: 10px;
+  margin-top: 20px;
   margin-bottom: 35px;
   display: flex;
+  justify-content: space-between;
 }
 .icon {
   width: 35px;
@@ -70,11 +73,14 @@
     align-items: center;
   }
 
-  .social_media {
-    margin-bottom: 0;
-    display: block;
+  .contact {
+    padding-top: 60px;
   }
   .icon {
     margin: 10px 0px;
+  }
+  .footer_wrapper {
+    margin-top: -75px;
+    padding-top: 0;
   }
 }

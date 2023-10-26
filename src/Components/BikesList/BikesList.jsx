@@ -45,7 +45,15 @@ const BikesList = () => {
   return (
     <div className={styles.carousel_container}>
       <div className={styles.header}>
-        <h3>Przeżyj niezapomnianą przygodę, skorzystaj z naszej oferty</h3>
+        <div className={styles.icon_element}>
+          <div className={styles.line}></div>
+          <div className={styles.line2}></div>
+          <img src="assets/bike-simple.svg" alt="bike" />
+        </div>
+        <h1 className={styles.header_h1}>Rowery do wypożyczenia</h1>
+        <h4 className={styles.header_h4}>
+          przeżyj niesamowitą przygodę, wybierz rower dla siebie{" "}
+        </h4>
       </div>
       <Carousel
         className={styles.carousel}

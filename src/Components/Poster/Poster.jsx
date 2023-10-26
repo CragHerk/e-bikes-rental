@@ -25,7 +25,7 @@ const Poster = () => {
           duration="2600ms"
           delay="0s"
           direction="normal"
-          timing="ease-in-out"
+          timing="ease-in"
           iteration="1"
           fillMode="none"
           className={styles.head}
@@ -38,7 +38,7 @@ const Poster = () => {
             duration="1500ms"
             delay="0s"
             direction="normal"
-            timing="ease-in-out"
+            timing="ease-in"
             iteration="1"
             fillMode="none"
           >
@@ -48,10 +48,10 @@ const Poster = () => {
         <MovingComponent
           className={styles.bike_wrapper}
           type="fadeInFromBottom"
-          duration="2300ms"
+          duration="1700ms"
           delay="0s"
           direction="normal"
-          timing="ease-in-out"
+          timing="ease-in"
           iteration="1"
           fillMode="none"
         >
