@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
-  setLoading,
-  selectLoading,
+  setReservationButtonLoading,
+  selectReservationButtonLoading,
   selectReservationLoading,
 } from "../../State/Reducers/loading.slice";
 import ReactDatePicker from "react-datepicker";
@@ -26,7 +26,9 @@ import styles from "./Reservation.module.css";
 const Reservation = ({ index }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isLoading = useSelector(selectLoading);
+  const isReservationButtonLoading = useSelector(
+    selectReservationButtonLoading
+  );
   const isReservationLoading = useSelector(selectReservationLoading);
   const selectedDates = useSelector((state) => state.bikes.selectedDates);
   const period = useSelector((state) => state.bikes.period);
@@ -57,7 +59,7 @@ const Reservation = ({ index }) => {
     dispatch(setInitialStartDate());
   }, [dispatch]);
   const handleReservation = () => {
-    dispatch(setLoading(true));
+    dispatch(setReservationButtonLoading(true));
     const reservationData = {
       formattedStartDate,
       formattedEndDate,
@@ -70,7 +72,7 @@ const Reservation = ({ index }) => {
     };
     setTimeout(() => {
       dispatch(addToCart(reservationData)), dispatch(setReservedIndex(-1));
-      dispatch(setLoading(false));
+      dispatch(setReservationButtonLoading(false));
       navigate("/cart");
     }, 2000);
   };
@@ -124,7 +126,7 @@ const Reservation = ({ index }) => {
         </div>
       )}
       <button onClick={handleReservation} className={styles.reservation_btn}>
-        {isLoading ? (
+        {isReservationButtonLoading ? (
           <ButtonSpinner color={"rgba(20, 69, 61, 0.8)"} />
         ) : (
           "Zarezerwuj"

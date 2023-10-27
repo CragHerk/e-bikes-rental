@@ -17,3 +17,16 @@ export const saveReservedDatesToLocalStorage = (bikeModel, data) => {
     console.error("Błąd zapisu danych do localStorage:", error);
   }
 };
+export const clearAllReservedDatesFromLocalStorage = () => {
+  try {
+    const keysToRemove = Object.keys(localStorage).filter((key) =>
+      key.startsWith("reservedDates_")
+    );
+
+    keysToRemove.forEach((key) => {
+      localStorage.removeItem(key);
+    });
+  } catch (error) {
+    console.error("Błąd podczas usuwania danych z localStorage:", error);
+  }
+};

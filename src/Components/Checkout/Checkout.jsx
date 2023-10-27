@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { sendReservation } from "../../State/Reducers/reservations.slice";
 import { clearReservationData } from "../../State/Reducers/addToCart.slice";
+import { clearAllReservedDatesFromLocalStorage } from "../../Utils/toLocalStorage";
 import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Notiflix from "notiflix";
@@ -40,6 +41,7 @@ const Checkout = () => {
     );
     setTimeout(() => {
       dispatch(clearReservationData());
+      clearAllReservedDatesFromLocalStorage();
     }, 3000);
   };
 
