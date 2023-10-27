@@ -8,6 +8,7 @@ import loadingSlice from "../Reducers/loading.slice";
 const store = configureStore({
   reducer: {
     bikes: bikesSlice,
+
     menu: menuSlice,
     reservations: reservationsSlice,
     addToCart: addToCartSlice,

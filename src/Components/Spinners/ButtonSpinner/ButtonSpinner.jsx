@@ -1,15 +1,15 @@
 import ClipLoader from "react-spinners/ClipLoader";
 import PropTypes from "prop-types";
-import styles from "./BikesSpinner.module.css";
+import styles from "./ButtonSpinner.module.css";
 
-const BikesSpinner = ({ color }) => {
+const ButtonSpinner = ({ color }) => {
   return (
     <div className={styles.spinner}>
       <ClipLoader color={color} className={styles.cliploader} />
     </div>
   );
 };
-BikesSpinner.propTypes = {
+ButtonSpinner.propTypes = {
   color: PropTypes.string,
 };
-export default BikesSpinner;
+export default ButtonSpinner;

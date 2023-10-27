@@ -12,9 +12,13 @@ export const addToCartSlice = createSlice({
     removeFromCart: (state, action) => {
       state.data = state.data.filter((_, index) => index !== action.payload);
     },
+    clearReservationData: (state) => {
+      state.data = [];
+    },
   },
 });
 
-export const { addToCart, removeFromCart } = addToCartSlice.actions;
+export const { addToCart, removeFromCart, clearReservationData } =
+  addToCartSlice.actions;
 export const selectReservations = (state) => state.addToCart.data;
 export default addToCartSlice.reducer;

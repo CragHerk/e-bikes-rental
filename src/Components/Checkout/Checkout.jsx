@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { sendReservation } from "../../State/Reducers/reservations.slice";
+import { clearReservationData } from "../../State/Reducers/addToCart.slice";
 import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Notiflix from "notiflix";
 import { validationSchema } from "../../Utils/validationSchema";
 import { Checkbox } from "../../Utils/checkbox/checkbox";
-import BikesSpinner from "../BikesSpinner/BikesSpinner";
+import ButtonSpinner from "../Spinners/ButtonSpinner/ButtonSpinner.jsx";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import styles from "./Checkout.module.css";
@@ -22,7 +23,9 @@ const Checkout = () => {
   const error = useSelector((state) => state.reservations.error);
   useEffect(() => {
     if (error) {
-      Notiflix.Notify.failure("Błąd, spróbuj ponownie " + error);
+      Notiflix.Notify.failure(
+        "Błąd, spróbuj ponownie, data już jest zarezerwowana " + error
+      );
     }
   }, [error]);
   const handleSubmit = (values, reservationData) => {
@@ -35,6 +38,9 @@ const Checkout = () => {
         endDate: reservationData[0].endDate,
       })
     );
+    setTimeout(() => {
+      dispatch(clearReservationData());
+    }, 3000);
   };
 
   return (
@@ -59,7 +65,9 @@ const Checkout = () => {
             handleSubmit(values, reservationData);
             setTimeout(() => {
               setSubmitting(false);
-              navigate("/complete");
+              if (!error) {
+                navigate("/complete");
+              }
             }, 3000);
           }}
         >
@@ -193,7 +201,7 @@ const Checkout = () => {
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      <BikesSpinner color={"rgba(20, 69, 61, 0.8)"} />
+                      <ButtonSpinner color={"rgba(20, 69, 61, 0.8)"} />
                     ) : (
                       "Kupuję i płacę"
                     )}

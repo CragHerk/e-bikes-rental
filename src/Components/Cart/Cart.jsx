@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import BikesSpinner from "../BikesSpinner/BikesSpinner";
+import ButtonSpinner from "../Spinners/ButtonSpinner/ButtonSpinner.jsx";
 import { removeFromCart } from "../../State/Reducers/addToCart.slice";
 import { setLoading, selectLoading } from "../../State/Reducers/loading.slice";
 import { FaTimesCircle } from "react-icons/fa";
@@ -86,7 +86,7 @@ const Cart = () => {
                 disabled={isLoading}
               >
                 {isLoading ? (
-                  <BikesSpinner color="rgba(20, 69, 61, 0.2)" />
+                  <ButtonSpinner color="rgba(20, 69, 61, 0.2)" />
                 ) : (
                   "Zarezerwuj"
                 )}

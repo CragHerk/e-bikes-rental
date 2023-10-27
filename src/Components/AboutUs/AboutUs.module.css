@@ -1,6 +1,5 @@
 .container {
   width: 100vw;
-
   position: relative;
   display: flex;
   justify-content: center;
@@ -81,8 +80,7 @@
     border-radius: 5px;
     box-shadow: -3px 3px 1px 1px rgba(0, 0, 0, 0.1);
   }
-  .header_h4 {
-  }
+
   .wrapper {
     display: flex;
     width: 100vw;
@@ -90,4 +88,6 @@
     align-items: center;
     justify-content: center;
   }
+}
+@media screen and (min-width: 1200px) {
 }

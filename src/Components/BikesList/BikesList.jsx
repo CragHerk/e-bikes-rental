@@ -4,10 +4,15 @@ import {
   setReservedIndex,
   setBikeInfo,
 } from "../../State/Reducers/bikes.slice.js";
-import { setLoading, selectLoading } from "../../State/Reducers/loading.slice";
+
+import {
+  setLoading,
+  selectLoading,
+  setReservationLoading,
+} from "../../State/Reducers/loading.slice";
 import Reservation from "../Reservation/Reservation";
 import Carousel from "react-multi-carousel";
-import BikesSpinner from "../BikesSpinner/BikesSpinner.jsx";
+import ButtonSpinner from "../Spinners/ButtonSpinner/ButtonSpinner.jsx";
 import bikeList from "../../Utils/bikelist";
 import responsive from "../../Utils/carouselConfig";
 import "react-multi-carousel/lib/styles.css";
@@ -17,21 +22,14 @@ import styles from "./BikesList.module.css";
 const BikesList = () => {
   const activeIndex = useSelector((state) => state.bikes.activeIndex);
   const reservedIndex = useSelector((state) => state.bikes.reservedIndex);
+
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
+
   const handleReservationClick = (index) => {
     dispatch(setLoading(true));
-
-    setTimeout(() => {
-      dispatch(setReservedIndex(index));
-
-      dispatch(setLoading(false));
-    }, 2000);
-  };
-
-  const handleCarouselItemClick = (index) => {
+    dispatch(setReservationLoading(true));
     dispatch(setActiveIndex(index));
-
     const selectedBike = bikeList[index];
     dispatch(
       setBikeInfo({
@@ -40,6 +38,27 @@ const BikesList = () => {
         img: selectedBike.img,
       })
     );
+    setTimeout(() => {
+      dispatch(setReservedIndex(index));
+
+      dispatch(setLoading(false));
+      dispatch(setReservationLoading(false));
+    }, 2000);
+  };
+
+  const handleCarouselItemClick = (index) => {
+    const isReservationActive = reservedIndex !== -1;
+    if (!isReservationActive) {
+      dispatch(setActiveIndex(index));
+      const selectedBike = bikeList[index];
+      dispatch(
+        setBikeInfo({
+          price: selectedBike.price,
+          name: selectedBike.name,
+          img: selectedBike.img,
+        })
+      );
+    }
   };
 
   return (
@@ -108,7 +127,7 @@ const BikesList = () => {
                 disabled={isLoading}
               >
                 {isLoading && index === activeIndex ? (
-                  <BikesSpinner color="rgba(20, 69, 61, 0.2)" />
+                  <ButtonSpinner color="rgba(20, 69, 61, 0.2)" />
                 ) : (
                   "Zarezerwuj"
                 )}

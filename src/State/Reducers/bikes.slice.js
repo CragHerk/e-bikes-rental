@@ -35,6 +35,7 @@ const bikesSlice = createSlice({
     setReservedIndex: (state, action) => {
       state.reservedIndex = action.payload;
     },
+
     setFromDate: (state, action) => {
       const { index, from } = action.payload;
       state.selectedDates[index] = { from, to: null };

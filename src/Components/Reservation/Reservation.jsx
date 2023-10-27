@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setLoading, selectLoading } from "../../State/Reducers/loading.slice";
+import {
+  setLoading,
+  selectLoading,
+  selectReservationLoading,
+} from "../../State/Reducers/loading.slice";
 import ReactDatePicker from "react-datepicker";
 import PropTypes from "prop-types";
 
@@ -13,7 +17,8 @@ import {
 } from "../../State/Reducers/bikes.slice.js";
 import { pullReservedDates } from "../../State/Reducers/bikes.slice.js";
 import { addToCart } from "../../State/Reducers/addToCart.slice.js";
-import BikesSpinner from "../BikesSpinner/BikesSpinner.jsx";
+import ButtonSpinner from "../Spinners/ButtonSpinner/ButtonSpinner.jsx";
+import ReservationSpinner from "../Spinners/ReservationSpinner/ReservationSpinner.jsx";
 import { FaCalendar } from "react-icons/fa";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Reservation.module.css";
@@ -22,6 +27,7 @@ const Reservation = ({ index }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLoading = useSelector(selectLoading);
+  const isReservationLoading = useSelector(selectReservationLoading);
   const selectedDates = useSelector((state) => state.bikes.selectedDates);
   const period = useSelector((state) => state.bikes.period);
   const price = useSelector((state) => state.bikes.bikeInfo.price);
@@ -74,48 +80,57 @@ const Reservation = ({ index }) => {
 
   return (
     <div className={styles.reservation_container}>
-      <div className={styles.reservation_wrapper}>
-        <h3 className={styles.reservation_header}>Wybierz daty:</h3>
-        <div className={styles.date_inputs}>
-          <div className={styles.date_input}>
-            <label>Początek:</label>
-            <ReactDatePicker
-              selected={selectedDates[index]?.from || new Date()}
-              onChange={(date) => handleChange(date, "from")}
-              dateFormat="dd/MM/yyyy"
-              className={styles.datepicker}
-              minDate={new Date()}
-              excludeDates={blockedDates}
-            />
-            <FaCalendar className={styles.date_calendar} />
-          </div>
-          <div className={styles.date_input}>
-            <label>Okres:</label>
-            <select
-              className={styles.select}
-              value={period}
-              onChange={handlePeriodChange}
-            >
-              <option value={1}>1 dzień</option>
-              <option value={2}>2 dni</option>
-              <option value={3}>3 dni</option>
-            </select>
-            <FaCalendar className={styles.select_calendar} />
-          </div>
-          <div className={styles.overal}>
-            <h4 className={styles.name}>{name}:</h4>
-            <h3 className={styles.price}>Suma : {totalPrice}zł</h3>
+      {isReservationLoading ? (
+        <ReservationSpinner color={"#43c59e"} />
+      ) : (
+        <div className={styles.content_wrapper}>
+          <div className={styles.reservation_wrapper}>
+            <h3 className={styles.reservation_header}>Wybierz daty:</h3>
+            <div className={styles.date_inputs}>
+              <div className={styles.date_input}>
+                <label>Początek:</label>
+                <ReactDatePicker
+                  selected={selectedDates[index]?.from || new Date()}
+                  onChange={(date) => handleChange(date, "from")}
+                  dateFormat="dd/MM/yyyy"
+                  className={styles.datepicker}
+                  minDate={new Date()}
+                  excludeDates={blockedDates}
+                />
+                <FaCalendar className={styles.date_calendar} />
+              </div>
+              <div className={styles.date_input}>
+                <label>Okres:</label>
+                <select
+                  className={styles.select}
+                  value={period}
+                  onChange={handlePeriodChange}
+                >
+                  <option value={1}>1 dzień</option>
+                  <option value={2}>2 dni</option>
+                  <option value={3}>3 dni</option>
+                </select>
+                <FaCalendar className={styles.select_calendar} />
+              </div>
+              <div className={styles.overal}>
+                <h4 className={styles.name}>{name}:</h4>
+                <h3 className={styles.price}>Suma : {totalPrice}zł</h3>
+              </div>
+            </div>
+            <p className={styles.p}>
+              *Wykluczono z kalendarza daty już zarezerwowane lub z przeszłości
+            </p>
           </div>
         </div>
+      )}
+      <button onClick={handleReservation} className={styles.reservation_btn}>
+        {isLoading ? (
+          <ButtonSpinner color={"rgba(20, 69, 61, 0.8)"} />
+        ) : (
+          "Zarezerwuj"
+        )}
+      </button>
 
-        <button onClick={handleReservation} className={styles.reservation_btn}>
-          {isLoading ? (
-            <BikesSpinner color={"rgba(20, 69, 61, 0.8)"} />
-          ) : (
-            "Zarezerwuj"
-          )}
-        </button>
-      </div>
       <button className={styles.close_button} onClick={handleClose}></button>
     </div>
   );
