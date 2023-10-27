@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Notiflix from "notiflix";
 import { validationSchema } from "../../Utils/validationSchema";
-import { Checkbox } from "../../Utils/checkbox/checkbox";
+import { Checkbox } from "../Checkbox/Checkbox";
 import ButtonSpinner from "../Spinners/ButtonSpinner/ButtonSpinner.jsx";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";

@@ -1,12 +1,25 @@
+import {
+  getReservedDatesFromLocalStorage,
+  saveReservedDatesToLocalStorage,
+} from "../../Utils/toLocalStorage.js";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+
 const apiEndpoint = import.meta.env.VITE_REACT_APP_API_ENDPOINT;
 export const pullReservedDates = createAsyncThunk(
   "bikes/pullReservedDates",
   async (bikeModel) => {
+    const cachedData = getReservedDatesFromLocalStorage(bikeModel);
+    if (cachedData) {
+      return cachedData;
+    }
+
     const response = await axios.get(
       `${apiEndpoint}/availability/${bikeModel}`
     );
+
+    saveReservedDatesToLocalStorage(bikeModel, response.data);
+
     return response.data;
   }
 );

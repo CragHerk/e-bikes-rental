@@ -99,7 +99,6 @@
   border: none;
   position: absolute;
   bottom: 40px;
-  left: 75px;
 }
 .reservation_btn:hover {
   background-color: var(--mint);
