@@ -33,6 +33,14 @@
   align-items: center;
   justify-content: space-between;
 }
+.conflict {
+  list-style: none;
+  display: flex;
+  border-bottom: 1px solid var(--error);
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+}
 .remove_btn {
   background-color: transparent;
   height: 32px;
@@ -47,6 +55,7 @@
   width: 250px;
   height: 60px;
   margin-bottom: 30px;
+  margin-top: 30px;
   border: 1px solid var(--border-03);
   background-color: transparent;
 }
@@ -74,4 +83,7 @@
   background-color: var(--background-01);
   border-radius: 5px;
   margin-top: 30px;
+}
+.overview h2 {
+  padding-top: 15px;
 }
