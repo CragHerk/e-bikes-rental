@@ -1,7 +1,7 @@
 {
   "name": "e-bikes-rental",
-  "homepage": "https://cragherk.github.io/e-bikes-rental/",
-  "private": false,
+  "homepage": "https://kamrock-bikes.netlify.app/",
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
