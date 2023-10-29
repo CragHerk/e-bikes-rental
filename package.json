@@ -1,7 +1,7 @@
 {
   "name": "e-bikes-rental",
   "homepage": "https://cragherk.github.io/e-bikes-rental/",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
