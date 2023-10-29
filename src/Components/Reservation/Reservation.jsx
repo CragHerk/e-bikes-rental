@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
@@ -6,9 +7,6 @@ import {
   selectReservationButtonLoading,
   selectReservationLoading,
 } from "../../State/Reducers/loading.slice";
-import ReactDatePicker from "react-datepicker";
-import PropTypes from "prop-types";
-
 import {
   setPeriod,
   setFromDate,
@@ -17,6 +15,9 @@ import {
 } from "../../State/Reducers/bikes.slice.js";
 import { pullReservedDates } from "../../State/Reducers/bikes.slice.js";
 import { addToCart } from "../../State/Reducers/addToCart.slice.js";
+import Notiflix from "notiflix";
+import moment from "moment";
+import ReactDatePicker from "react-datepicker";
 import ButtonSpinner from "../Spinners/ButtonSpinner/ButtonSpinner.jsx";
 import ReservationSpinner from "../Spinners/ReservationSpinner/ReservationSpinner.jsx";
 import { FaCalendar } from "react-icons/fa";
@@ -59,23 +60,34 @@ const Reservation = ({ index }) => {
     dispatch(setInitialStartDate());
   }, [dispatch]);
   const handleReservation = () => {
-    dispatch(setReservationButtonLoading(true));
-    const reservationData = {
-      formattedStartDate,
-      formattedEndDate,
-      totalPrice,
-      period,
-      price,
-      name,
-      startDate: startDate.toISOString(),
-      endDate: endDate.toISOString(),
-    };
-    setTimeout(() => {
-      dispatch(addToCart(reservationData)), dispatch(setReservedIndex(-1));
-      dispatch(setReservationButtonLoading(false));
-      navigate("/cart");
-    }, 2000);
+    const isTodayReserved = blockedDates.some((blockedDate) =>
+      moment().isSame(moment(blockedDate), "day")
+    );
+
+    if (isTodayReserved) {
+      Notiflix.Notify.warning(
+        "Ten rower jest już zarezerwowany na dzisiaj. Wybierz inną datę."
+      );
+    } else {
+      dispatch(setReservationButtonLoading(true));
+      const reservationData = {
+        formattedStartDate,
+        formattedEndDate,
+        totalPrice,
+        period,
+        price,
+        name,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+      };
+      setTimeout(() => {
+        dispatch(addToCart(reservationData)), dispatch(setReservedIndex(-1));
+        dispatch(setReservationButtonLoading(false));
+        navigate("/cart");
+      }, 2000);
+    }
   };
+
   useEffect(() => {
     dispatch(pullReservedDates(name));
   }, [dispatch, name]);
@@ -92,7 +104,7 @@ const Reservation = ({ index }) => {
               <div className={styles.date_input}>
                 <label>Początek:</label>
                 <ReactDatePicker
-                  selected={selectedDates[index]?.from || new Date()}
+                  selected={selectedDates[index]?.from}
                   onChange={(date) => handleChange(date, "from")}
                   dateFormat="dd/MM/yyyy"
                   className={styles.datepicker}
