@@ -104,7 +104,7 @@ const Reservation = ({ index }) => {
               <div className={styles.date_input}>
                 <label>Początek:</label>
                 <ReactDatePicker
-                  selected={selectedDates[index]?.from}
+                  selected={selectedDates[index]?.from || new Date()}
                   onChange={(date) => handleChange(date, "from")}
                   dateFormat="dd/MM/yyyy"
                   className={styles.datepicker}
