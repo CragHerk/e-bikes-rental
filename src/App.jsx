@@ -17,7 +17,7 @@ import Complete from "./Components/Complete/Complete";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/e-bikes-rental">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
