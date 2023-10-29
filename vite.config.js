@@ -4,6 +4,4 @@ import Vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   plugins: [react(), Vue()],
-
-  base: "/e-bikes-rental/",
 });
