@@ -21,20 +21,23 @@
   position: absolute;
   left: 10px;
   top: 5px;
-  font-size: 24px;
+  font-size: 35px;
   cursor: pointer;
+  color: var(--inside-text);
 }
 .prev {
   position: absolute;
   top: 50%;
   left: 10px;
   background-color: transparent;
-  font-size: 24px;
+  font-size: 50px;
+  color: var(--white);
 }
 .next {
   position: absolute;
   top: 50%;
   right: 10px;
   background-color: transparent;
-  font-size: 24px;
+  font-size: 50px;
+  color: var(--white);
 }
