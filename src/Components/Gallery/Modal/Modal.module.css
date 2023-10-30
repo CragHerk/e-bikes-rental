@@ -14,21 +14,16 @@
   position: absolute;
 }
 .image {
-  max-height: 100vh;
-  max-width: 100vw;
-  filter: blur(20px);
-}
-.loaded .image {
-  filter: blur(0);
+  width: 100vw;
 }
 
 .close {
   position: absolute;
-  left: 10px;
-  top: 5px;
+  left: 15px;
   font-size: 35px;
   cursor: pointer;
   color: var(--inside-text);
+  z-index: 9;
 }
 .prev {
   position: absolute;

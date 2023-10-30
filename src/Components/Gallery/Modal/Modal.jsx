@@ -1,22 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
-import lozad from "lozad";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import styles from "./Modal.module.css";
 
 const Modal = ({ onClose, images, currentIndex }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex);
-  const modalRef = useRef(null);
-
-  useEffect(() => {
-    const observer = lozad(modalRef.current, {
-      loaded: function(el) {
-        el.classList.add(styles.loaded);
-      },
-    });
-    observer.observe();
-
-    setCurrentImageIndex(currentIndex);
-  }, [currentIndex]);
 
   const handlePrev = () => {
     const prevIndex = (currentImageIndex - 1 + images.length) % images.length;
@@ -35,11 +23,11 @@ const Modal = ({ onClose, images, currentIndex }) => {
           <span className={styles.close} onClick={onClose}>
             &times;
           </span>
-          <img
-            data-src={images[currentImageIndex].src}
-            src={images[currentImageIndex].thumbnail}
+          <LazyLoadImage
+            src={images[currentImageIndex].src}
             alt={images[currentImageIndex].alt}
-            className={`${styles.image} ${styles.blurred}`}
+            placeholderSrc={images[currentImageIndex].thumbnail}
+            className={styles.image}
           />
           <button className={styles.prev} onClick={handlePrev}>
             &#8249;

@@ -52,7 +52,7 @@ export const images = [
   {
     src: "/assets/gallery/image (11).jpg",
     alt: "bike-trip 1",
-    thumbnail: "assets/gallery/thumbnails/thumbnail12.jpg",
+    thumbnail: "assets/gallery/thumbnails/thumbnail11.jpg",
   },
   {
     src: "/assets/gallery/image (1).jpg",
