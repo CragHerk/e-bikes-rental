@@ -14,8 +14,9 @@
   position: absolute;
 }
 .image {
-  max-height: 100vh;
+  max-height: 95vh;
   width: 100vw;
+  aspect-ratio: 16/9;
 }
 
 .close {
