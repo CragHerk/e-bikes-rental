@@ -16,7 +16,6 @@
 .image {
   max-height: 100vh;
   max-width: 100vw;
-  filter: blur(20px);
 }
 .close {
   position: absolute;
