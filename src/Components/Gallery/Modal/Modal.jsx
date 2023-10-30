@@ -1,11 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import lozad from "lozad";
 import styles from "./Modal.module.css";
 
 const Modal = ({ onClose, images, currentIndex }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex);
 
+  const modalRef = useRef(null);
+
   useEffect(() => {
+    const observer = lozad(modalRef.current);
+    observer.observe();
+
     setCurrentImageIndex(currentIndex);
   }, [currentIndex]);
 
