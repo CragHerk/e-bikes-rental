@@ -14,6 +14,7 @@
   position: absolute;
 }
 .image {
+  max-height: 100vh;
   width: 100vw;
 }
 
