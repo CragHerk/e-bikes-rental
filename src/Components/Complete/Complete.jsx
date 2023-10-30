@@ -7,7 +7,7 @@ const Complete = () => {
       <Link to={"/"}>
         <MovingComponent
           type="fadeInFromTop"
-          duration="2500ms"
+          duration="2000ms"
           delay="0s"
           direction="normal"
           timing="linear"
