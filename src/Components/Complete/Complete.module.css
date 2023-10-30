@@ -23,12 +23,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .tag {
   font-size: 20px;
   color: var(--black);
 }
-
+.p {
+  color: var(--black);
+}
 @media screen and (min-width: 768px) {
   .tag {
     font-size: 30px;

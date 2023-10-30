@@ -28,6 +28,7 @@ const Complete = () => {
         fillMode="none"
       >
         <h1 className={styles.tag}>Zarezerwowano</h1>
+        <p className={styles.p}>Sprawdź e-mail</p>
       </MovingComponent>
     </div>
   );
