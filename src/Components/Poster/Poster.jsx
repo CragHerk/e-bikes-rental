@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import MovingComponent from "react-moving-text";
 import { useSpring, animated } from "react-spring";
+import lozad from "lozad";
 import styles from "./Poster.module.css";
 
 const Poster = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const isTablet = window.innerWidth >= 768;
   const isDesktop = window.innerWidth >= 1200;
+  useEffect(() => {
+    const observer = lozad();
+    observer.observe();
+  }, []);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -75,7 +80,7 @@ const Poster = () => {
         style={{
           ...imageSpring,
         }}
-        className={styles.image}
+        className={`${styles.image} lozad`}
       />
     </div>
   );
