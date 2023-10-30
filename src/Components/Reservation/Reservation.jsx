@@ -60,11 +60,11 @@ const Reservation = ({ index }) => {
     dispatch(setInitialStartDate());
   }, [dispatch]);
   const handleReservation = () => {
-    const isTodayReserved = blockedDates.some((blockedDate) =>
-      moment().isSame(moment(blockedDate), "day")
+    const selectedDateIsReserved = blockedDates.some((blockedDate) =>
+      moment(selectedDates[index]?.from).isSame(moment(blockedDate), "day")
     );
 
-    if (isTodayReserved) {
+    if (selectedDateIsReserved) {
       Notiflix.Notify.warning(
         "Ten rower jest już zarezerwowany na dzisiaj. Wybierz inną datę."
       );

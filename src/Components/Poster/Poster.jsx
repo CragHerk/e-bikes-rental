@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import MovingComponent from "react-moving-text";
 import { useSpring, animated } from "react-spring";
+
 import styles from "./Poster.module.css";
 
 const Poster = () => {
