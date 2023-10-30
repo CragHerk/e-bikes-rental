@@ -16,7 +16,12 @@
 .image {
   max-height: 100vh;
   max-width: 100vw;
+  filter: blur(20px);
 }
+.loaded .image {
+  filter: blur(0);
+}
+
 .close {
   position: absolute;
   left: 10px;

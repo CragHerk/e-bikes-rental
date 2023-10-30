@@ -1,15 +1,18 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import lozad from "lozad";
 import styles from "./Modal.module.css";
 
 const Modal = ({ onClose, images, currentIndex }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex);
-
   const modalRef = useRef(null);
 
   useEffect(() => {
-    const observer = lozad(modalRef.current);
+    const observer = lozad(modalRef.current, {
+      loaded: function(el) {
+        el.classList.add(styles.loaded);
+      },
+    });
     observer.observe();
 
     setCurrentImageIndex(currentIndex);
@@ -33,9 +36,10 @@ const Modal = ({ onClose, images, currentIndex }) => {
             &times;
           </span>
           <img
-            src={images[currentImageIndex].src}
+            data-src={images[currentImageIndex].src}
+            src={images[currentImageIndex].thumbnail}
             alt={images[currentImageIndex].alt}
-            className={styles.image}
+            className={`${styles.image} ${styles.blurred}`}
           />
           <button className={styles.prev} onClick={handlePrev}>
             &#8249;
@@ -52,12 +56,14 @@ const Modal = ({ onClose, images, currentIndex }) => {
 Modal.propTypes = {
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
   }).isRequired,
   onClose: PropTypes.func.isRequired,
   images: PropTypes.arrayOf(
     PropTypes.shape({
       src: PropTypes.string.isRequired,
+      thumbnail: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
     })
   ).isRequired,
