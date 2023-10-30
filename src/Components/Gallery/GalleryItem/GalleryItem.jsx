@@ -17,9 +17,10 @@ const GalleryItem = ({ image, index, images }) => {
   return (
     <div className={styles.item}>
       <img
-        src={image.src}
+        src={image.thumbnail}
         alt={image.alt}
         className={styles.image}
+        loading="lazy"
         onClick={handleOpenModal}
       />
       {modalOpen && (
@@ -37,6 +38,7 @@ const GalleryItem = ({ image, index, images }) => {
 GalleryItem.propTypes = {
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
   }).isRequired,
   index: PropTypes.number.isRequired,
@@ -44,6 +46,7 @@ GalleryItem.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
       src: PropTypes.string.isRequired,
+      thumbnail: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
     })
   ).isRequired,

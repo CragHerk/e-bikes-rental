@@ -9,6 +9,7 @@
 }
 .btn {
   margin-bottom: 100px;
+  background-color: transparent;
 }
 .wrapper {
   width: 50vw;
