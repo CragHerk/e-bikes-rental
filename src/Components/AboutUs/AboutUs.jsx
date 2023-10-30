@@ -1,5 +1,6 @@
 import { images } from "../Gallery/images";
 import Gallery from "../Gallery/Gallery/Gallery";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import styles from "./AboutUs.module.css";
 const AboutUs = () => {
   return (
@@ -32,7 +33,7 @@ const AboutUs = () => {
         <div className={styles.icon_element}>
           <div className={styles.line}></div>
           <div className={styles.line2}></div>
-          <img src="assets/bike-simple.svg" alt="bike" />
+          <LazyLoadImage src="assets/bike-simple.svg" alt="bike" />
         </div>
         <h1 className={styles.header_h1}>Galeria</h1>
 
