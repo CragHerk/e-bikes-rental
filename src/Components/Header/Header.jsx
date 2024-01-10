@@ -36,7 +36,7 @@ const Header = () => {
       <Link to={"/"}>
         <div className={styles.logo}>LOGO</div>
       </Link>
-      <Link to={"/cart"}>
+      <Link to={"/cart"} aria-label="link to cart">
         <button className={styles.cart} aria-label="cart" id="cart">
           <FaShoppingCart size={24} />
         </button>
