@@ -66,10 +66,10 @@ const Poster = () => {
       <animated.img
         src={
           isDesktop
-            ? "/assets/computer.jpg"
+            ? "/assets/computer.webp"
             : isTablet
-            ? "/assets/tablet.jpg"
-            : "/assets/mobile.jpg"
+            ? "/assets/tablet.webp"
+            : "/assets/mobile.webp"
         }
         alt="Poster"
         onLoad={handleImageLoad}
