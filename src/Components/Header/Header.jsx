@@ -28,7 +28,8 @@ const Header = () => {
       <button
         className={styles.hamburger}
         onClick={handleOpenMenu}
-        name="hamburger"
+        id="hamburger"
+        aria-label="hamburger"
       >
         <FaBars className={styles.hamburger_icon} />
       </button>
@@ -36,7 +37,7 @@ const Header = () => {
         <div className={styles.logo}>LOGO</div>
       </Link>
       <Link to={"/cart"}>
-        <button className={styles.cart} name="cart">
+        <button className={styles.cart} aria-label="cart" id="cart">
           <FaShoppingCart size={24} />
         </button>
       </Link>
