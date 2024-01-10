@@ -16,17 +16,25 @@ const Footer = () => {
         <div className={styles.contact}>
           <h4>Kontakt i lokalizacja</h4>
           <div className={styles.adress}>
-            <img src="/assets/svg/location.svg" alt="location" />
+            <img
+              src="/assets/svg/location.svg"
+              alt="location"
+              className={styles.svg}
+            />
             <a>Słotwina 222 aaa</a>
           </div>
           <div className={styles.email}>
-            <img src="/assets/svg/mail.svg" alt="mail" />
+            <img src="/assets/svg/mail.svg" alt="mail" className={styles.svg} />
             <a href="kamrock36@gmail.com" type="email">
               kamrock36@gmail.com
             </a>
           </div>
           <div className={styles.phone}>
-            <img src="/assets/svg/phone.svg" alt="phone" />
+            <img
+              src="/assets/svg/phone.svg"
+              alt="phone"
+              className={styles.svg}
+            />
             <a>Telefon:</a>
             <h4>123321123123</h4>
           </div>
