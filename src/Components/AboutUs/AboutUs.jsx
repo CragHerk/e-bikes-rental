@@ -9,7 +9,7 @@ const AboutUs = () => {
         <div className={styles.icon_element}>
           <div className={styles.line}></div>
           <div className={styles.line2}></div>
-          <img src="assets/svg/bike-simple.svg" alt="bike" />
+          <img src="assets/bike-simple.svg" alt="bike" />
         </div>
         <h1 className={styles.header_h1}>O nas</h1>
         <div className={styles.wrapper}>
@@ -33,7 +33,7 @@ const AboutUs = () => {
         <div className={styles.icon_element}>
           <div className={styles.line}></div>
           <div className={styles.line2}></div>
-          <LazyLoadImage src="assets/svg/bike-simple.svg" alt="bike" />
+          <LazyLoadImage src="assets/bike-simple.svg" alt="bike" />
         </div>
         <h1 className={styles.header_h1}>Galeria</h1>
 
