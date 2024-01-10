@@ -15,7 +15,7 @@ const AboutUs = () => {
         <div className={styles.wrapper}>
           <img
             className={styles.header_img}
-            src="assets/about-us.jpg"
+            src="assets/about-us.webp"
             alt="man-bike"
           />
           <h4 className={styles.header_h4}>
