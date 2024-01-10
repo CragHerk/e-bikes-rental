@@ -67,7 +67,7 @@ const BikesList = () => {
         <div className={styles.icon_element}>
           <div className={styles.line}></div>
           <div className={styles.line2}></div>
-          <img src="assets/bike-simple.svg" alt="bike" />
+          <img src="assets/svg/bike-simple.svg" alt="bike" />
         </div>
         <h1 className={styles.header_h1}>Rowery do wypożyczenia</h1>
         <h4 className={styles.header_h4}>
@@ -115,7 +115,7 @@ const BikesList = () => {
                 <div className={styles.bike}>
                   <img
                     className={styles.bike_svg}
-                    src="assets/bike-green-carousel.svg"
+                    src="assets/svg/bike-green-carousel.svg"
                     alt="bike"
                   />
                   <p>Rower full</p>

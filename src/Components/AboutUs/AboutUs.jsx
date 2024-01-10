@@ -9,7 +9,7 @@ const AboutUs = () => {
         <div className={styles.icon_element}>
           <div className={styles.line}></div>
           <div className={styles.line2}></div>
-          <img src="assets/bike-simple.svg" alt="bike" />
+          <img src="assets/svg/bike-simple.svg" alt="bike" />
         </div>
         <h1 className={styles.header_h1}>O nas</h1>
         <div className={styles.wrapper}>
@@ -33,7 +33,7 @@ const AboutUs = () => {
         <div className={styles.icon_element}>
           <div className={styles.line}></div>
           <div className={styles.line2}></div>
-          <LazyLoadImage src="assets/bike-simple.svg" alt="bike" />
+          <LazyLoadImage src="assets/svg/bike-simple.svg" alt="bike" />
         </div>
         <h1 className={styles.header_h1}>Galeria</h1>
 
@@ -44,14 +44,14 @@ const AboutUs = () => {
           <a href="https://www.facebook.com/">
             <img
               className={styles.svg}
-              src="assets/instagram-big.svg"
+              src="assets/svg/instagram-big.svg"
               alt="instagram"
             />
           </a>
           <a href="https://www.instagram.com/">
             <img
               className={styles.svg}
-              src="assets/facebook-big.svg"
+              src="assets/svg/facebook-big.svg"
               alt="facebook"
             />
           </a>

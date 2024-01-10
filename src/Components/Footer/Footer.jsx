@@ -16,17 +16,17 @@ const Footer = () => {
         <div className={styles.contact}>
           <h4>Kontakt i lokalizacja</h4>
           <div className={styles.adress}>
-            <img src="/assets/location.svg" alt="location" />
+            <img src="/assets/svg/location.svg" alt="location" />
             <a>Słotwina 222 aaa</a>
           </div>
           <div className={styles.email}>
-            <img src="/assets/mail.svg" alt="mail" />
+            <img src="/assets/svg/mail.svg" alt="mail" />
             <a href="kamrock36@gmail.com" type="email">
               kamrock36@gmail.com
             </a>
           </div>
           <div className={styles.phone}>
-            <img src="/assets/phone.svg" alt="phone" />
+            <img src="/assets/svg/phone.svg" alt="phone" />
             <a>Telefon:</a>
             <h4>123321123123</h4>
           </div>
@@ -34,14 +34,14 @@ const Footer = () => {
             <a className={styles.icon} href="https://www.instagram.com">
               <img
                 className={styles.svg}
-                src="/assets/instagram.svg"
+                src="/assets/svg/instagram.svg"
                 alt="instagram"
               />
             </a>
             <a className={styles.icon} href="https://www.facebook.com">
               <img
                 className={styles.svg}
-                src="/assets/facebook.svg"
+                src="/assets/svg/facebook.svg"
                 alt="facebook"
               />
             </a>

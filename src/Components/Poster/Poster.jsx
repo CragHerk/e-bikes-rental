@@ -56,7 +56,7 @@ const Poster = () => {
           iteration="1"
           fillMode="none"
         >
-          <img className={styles.bike} src="assets/bike-green.svg" />
+          <img className={styles.bike} src="assets/svg/bike-green.svg" />
           <span className={styles.price}>Ceny od ...</span>
           <span className={styles.value}> 240zł/dzień</span>
         </MovingComponent>
