@@ -1,13 +1,5 @@
-@font-face {
-  font-family: "Coustard";
-  src: url("/public/assets/fonts/Coustard-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   line-height: 1.5;
   font-weight: 400;
   text-rendering: optimizeLegibility;
@@ -16,7 +8,6 @@
 }
 
 body {
-  font-family: "Coustard";
   margin: 0;
   display: flex;
   place-items: center;
