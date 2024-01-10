@@ -25,14 +25,18 @@ const Header = () => {
 
   return (
     <div className={styles.container}>
-      <button className={styles.hamburger} onClick={handleOpenMenu}>
+      <button
+        className={styles.hamburger}
+        onClick={handleOpenMenu}
+        name="hamburger"
+      >
         <FaBars className={styles.hamburger_icon} />
       </button>
       <Link to={"/"}>
         <div className={styles.logo}>LOGO</div>
       </Link>
       <Link to={"/cart"}>
-        <button className={styles.cart}>
+        <button className={styles.cart} name="cart">
           <FaShoppingCart size={24} />
         </button>
       </Link>
