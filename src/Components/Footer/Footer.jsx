@@ -4,7 +4,7 @@ const Footer = () => {
     <div className={styles.footer_container}>
       <div className={styles.container}>
         <div className={styles.footer_wrapper}>
-          <h4>Godziny otwarcia :</h4>
+          <span>Godziny otwarcia :</span>
           <div className={styles.footer_avilability}>
             <span>poniedziałek - piątek</span> <h4>9:00 - 19.00</h4>
           </div>
@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.contact}>
-          <h4>Kontakt i lokalizacja</h4>
+          <span>Kontakt i lokalizacja</span>
           <div className={styles.adress}>
             <img
               src="/assets/svg/location.svg"
@@ -36,7 +36,7 @@ const Footer = () => {
               className={styles.svg}
             />
             <a>Telefon:</a>
-            <h4>123321123123</h4>
+            <span>123321123123</span>
           </div>
           <div className={styles.social_media}>
             <a className={styles.icon} href="https://www.instagram.com">
