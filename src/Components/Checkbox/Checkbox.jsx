@@ -17,7 +17,5 @@ export const Checkbox = ({ checked }) => {
 };
 
 Checkbox.propTypes = {
-  checked: PropTypes.bool.isRequired
-    .description("Indicates whether the checkbox is checked or not")
-    .default(false),
+  checked: PropTypes.bool,
 };
