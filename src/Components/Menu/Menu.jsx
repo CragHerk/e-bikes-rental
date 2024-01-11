@@ -27,7 +27,11 @@ const Menu = () => {
   return (
     <animated.div style={menuAnimation} className={styles.menu_container}>
       <div className={styles.container}>
-        <button className={styles.close_btn} onClick={handleCloseMenu}>
+        <button
+          className={styles.close_btn}
+          onClick={handleCloseMenu}
+          aria-label="close"
+        >
           <FaTimes className={styles.close_icon} />
         </button>
         <ul className={styles.menu_list}>
