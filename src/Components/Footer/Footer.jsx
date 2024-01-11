@@ -7,10 +7,10 @@ const Footer = () => {
         <div className={styles.footer_wrapper}>
           <span>Godziny otwarcia :</span>
           <div className={styles.footer_avilability}>
-            <span>poniedziałek - piątek</span> <h4>9:00 - 19.00</h4>
+            <span>poniedziałek - piątek</span> <span>9:00 - 19.00</span>
           </div>
           <div className={styles.footer_avilability}>
-            <span>sobota - niedziela</span> <h4>9:00 - 18.00</h4>
+            <span>sobota - niedziela</span> <span>9:00 - 18.00</span>
           </div>
         </div>
 
