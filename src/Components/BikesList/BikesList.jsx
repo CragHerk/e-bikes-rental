@@ -22,7 +22,7 @@ import styles from "./BikesList.module.css";
 const BikesList = () => {
   const activeIndex = useSelector((state) => state.bikes.activeIndex);
   const reservedIndex = useSelector((state) => state.bikes.reservedIndex);
-
+  const RESERVE_BTN_TEXT = "Zarezerwuj";
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
 
@@ -133,7 +133,7 @@ const BikesList = () => {
                 {isLoading && index === activeIndex ? (
                   <ButtonSpinner color="rgba(20, 69, 61, 0.2)" />
                 ) : (
-                  "Zarezerwuj"
+                  RESERVE_BTN_TEXT
                 )}
               </button>
 

@@ -1,7 +1,8 @@
-import styles from "./Footer.module.css";
+import * as styles from "./Footer.module.css";
+
 const Footer = () => {
   return (
-    <div className={styles.footer_container}>
+    <footer className={styles.footer_container}>
       <div className={styles.container}>
         <div className={styles.footer_wrapper}>
           <span>Godziny otwarcia :</span>
@@ -15,14 +16,14 @@ const Footer = () => {
 
         <div className={styles.contact}>
           <span>Kontakt i lokalizacja</span>
-          <div className={styles.adress}>
+          <address className={styles.adress}>
             <img
               src="/assets/svg/location.svg"
               alt="location"
               className={styles.svg}
             />
             <a>Słotwina 222 aaa</a>
-          </div>
+          </address>
           <div className={styles.email}>
             <img src="/assets/svg/mail.svg" alt="mail" className={styles.svg} />
             <a href="kamrock36@gmail.com" type="email">
@@ -59,7 +60,8 @@ const Footer = () => {
       <div className={styles.foot}>
         <span>© 2023 Wypożyczalnia rowerów elektrycznych w Słotwinie</span>
       </div>
-    </div>
+    </footer>
   );
 };
+
 export default Footer;
