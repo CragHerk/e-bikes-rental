@@ -57,7 +57,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.foot}>
-        <h6>© 2023 Wypożyczalnia rowerów elektrycznych w Słotwinie</h6>
+        <span>© 2023 Wypożyczalnia rowerów elektrycznych w Słotwinie</span>
       </div>
     </div>
   );

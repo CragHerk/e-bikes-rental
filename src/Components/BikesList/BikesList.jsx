@@ -67,12 +67,16 @@ const BikesList = () => {
         <div className={styles.icon_element}>
           <div className={styles.line}></div>
           <div className={styles.line2}></div>
-          <img src="./assets/bike-simple.svg" alt="bike" />
+          <img
+            src="./assets/bike-simple.svg"
+            alt="bike"
+            className={styles.bike_img}
+          />
         </div>
         <h1 className={styles.header_h1}>Rowery do wypożyczenia</h1>
-        <h4 className={styles.header_h4}>
+        <h2 className={styles.header_h4}>
           przeżyj niesamowitą przygodę, wybierz rower dla siebie{" "}
-        </h4>
+        </h2>
       </div>
       <Carousel
         className={styles.carousel}
