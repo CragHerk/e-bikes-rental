@@ -36,16 +36,20 @@ const Menu = () => {
         </button>
         <ul className={styles.menu_list}>
           <li className={styles.menu_element}>
-            <FaFacebook /> Facebook
+            <a href="https://www.facebook.com" className={styles.icon}>
+              <FaFacebook /> Facebook
+            </a>
           </li>
           <li className={styles.menu_element}>
-            <FaInstagram /> Instagram
+            <a href="https://www.instagram.com" className={styles.icon}>
+              <FaInstagram /> Instagram
+            </a>
           </li>
           <li className={styles.menu_element}>
             <FaEnvelope /> kamrock36@gmail.com
           </li>
           <li className={styles.menu_element}>
-            <FaPhone /> Telefon
+            <FaPhone /> 536196751
           </li>
         </ul>
         <p className={styles.menu_p}>
