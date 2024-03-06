@@ -34,7 +34,7 @@ const Header = () => {
         <FaBars className={styles.hamburger_icon} />
       </button>
       <Link to={"/"}>
-        <div className={styles.logo}>LOGO</div>
+        <img src="/icon (1).png" alt="logo" />
       </Link>
       <Link to={"/cart"} aria-label="link to cart">
         <button className={styles.cart} aria-label="cart" id="cart">

@@ -7,7 +7,7 @@ const bikeList = [
     bounce: "140mm",
     battery: "750wh",
     engine: "Bosch gen 4 Smart",
-    img: "/assets/rower1-min.jpg",
+    img: "/assets/r1.jpg",
   },
   {
     name: "rower2",
@@ -18,7 +18,7 @@ const bikeList = [
     battery: "625wh",
     engine: "Bosch gen 4 ",
     suspension: "Rock Shox",
-    img: "/assets/bicycle2.svg",
+    img: "/assets/r2.jpg",
   },
   {
     name: "rower3",
@@ -29,7 +29,7 @@ const bikeList = [
     battery: "750wh",
     engine: "Bosch gen 4 Smart",
     suspension: "Rock Shox",
-    img: "/assets/bicycle3.svg",
+    img: "/assets/r3.jpg",
   },
   {
     name: "rower4",
@@ -40,7 +40,7 @@ const bikeList = [
     battery: "625wh",
     engine: "Bosch gen 4 ",
     suspension: "Fox suspension",
-    img: "/assets/bicycle4.svg",
+    img: "/assets/r4.jpg",
   },
 ];
 
