@@ -46,20 +46,13 @@ const Poster = () => {
             <button className={styles.button}>Znajdź rower</button>
           </MovingComponent>
         </Link>
-        <MovingComponent
-          className={styles.bike_wrapper}
-          type="fadeInFromBottom"
-          duration="1700ms"
-          delay="0s"
-          direction="normal"
-          timing="ease-in"
-          iteration="1"
-          fillMode="none"
-        >
-          <img className={styles.bike} src="assets/svg/bike-green.svg" />
-          <span className={styles.price}>Ceny od ...</span>
-          <span className={styles.value}> 240zł/dzień</span>
-        </MovingComponent>
+        <Link to={"/"}>
+          <img
+            className={styles.bike_wrapper}
+            src="/icon-poster.png"
+            alt="logo"
+          />
+        </Link>
       </div>
 
       {!imageLoaded && <div className={styles.placeholder}></div>}

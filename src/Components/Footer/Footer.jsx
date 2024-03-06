@@ -22,7 +22,7 @@ const Footer = () => {
               alt="location"
               className={styles.svg}
             />
-            <a>Słotwina 222 aaa</a>
+            <a>Lipowa ul.sloneczne wzgórze 28 </a>
           </address>
           <div className={styles.email}>
             <img src="/assets/svg/mail.svg" alt="mail" className={styles.svg} />
@@ -37,7 +37,7 @@ const Footer = () => {
               className={styles.svg}
             />
             <a>Telefon:</a>
-            <span>123321123123</span>
+            <span>536196751</span>
           </div>
           <div className={styles.social_media}>
             <a className={styles.icon} href="https://www.instagram.com">

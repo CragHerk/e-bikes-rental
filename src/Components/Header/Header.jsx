@@ -33,9 +33,7 @@ const Header = () => {
       >
         <FaBars className={styles.hamburger_icon} />
       </button>
-      <Link to={"/"}>
-        <img src="/icon (1).png" alt="logo" />
-      </Link>
+
       <Link to={"/cart"} aria-label="link to cart">
         <button className={styles.cart} aria-label="cart" id="cart">
           <FaShoppingCart size={24} />
