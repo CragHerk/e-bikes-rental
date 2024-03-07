@@ -64,8 +64,8 @@
     transform: skew(20deg);
     z-index: 2;
     position: relative;
-    left: 55vw;
-    margin-bottom: 20vh;
+    left: 45vw;
+    top: 5vw;
   }
   .wrapper {
     background-color: var(--background-05);
@@ -114,7 +114,6 @@
     left: 280px;
   }
   .bike_wrapper {
-    top: 320px;
   }
   .poster_wrapper {
     left: -3%;
