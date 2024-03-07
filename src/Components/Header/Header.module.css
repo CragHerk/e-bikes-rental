@@ -21,7 +21,7 @@
 .cart {
   background-color: transparent;
   position: absolute;
-  right: 20px;
+  right: 30px;
   top: 20px;
 }
 .logo {
@@ -32,9 +32,6 @@
   top: 5px;
 }
 @media screen and (min-width: 768px) {
-  .cart {
-    right: 180px;
-  }
   .logo {
     left: 250px;
   }
