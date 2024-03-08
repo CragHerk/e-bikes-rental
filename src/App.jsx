@@ -9,6 +9,7 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import BikesList from "./Components/BikesList/BikesList";
 import AboutUs from "./Components/AboutUs/AboutUs";
+import Service from "./Components/Service/Service";
 import Footer from "./Components/Footer/Footer";
 import Poster from "./Components/Poster/Poster";
 import Cart from "./Components/Cart/Cart";
@@ -47,6 +48,7 @@ const Home = () => {
       <Poster />
       <BikesList />
       <AboutUs />
+      <Service />
       <Footer />
     </div>
   );

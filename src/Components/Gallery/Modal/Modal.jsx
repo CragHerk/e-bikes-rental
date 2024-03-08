@@ -19,23 +19,21 @@ const Modal = ({ onClose, images, currentIndex }) => {
   return (
     <div className={styles.modal_wrapper}>
       <div className={styles.modal}>
-        <div className={styles.content}>
-          <span className={styles.close} onClick={onClose}>
-            &times;
-          </span>
-          <LazyLoadImage
-            src={images[currentImageIndex].src}
-            alt={images[currentImageIndex].alt}
-            placeholderSrc={images[currentImageIndex].thumbnail}
-            className={styles.image}
-          />
-          <button className={styles.prev} onClick={handlePrev}>
-            &#8249;
-          </button>
-          <button className={styles.next} onClick={handleNext}>
-            &#8250;
-          </button>
-        </div>
+        <span className={styles.close} onClick={onClose}>
+          &times;
+        </span>
+        <LazyLoadImage
+          src={images[currentImageIndex].src}
+          alt={images[currentImageIndex].alt}
+          placeholderSrc={images[currentImageIndex].thumbnail}
+          className={styles.image}
+        />
+        <button className={styles.prev} onClick={handlePrev}>
+          &#8249;
+        </button>
+        <button className={styles.next} onClick={handleNext}>
+          &#8250;
+        </button>
       </div>
     </div>
   );
