@@ -104,9 +104,10 @@
 .button {
   width: 280px;
   height: 60px;
-  background-color: transparent;
+  background-color: var(--white);
   border: 1px solid var(--border-03);
   color: var(--inside-text);
   border-radius: 8px;
   font-weight: bold;
+  font-size: large;
 }
