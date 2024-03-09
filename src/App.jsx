@@ -6,12 +6,14 @@ import {
   useLocation,
 } from "react-router-dom";
 import "./App.css";
-import Header from "./Components/Header/Header";
+import { images } from "./Components/Gallery/images";
+import Header from "./Components/Nav/Nav";
 import BikesList from "./Components/BikesList/BikesList";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Service from "./Components/Service/Service";
 import Footer from "./Components/Footer/Footer";
 import Poster from "./Components/Poster/Poster";
+import Gallery from "./Components/Gallery/Gallery/Gallery";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import Complete from "./Components/Complete/Complete";
@@ -48,6 +50,7 @@ const Home = () => {
       <Poster />
       <BikesList />
       <AboutUs />
+      <Gallery images={images} />
       <Service />
       <Footer />
     </div>

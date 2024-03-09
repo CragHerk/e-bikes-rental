@@ -4,16 +4,18 @@ import styles from "./Gallery.module.css";
 
 const Gallery = ({ images }) => {
   return (
-    <div className={styles.gallery}>
-      {images.map((image, index) => (
-        <GalleryItem
-          key={index}
-          image={image}
-          index={index}
-          total={images.length}
-          images={images}
-        />
-      ))}
+    <div className={styles.gallery_wrapper}>
+      <div className={styles.gallery}>
+        {images.map((image, index) => (
+          <GalleryItem
+            key={index}
+            image={image}
+            index={index}
+            total={images.length}
+            images={images}
+          />
+        ))}
+      </div>
     </div>
   );
 };

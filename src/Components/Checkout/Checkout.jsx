@@ -9,7 +9,7 @@ import Notiflix from "notiflix";
 import { validationSchema } from "../../Utils/validationSchema";
 import { Checkbox } from "../Checkbox/Checkbox";
 import ButtonSpinner from "../Spinners/ButtonSpinner/ButtonSpinner.jsx";
-import Header from "../Header/Header";
+import Header from "../Nav/Nav.jsx";
 import Footer from "../Footer/Footer";
 import styles from "./Checkout.module.css";
 

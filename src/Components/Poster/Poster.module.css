@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 60px;
 }
 .wrapper {
   position: absolute;
@@ -22,17 +23,17 @@
 .button {
   width: 200px;
   height: 60px;
-  background-color: transparent;
+  background-color: var(--white);
   color: var(--black);
   border: 1px solid var(--black);
   margin-top: 65px;
   font-size: 20px;
 }
 .bike_wrapper {
-  display: none;
-}
-.bike {
-  display: none;
+  width: 200px;
+  position: absolute;
+  top: -160px;
+  left: 0%;
 }
 
 .placeholder {
@@ -52,20 +53,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  .bike {
-    display: block;
-    margin-top: -36px;
-  }
   .bike_wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     transform: skew(20deg);
     z-index: 2;
-    position: relative;
-    left: 45vw;
+    left: 55vw;
     top: 5vw;
+    width: auto;
   }
   .wrapper {
     background-color: var(--background-05);
@@ -82,7 +75,6 @@
     top: 130px;
     left: 35%;
     transition: transform 0.4s ease-in-out;
-    background-color: var(--white);
   }
   .button:hover {
     transform: scale(1.05) skew(20deg);
@@ -106,6 +98,9 @@
   }
 }
 @media screen and (min-width: 1200px) {
+  .image {
+    max-height: calc(100vh - 60px);
+  }
   .head {
     left: 200px;
     font-size: 45px;
@@ -113,10 +108,5 @@
   .button {
     top: 240px;
     left: 280px;
-  }
-  .bike_wrapper {
-  }
-  .poster_wrapper {
-    left: -3%;
   }
 }

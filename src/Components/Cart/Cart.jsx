@@ -10,7 +10,7 @@ import {
 } from "../../State/Reducers/conflict.slice";
 import { isReservationConflict } from "../../Utils/isReservationConflict";
 import Notiflix from "notiflix";
-import Header from "../Header/Header";
+import Header from "../Nav/Nav.jsx";
 import Footer from "../Footer/Footer";
 import ButtonSpinner from "../Spinners/ButtonSpinner/ButtonSpinner.jsx";
 import { FaTimesCircle } from "react-icons/fa";

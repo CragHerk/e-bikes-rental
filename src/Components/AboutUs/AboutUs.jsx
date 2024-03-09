@@ -1,7 +1,7 @@
 import * as styles from "./AboutUs.module.css";
-import Gallery from "../Gallery/Gallery/Gallery";
+
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { images } from "../Gallery/images";
+
 const AboutUs = () => {
   return (
     <div className={styles.container}>
@@ -49,10 +49,6 @@ const AboutUs = () => {
             <img />
           </a>
         </div>
-      </div>
-
-      <div className={styles.aboutus_container}>
-        <Gallery images={images} />
       </div>
     </div>
   );
