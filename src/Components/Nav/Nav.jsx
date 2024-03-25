@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { openMenu } from "../../State/Actions/menu.actions";
-import Menu from "../Menu/Menu";
+import Modal from "../Modal/Modal";
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
@@ -45,7 +45,7 @@ const Nav = () => {
           handleCloseMenu();
         }}
       >
-        <Menu />
+        <Modal />
       </div>
     </div>
   );

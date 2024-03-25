@@ -10,8 +10,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
-.modal {
-}
+
 .image {
   width: 100vw;
   aspect-ratio: 16/9;
@@ -21,10 +20,9 @@
   position: absolute;
   left: 25px;
   top: 20%;
-
-  font-size: 35px;
+  font-size: 45px;
   cursor: pointer;
-  color: var(--inside-text);
+  color: var(--black);
   z-index: 9;
 }
 .prev {
