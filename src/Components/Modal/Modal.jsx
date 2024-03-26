@@ -36,7 +36,10 @@ const Modal = () => {
         </button>
         <ul className={styles.menu_list}>
           <li className={styles.menu_element}>
-            <a href="https://www.facebook.com" className={styles.icon}>
+            <a
+              href="https://www.facebook.com/profile.php?id=100092719643579"
+              className={styles.icon}
+            >
               <FaFacebook /> Facebook
             </a>
           </li>
