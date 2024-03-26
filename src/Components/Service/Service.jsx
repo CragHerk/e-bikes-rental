@@ -12,17 +12,17 @@ const Service = () => {
       <div className={styles.header_h4}>Bosh professional</div>
       <div className={styles.service}>
         <img
-          src="/assets/service/serwis2.jpg"
+          src="/assets/service/serwis2.webp"
           alt="service"
           className={styles.service_image}
         />
         <img
-          src="/assets/service/serwis.jpg"
+          src="/assets/service/serwis.webp"
           alt="service"
           className={styles.service_image}
         />
         <img
-          src="/assets/service/serwis1.jpg"
+          src="/assets/service/serwis1.webp"
           alt="service"
           className={styles.service_image}
         />
