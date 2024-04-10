@@ -48,6 +48,12 @@
 .cart_link {
   margin-inline: 2px;
 }
+.cart_svg {
+  margin-inline: 2px;
+  position: absolute;
+  top: 4px;
+  left: -32px;
+}
 @media screen and (min-width: 768px) {
   .logo {
     left: 250px;

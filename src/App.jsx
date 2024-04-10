@@ -27,6 +27,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/complete" element={<Complete />} />
+        <Route path="/service" element={<Service />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
@@ -51,7 +52,7 @@ const Home = () => {
       <BikesList />
       <AboutUs />
       <Gallery images={images} />
-      <Service />
+
       <Footer />
     </div>
   );

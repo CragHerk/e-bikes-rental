@@ -37,20 +37,10 @@ const Nav = () => {
         <Link
           to={"/cart"}
           aria-label="link to cart"
-          className={styles.cart_link}
+          className={styles.cart_svg}
         >
           <button aria-label="cart" id="cart">
             <FaShoppingCart size={16} className={styles.cart_icon} />
-          </button>
-        </Link>
-        <Link
-          to={"/"}
-          aria-label="link to service"
-          className={styles.cart_link}
-        >
-          {" "}
-          <button type="button" className="">
-            STRONA GŁÓWNA
           </button>
         </Link>
         <Link
@@ -61,6 +51,16 @@ const Nav = () => {
           {" "}
           <button type="button" className="">
             SERWIS
+          </button>
+        </Link>
+        <Link
+          to={"/"}
+          aria-label="link to service"
+          className={styles.cart_link}
+        >
+          {" "}
+          <button type="button" className="">
+            STRONA GŁÓWNA
           </button>
         </Link>
       </div>
