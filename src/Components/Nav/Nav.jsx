@@ -33,12 +33,38 @@ const Nav = () => {
       >
         <FaBars className={styles.hamburger_icon} />
       </button>
+      <div className={styles.nav}>
+        <Link
+          to={"/cart"}
+          aria-label="link to cart"
+          className={styles.cart_link}
+        >
+          <button aria-label="cart" id="cart">
+            <FaShoppingCart size={16} className={styles.cart_icon} />
+          </button>
+        </Link>
+        <Link
+          to={"/"}
+          aria-label="link to service"
+          className={styles.cart_link}
+        >
+          {" "}
+          <button type="button" className="">
+            STRONA GŁÓWNA
+          </button>
+        </Link>
+        <Link
+          to={"/service"}
+          aria-label="link to service"
+          className={styles.cart_link}
+        >
+          {" "}
+          <button type="button" className="">
+            SERWIS
+          </button>
+        </Link>
+      </div>
 
-      <Link to={"/cart"} aria-label="link to cart">
-        <button className={styles.cart} aria-label="cart" id="cart">
-          <FaShoppingCart size={24} />
-        </button>
-      </Link>
       <div
         className={menuClassName}
         onClick={() => {

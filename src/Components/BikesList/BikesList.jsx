@@ -62,7 +62,7 @@ const BikesList = () => {
   };
 
   return (
-    <div className={styles.carousel_container}>
+    <div id="bikeslist" className={styles.carousel_container}>
       <div className={styles.header}>
         <div className={styles.icon_element}>
           <div className={styles.line}></div>
@@ -94,7 +94,6 @@ const BikesList = () => {
 
           return (
             <div
-              id="bikeslist"
               key={index}
               className={styles.carousel_item}
               onClick={() => handleCarouselItemClick(index)}
