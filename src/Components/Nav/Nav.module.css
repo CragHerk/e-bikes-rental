@@ -6,7 +6,7 @@
   background-color: transparent;
   color: var(--black);
   background-color: var(--white);
-  width: 100vw;
+  width: calc(100vw - 17px);
   height: 60px;
   z-index: 9;
   border-bottom: 1px solid var(--border-03);

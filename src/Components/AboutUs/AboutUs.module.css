@@ -1,5 +1,5 @@
 .container {
-  width: 100vw;
+  width: calc(100vw - 17px);
   position: relative;
   display: flex;
   justify-content: center;
@@ -47,7 +47,7 @@
   padding: 10px 10px 0px 10px;
 }
 .header_img {
-  width: 100vw;
+  width: calc(100vw - 17px);
   height: auto;
   margin-top: 15px;
 }
@@ -97,7 +97,7 @@
 
   .wrapper {
     flex-direction: row;
-    width: 100vw;
+    width: calc(100vw - 17px);
     height: 400px;
   }
 }
