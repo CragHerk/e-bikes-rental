@@ -111,8 +111,7 @@ const BikesList = () => {
                       bikeList[index].size +
                       " (" +
                       bikeList[index].battery +
-                      ") Kolor: " +
-                      bikeList[index].color}
+                      ")  "}
                   </h3>
                 </div>
                 <div className={styles.bike}>

@@ -1,7 +1,7 @@
 const bikeList = [
   {
-    name: "rower1",
-    color: "Biały",
+    name: "Cube",
+
     price: 270,
     size: "L",
     bounce: "140mm",
@@ -10,8 +10,8 @@ const bikeList = [
     img: "/assets/r1.webp",
   },
   {
-    name: "rower2",
-    color: "Czarny",
+    name: "Cube",
+
     price: 240,
     size: "L",
     bounce: "160mm",
@@ -21,8 +21,8 @@ const bikeList = [
     img: "/assets/r2.webp",
   },
   {
-    name: "rower3",
-    color: "Piaskowy",
+    name: "Cube",
+
     price: 250,
     size: "L",
     bounce: "160mm",
@@ -33,7 +33,7 @@ const bikeList = [
   },
   {
     name: "rower4",
-    color: "PiaskowoCzarny",
+
     price: 270,
     size: "L",
     bounce: "140mm",
