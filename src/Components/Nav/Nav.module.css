@@ -6,7 +6,7 @@
   background-color: transparent;
   color: var(--black);
   background-color: var(--white);
-  width: calc(100vw - 17px);
+  width: 100vw;
   height: 60px;
   z-index: 9;
   border-bottom: 1px solid var(--border-03);
@@ -57,6 +57,9 @@
 @media screen and (min-width: 768px) {
   .logo {
     left: 250px;
+  }
+  .container {
+    width: calc(100vw - 17px);
   }
 }
 @media screen and (min-width: 1200px) {

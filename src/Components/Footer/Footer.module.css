@@ -1,9 +1,6 @@
 .footer_container {
-  width: calc(100vw - 17px);
+  width: 100vw;
   text-align: left;
-  margin-top: 100px;
-  background: linear-gradient(rgba(20, 69, 61, 0.05), var(--background-02));
-  box-shadow: 0px 20px rgba(20, 69, 61, 0.05);
 }
 .footer_wrapper {
   margin-left: 20px;
@@ -67,12 +64,18 @@
   justify-content: center;
   margin-top: 40px;
 }
+.cap {
+  font-size: smaller;
+}
 
 @media screen and (min-width: 768px) {
   .container {
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+  .footer_container {
+    width: calc(100vw - 17px);
   }
 
   .contact {
