@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Notiflix from "notiflix";
 import { validationSchema } from "../../Utils/validationSchema";
-import { Checkbox } from "../Checkbox/Checkbox";
+
 import ButtonSpinner from "../Spinners/ButtonSpinner/ButtonSpinner.jsx";
 import Header from "../Nav/Nav.jsx";
 import Footer from "../Footer/Footer";
@@ -194,7 +194,7 @@ const Checkout = () => {
                     SUMA : <p>{totalAmount}zł</p>
                   </h3>
                   <div className={styles.checkbox}>
-                    <Checkbox />
+                    <input type="checkbox" className={styles.checkbox} />
                     Płatność na miejscu
                   </div>
                   <button

@@ -42,6 +42,16 @@ const bikeList = [
     suspension: "Fox suspension",
     img: "/assets/r4.webp",
   },
+  {
+    name: "Radon",
+
+    price: 270,
+    size: "L",
+    bounce: "160mm",
+    battery: "750wh",
+    engine: "Bosch gen 4 Smart",
+    img: "/assets/r5.jpg",
+  },
 ];
 
 export default bikeList;
