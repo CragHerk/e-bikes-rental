@@ -5,7 +5,7 @@ const bikeList = [
     price: 270,
     size: "L",
     bounce: "140mm",
-    battery: "750wh",
+    battery: "625wh",
     engine: "Bosch gen 4 Smart",
     img: "/assets/r1.webp",
   },

@@ -20,38 +20,26 @@ const Poster = () => {
 
   return (
     <div className={styles.container}>
+      <img className={styles.logo} src="/icon-poster.png" alt="logo" />
       <div className={styles.wrapper}>
-        <MovingComponent
-          type="fadeInFromTop"
-          duration="2600ms"
-          delay="0s"
-          direction="normal"
-          timing="ease-in"
-          iteration="1"
-          fillMode="none"
-          className={styles.head}
-        >
-          Wypożyczalnia rowerów elektrycznych
-        </MovingComponent>
+        <div className={styles.header}>
+          <h1 className={styles.h1}>Wypożyczalnia rowerów</h1>
+          <span className={styles.span}>
+            Rowery elektryczne, górskie z wytrzymałą baterią i mocnym silnikiem
+          </span>
+        </div>
         <Link to="bikeslist">
           <MovingComponent
             type="fadeInFromLeft"
-            duration="1500ms"
+            duration="1000ms"
             delay="0s"
             direction="normal"
             timing="ease-in"
             iteration="1"
             fillMode="none"
           >
-            <button className={styles.button}>Znajdź rower</button>
+            <button className={styles.button}>Wybierz rower</button>
           </MovingComponent>
-        </Link>
-        <Link to={"/"}>
-          <img
-            className={styles.bike_wrapper}
-            src="/icon-poster.png"
-            alt="logo"
-          />
         </Link>
       </div>
 
@@ -59,10 +47,10 @@ const Poster = () => {
       <animated.img
         src={
           isDesktop
-            ? "/assets/computer.webp"
+            ? "/assets/desk.jpg"
             : isTablet
-            ? "/assets/tablet.webp"
-            : "/assets/mobile.webp"
+            ? "/assets/tab.jpg"
+            : "/assets/mob.jpg"
         }
         alt="Poster"
         onLoad={handleImageLoad}

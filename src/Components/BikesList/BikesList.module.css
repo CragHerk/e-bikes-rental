@@ -1,7 +1,7 @@
 .carousel_container {
   position: relative;
   height: 900px;
-  width: calc(100vw - 17px);
+
   background: linear-gradient(var(--background-02), rgba(20, 69, 61, 0.01));
   box-shadow: 0px 20px rgba(20, 69, 61, 0.01);
 }
@@ -53,7 +53,6 @@
   padding-top: 50px;
 }
 .carousel_li {
-  width: auto;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -110,4 +109,8 @@
   border-radius: 8px;
   font-weight: bold;
   font-size: large;
+}
+@media screen and (min-width: 768px) {
+  .carousel_container {
+  }
 }

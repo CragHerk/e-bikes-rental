@@ -10,7 +10,6 @@
 
 body {
   margin: 0;
-  display: flex;
 
   background-color: var(--white);
   color: var(--white);
@@ -22,6 +21,7 @@ button {
   border-radius: 8px;
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent;
 }
 button:hover {
   background-color: var(--background-01);

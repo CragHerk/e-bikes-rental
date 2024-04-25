@@ -17,6 +17,7 @@ import Gallery from "./Components/Gallery/Gallery/Gallery";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import Complete from "./Components/Complete/Complete";
+import UnderPoster from "./Components/UnderPoster/UnderPoster";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ const Home = () => {
     <div>
       <Header />
       <Poster />
+      <UnderPoster />
       <BikesList />
       <AboutUs />
       <Gallery images={images} />

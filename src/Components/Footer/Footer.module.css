@@ -1,5 +1,4 @@
 .footer_container {
-  width: 100vw;
   text-align: left;
 }
 .footer_wrapper {
@@ -59,6 +58,9 @@
 .phone {
   display: flex;
 }
+.nip {
+  margin-top: 10px;
+}
 .foot {
   display: flex;
   justify-content: center;
@@ -75,7 +77,7 @@
     align-items: center;
   }
   .footer_container {
-    width: calc(100vw - 17px);
+    max-width: 90vw;
   }
 
   .contact {

@@ -1,5 +1,4 @@
 .gallery_wrapper {
-  width: calc(100vw - 17px);
   display: flex;
   flex-direction: column;
   justify-content: center;

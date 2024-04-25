@@ -39,6 +39,11 @@ const Footer = () => {
             <a>Telefon:</a>
             <span>536196751</span>
           </div>
+          <div className={styles.nip}>
+            <img src="/assets/svg/nip.svg" alt="phone" className={styles.svg} />
+            <a>NIP:</a>
+            <span>536196751</span>
+          </div>
           <div className={styles.social_media}>
             <a className={styles.icon} href="https://www.instagram.com">
               <img
@@ -47,7 +52,10 @@ const Footer = () => {
                 alt="instagram"
               />
             </a>
-            <a className={styles.icon} href="https://www.facebook.com">
+            <a
+              className={styles.icon}
+              href="https://www.facebook.com/profile.php?id=100092719643579"
+            >
               <img
                 className={styles.svg}
                 src="/assets/svg/facebook.svg"

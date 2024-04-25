@@ -1,0 +1,38 @@
+.wrapper {
+}
+.first {
+  background-color: var(--primary-color);
+
+  padding: 4px;
+  font-size: 25px;
+  font-weight: 700;
+}
+.second {
+  background-color: var(--logo-yellow);
+  padding: 4px;
+  font-size: 25px;
+  font-weight: 700;
+}
+.third {
+  background-color: var(--logo-color);
+  padding: 4px;
+  font-size: 25px;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    display: flex;
+  }
+  .third {
+    width: 33vw;
+    padding: 14px;
+  }
+  .second {
+    width: 33vw;
+    padding: 14px;
+  }
+  .first {
+    width: 33vw;
+    padding: 14px;
+  }
+}

@@ -1,5 +1,6 @@
 #root {
   text-align: center;
+  overflow-y: hidden;
 }
 :root {
   --primary-color: #14453d;
@@ -18,4 +19,6 @@
   --mint: #43c59e;
   --service-bg: #eff5fa;
   --service-ul: #3b4625;
+  --logo-color: #835029;
+  --logo-yellow: #da9f34;
 }
