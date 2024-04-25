@@ -76,9 +76,6 @@
     justify-content: space-around;
     align-items: center;
   }
-  .footer_container {
-    max-width: 90vw;
-  }
 
   .contact {
     padding-top: 60px;

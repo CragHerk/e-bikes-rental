@@ -16,7 +16,7 @@
   border-radius: 0;
   border: none;
   background-color: transparent;
-  color: var(--black);
+  color: var(--primary-color);
 }
 .cart {
   background-color: transparent;
