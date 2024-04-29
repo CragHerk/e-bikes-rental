@@ -39,16 +39,6 @@ const AboutUs = () => {
             className="style.svg"
           />
         </div>
-        <h1 className={styles.header_h1}>Galeria</h1>
-
-        <div className={styles.header_h4}>
-          Znajdź nas na Instagramie oraz Facebooku !
-        </div>
-        <div className={styles.socials_wrapper}>
-          <a href="https://www.facebook.com/">
-            <img />
-          </a>
-        </div>
       </div>
     </div>
   );

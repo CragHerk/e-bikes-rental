@@ -9,7 +9,7 @@ import "./App.css";
 import { images } from "./Components/Gallery/images";
 import Header from "./Components/Nav/Nav";
 import BikesList from "./Components/BikesList/BikesList";
-import AboutUs from "./Components/AboutUs/AboutUs";
+
 import Service from "./Components/Service/Service";
 import Footer from "./Components/Footer/Footer";
 import Poster from "./Components/Poster/Poster";
@@ -52,7 +52,7 @@ const Home = () => {
       <Poster />
       <UnderPoster />
       <BikesList />
-      <AboutUs />
+
       <Gallery images={images} />
 
       <Footer />
