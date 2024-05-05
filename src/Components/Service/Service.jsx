@@ -110,7 +110,7 @@ const Service = () => {
           <img src="assets/bike-simple.svg" alt="bike" className="style.svg" />
         </div>
         <h1 className={styles.header_h1}>Serwis</h1>
-        <div className={styles.header_h4}>Bosh professional</div>
+        <div className={styles.header_h4}>Bosch professional</div>
         <div className={styles.service}>
           <div className={styles.desc}>
             <div className={styles.first_wrapper}>
