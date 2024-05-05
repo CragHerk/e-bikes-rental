@@ -1,18 +1,18 @@
 const bikeList = [
   {
-    name: "Cube",
+    name: "Cube140",
 
-    price: 270,
-    size: "L",
+    price: 250,
+    size: "M",
     bounce: "140mm",
     battery: "625wh",
     engine: "Bosch gen 4 Smart",
     img: "/assets/r1.webp",
   },
   {
-    name: "Cube",
+    name: "Cube160",
 
-    price: 240,
+    price: 250,
     size: "L",
     bounce: "160mm",
     battery: "625wh",
@@ -21,9 +21,9 @@ const bikeList = [
     img: "/assets/r2.webp",
   },
   {
-    name: "Cube",
+    name: "Cube160",
 
-    price: 250,
+    price: 270,
     size: "L",
     bounce: "160mm",
     battery: "750wh",
@@ -32,24 +32,25 @@ const bikeList = [
     img: "/assets/r3.webp",
   },
   {
-    name: "rower4",
+    name: "Cube140",
 
-    price: 270,
+    price: 250,
     size: "L",
     bounce: "140mm",
-    battery: "625wh",
+    battery: "750wh",
     engine: "Bosch gen 4 ",
-    suspension: "Fox suspension",
+    suspension: "Rock Shox",
     img: "/assets/r4.webp",
   },
   {
-    name: "Radon",
+    name: "Radon160",
 
     price: 270,
     size: "L",
     bounce: "160mm",
     battery: "750wh",
     engine: "Bosch gen 4 Smart",
+    suspension: "Fox suspension",
     img: "/assets/r5.jpg",
   },
 ];

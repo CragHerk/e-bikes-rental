@@ -37,12 +37,12 @@ const Footer = () => {
               className={styles.svg}
             />
             <a>Telefon:</a>
-            <span>536196751</span>
+            <span>+48 536196751</span>
           </div>
           <div className={styles.nip}>
             <img src="/assets/svg/nip.svg" alt="phone" className={styles.svg} />
             <a>NIP:</a>
-            <span>536196751</span>
+            <span>PL9372734720</span>
           </div>
           <div className={styles.social_media}>
             <a className={styles.icon} href="https://www.instagram.com">
