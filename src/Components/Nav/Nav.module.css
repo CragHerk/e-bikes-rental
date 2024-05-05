@@ -52,9 +52,20 @@
   top: 2px;
   left: -32px;
 }
+.cmp {
+  display: none;
+}
 @media screen and (min-width: 768px) {
   .logo {
     left: 250px;
+  }
+  .cmp {
+    display: flex;
+    height: 60px;
+    align-items: center;
+  }
+  .brose {
+    height: 12px;
   }
 }
 @media screen and (min-width: 1200px) {

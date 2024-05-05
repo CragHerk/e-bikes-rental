@@ -33,6 +33,14 @@ const Nav = () => {
       >
         <FaBars className={styles.hamburger_icon} />
       </button>
+      <div className={styles.cmp}>
+        <img src="/assets/bosch.svg" alt="bosch" className={styles.bosch} />
+        <img
+          src="/assets/brose-seeklogo.svg"
+          alt="brose"
+          className={styles.brose}
+        />
+      </div>
       <div className={styles.nav}>
         <Link
           to={"/cart"}
