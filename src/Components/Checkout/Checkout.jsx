@@ -16,6 +16,7 @@ import styles from "./Checkout.module.css";
 const Checkout = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const reservationData = useSelector((state) => state.addToCart.data);
   const totalAmount = reservationData.reduce(
     (total, reservation) => total + reservation.totalPrice,
@@ -30,15 +31,17 @@ const Checkout = () => {
     }
   }, [error]);
   const handleSubmit = (values, reservationData) => {
-    dispatch(
-      sendReservation({
-        ...values,
-        bikeModel: reservationData[0].name,
-        totalPrice: reservationData[0].totalPrice,
-        startDate: reservationData[0].startDate,
-        endDate: reservationData[0].endDate,
-      })
-    );
+    reservationData.map((item) => {
+      dispatch(
+        sendReservation({
+          ...values,
+          bikeModel: item.name,
+          totalPrice: item.totalPrice,
+          startDate: item.startDate,
+          endDate: item.endDate,
+        })
+      );
+    });
     setTimeout(() => {
       dispatch(clearReservationData());
       clearAllReservedDatesFromLocalStorage();

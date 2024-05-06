@@ -54,7 +54,7 @@ const Panel = () => {
             <div>bikeModel:{reservation.bikeModel}</div>
             <div>startDate:{reservation.startDate}</div>
             <div>endDate:{reservation.endDate}</div>
-            <div>totalPrice:{reservation.totalPrice}</div>
+            <div>totalPrice:{reservation.totalPrice}zł</div>
           </div>
         ))}
       </div>
