@@ -1,3 +1,7 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
 .ul {
   color: black;
   border: 1px solid black;
@@ -15,4 +19,11 @@
   position: absolute;
   right: 5px;
   top: 5px;
+}
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--primary-color);
+  font-size: xx-large;
 }
