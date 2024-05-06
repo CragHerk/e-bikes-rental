@@ -27,6 +27,9 @@ const Panel = () => {
   if (error) {
     return <div>{error}</div>;
   }
+  if (reservations.length === 0) {
+    return <div className={styles.loading}>Aktualnie brak rezerwacji :/</div>;
+  }
   return (
     <div className={styles.main}>
       <h1>PANEL REZERWACJI</h1>

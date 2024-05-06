@@ -1,9 +1,12 @@
 import styles from "./Complete.module.css";
 import { Link } from "react-router-dom";
 import MovingComponent from "react-moving-text";
+import Nav from "../Nav/Nav";
+import Footer from "../Footer/Footer";
 const Complete = () => {
   return (
     <div className={styles.container}>
+      <Nav />
       <Link to={"/"}>
         <MovingComponent
           type="fadeInFromTop"
@@ -30,6 +33,7 @@ const Complete = () => {
         <h1 className={styles.tag}>Zarezerwowano</h1>
         <p className={styles.p}>Sprawdź e-mail</p>
       </MovingComponent>
+      <Footer />
     </div>
   );
 };
