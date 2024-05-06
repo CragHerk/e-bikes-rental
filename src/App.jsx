@@ -18,6 +18,7 @@ import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import Complete from "./Components/Complete/Complete";
 import UnderPoster from "./Components/UnderPoster/UnderPoster";
+import Panel from "./Components/Panel/Panel";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/complete" element={<Complete />} />
         <Route path="/service" element={<Service />} />
+        <Route path="/xxxlll" element={<Panel />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
