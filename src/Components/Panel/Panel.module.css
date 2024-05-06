@@ -1,3 +1,8 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--background-02);
+  padding-top: 20px;
+}
 .container {
   display: flex;
   flex-wrap: wrap;

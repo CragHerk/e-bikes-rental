@@ -1,6 +1,6 @@
 const bikeList = [
   {
-    name: "Cube140",
+    name: "Cube-1",
 
     price: 250,
     size: "M",
@@ -10,7 +10,7 @@ const bikeList = [
     img: "/assets/r1.webp",
   },
   {
-    name: "Cube160",
+    name: "Cube-2",
 
     price: 250,
     size: "L",
@@ -21,7 +21,7 @@ const bikeList = [
     img: "/assets/r2.webp",
   },
   {
-    name: "Cube160",
+    name: "Cube-3",
 
     price: 270,
     size: "L",
@@ -32,7 +32,7 @@ const bikeList = [
     img: "/assets/r3.webp",
   },
   {
-    name: "Cube140",
+    name: "Cube-4",
 
     price: 250,
     size: "L",
@@ -43,7 +43,7 @@ const bikeList = [
     img: "/assets/r4.webp",
   },
   {
-    name: "Radon160",
+    name: "Radon",
 
     price: 270,
     size: "L",

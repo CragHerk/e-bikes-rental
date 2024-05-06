@@ -28,7 +28,7 @@ const Panel = () => {
     return <div>{error}</div>;
   }
   return (
-    <>
+    <div className={styles.main}>
       <h1>PANEL REZERWACJI</h1>
       <div className={styles.container}>
         {reservations.map((reservation) => (
@@ -58,7 +58,7 @@ const Panel = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
