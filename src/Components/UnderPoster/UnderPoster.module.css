@@ -4,19 +4,21 @@
 }
 .first {
   background-color: var(--primary-color);
-
+  color: var(--white);
   padding: 4px;
   font-size: 25px;
   font-weight: 700;
 }
 .second {
   background-color: var(--logo-yellow);
+  color: var(--white);
   padding: 4px;
   font-size: 25px;
   font-weight: 700;
 }
 .third {
   background-color: var(--logo-color);
+  color: var(--white);
   padding: 4px;
   font-size: 25px;
   font-weight: 700;

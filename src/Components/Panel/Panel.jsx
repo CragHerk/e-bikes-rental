@@ -6,6 +6,8 @@ import {
   fetchReservations,
   deleteReservation,
 } from "../../State/Reducers/panel.slice";
+import moment from "moment";
+moment.locale("pl");
 
 const Panel = () => {
   const dispatch = useDispatch();
@@ -44,20 +46,61 @@ const Panel = () => {
               />
             </button>
 
-            <div>_id:{reservation._id} </div>
-            <div>firstname: {reservation.firstName}</div>
-            <div>lastname:{reservation.lastName} </div>
-            <div>companyname:{reservation.companyName}</div>
-            <div>country:{reservation.country}</div>
-            <div>street:{reservation.street}</div>
-            <div>postalCode:{reservation.postalCode}</div>
-            <div>city:{reservation.city}</div>
-            <div>phone:{reservation.phone}</div>
-            <div>email:{reservation.email}</div>
-            <div>bikeModel:{reservation.bikeModel}</div>
-            <div>startDate:{reservation.startDate}</div>
-            <div>endDate:{reservation.endDate}</div>
-            <div>totalPrice:{reservation.totalPrice}zł</div>
+            <div className={styles.div}>
+              <span className={styles.span}>_id:</span>
+              {reservation._id}{" "}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Imię:</span> {reservation.firstName}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Nazwisko:</span>
+              {reservation.lastName}{" "}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Firma:</span>
+              {reservation.companyName}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Kraj:</span>
+              {reservation.country}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Ulica:</span>
+              {reservation.street}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Kod Pocztowy:</span>
+              {reservation.postalCode}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Miasto:</span>
+              {reservation.city}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Telefon:</span>
+              {reservation.phone}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>e-mail:</span>
+              {reservation.email}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Rower:</span>
+              {reservation.bikeModel}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Data startu:</span>
+              {moment(reservation.startDate).format("LL")}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Data zakończenia:</span>
+              {moment(reservation.endDate).format("LL")}
+            </div>
+            <div className={styles.div}>
+              <span className={styles.span}>Cena:</span>
+              {reservation.totalPrice}zł
+            </div>
           </div>
         ))}
       </div>

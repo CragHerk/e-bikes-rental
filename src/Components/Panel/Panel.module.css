@@ -32,3 +32,10 @@
   color: var(--primary-color);
   font-size: xx-large;
 }
+.div {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.span {
+}
