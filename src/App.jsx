@@ -5,6 +5,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
+
 import "./App.css";
 import { images } from "./Components/Gallery/images";
 import Nav from "./Components/Nav/Nav";
@@ -18,6 +19,10 @@ import Checkout from "./Components/Checkout/Checkout";
 import Complete from "./Components/Complete/Complete";
 import UnderPoster from "./Components/UnderPoster/UnderPoster";
 import Panel from "./Components/Panel/Panel";
+import Login from "./Components/Login/Login";
+
+// import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
+import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 
 function App() {
   return (
@@ -29,7 +34,11 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/complete" element={<Complete />} />
         <Route path="/service" element={<Service />} />
-        <Route path="/xxxlll" element={<Panel />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/admin"
+          element={<RestrictedRoute redirectTo="/login" element={<Panel />} />}
+        />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
@@ -53,9 +62,7 @@ const Home = () => {
       <Poster />
       <UnderPoster />
       <BikesList />
-
       <Gallery images={images} />
-
       <Footer />
     </div>
   );

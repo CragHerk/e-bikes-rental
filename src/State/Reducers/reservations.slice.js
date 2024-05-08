@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
 const apiEndpoint = import.meta.env.VITE_REACT_APP_API_ENDPOINT;
+
 export const sendReservation = createAsyncThunk(
   "reservations/sendReservation",
   async (payload) => {
