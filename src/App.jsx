@@ -1,12 +1,13 @@
 import { useEffect } from "react";
+import "./App.css";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   useLocation,
+  Navigate,
 } from "react-router-dom";
 
-import "./App.css";
 import { images } from "./Components/Gallery/images";
 import Nav from "./Components/Nav/Nav";
 import BikesList from "./Components/BikesList/BikesList";
@@ -20,12 +21,24 @@ import Complete from "./Components/Complete/Complete";
 import UnderPoster from "./Components/UnderPoster/UnderPoster";
 import Panel from "./Components/Panel/Panel";
 import Login from "./Components/Login/Login";
-
-// import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
-import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
-
+import { ProtectedRoute } from "./Components/ProtectedRoute/ProtectedRoute";
+import { selectIsRefreshing } from "./State/Session/selectors";
+import { refreshUser } from "./State/Session/operations";
+import { useDispatch, useSelector } from "react-redux";
 function App() {
-  return (
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    const func = async () => {
+      dispatch(refreshUser());
+    };
+    func();
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <div>loading...</div>
+  ) : (
     <Router>
       <ScrollToTop />
       <Routes>
@@ -37,9 +50,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route
           path="/admin"
-          element={<RestrictedRoute redirectTo="/login" element={<Panel />} />}
+          element={<ProtectedRoute redirectTo="/login" component={<Panel />} />}
         />
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

@@ -10,6 +10,6 @@ export const RestrictedRoute = ({
   return isAuth ? <Navigate to={redirectTo} /> : Component;
 };
 RestrictedRoute.propTypes = {
-  component: PropTypes.elementType,
+  component: PropTypes.any,
   redirectTo: PropTypes.string,
 };
