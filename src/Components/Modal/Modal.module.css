@@ -53,6 +53,9 @@
   bottom: 200px;
   color: transparent;
 }
+.panel:hover {
+  background-color: transparent;
+}
 @media screen and (min-width: 768px) {
   .container {
     width: 300px;
