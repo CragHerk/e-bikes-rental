@@ -47,6 +47,12 @@
 .icon {
   color: var(--black);
 }
+.panel {
+  position: absolute;
+  left: 20px;
+  bottom: 200px;
+  color: transparent;
+}
 @media screen and (min-width: 768px) {
   .container {
     width: 300px;

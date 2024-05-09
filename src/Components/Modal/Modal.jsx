@@ -10,6 +10,7 @@ import {
   FaEnvelope,
   FaPhone,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Modal = () => {
   const dispatch = useDispatch();
@@ -58,6 +59,11 @@ const Modal = () => {
         <p className={styles.menu_p}>
           © 2023 Wypożyczalnia rowerów elektrycznych w Słotwinie
         </p>
+        <Link to="/xxxlll">
+          <button type="button" className={styles.panel}>
+            PANEL
+          </button>
+        </Link>
       </div>
     </animated.div>
   );

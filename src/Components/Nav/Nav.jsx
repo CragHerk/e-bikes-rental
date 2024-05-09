@@ -61,11 +61,7 @@ const Nav = () => {
             SERWIS
           </button>
         </Link>
-        <Link
-          to={"/"}
-          aria-label="link to service"
-          className={styles.cart_link}
-        >
+        <Link to={"/"} aria-label="link to home" className={styles.cart_link}>
           {" "}
           <button type="button" className="">
             STRONA GŁÓWNA

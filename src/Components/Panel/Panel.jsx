@@ -7,6 +7,7 @@ import {
   deleteReservation,
 } from "../../State/Reducers/panel.slice";
 import moment from "moment";
+import { Link } from "react-router-dom";
 moment.locale("pl");
 
 const Panel = () => {
@@ -35,6 +36,12 @@ const Panel = () => {
   return (
     <div className={styles.main}>
       <h1>PANEL REZERWACJI</h1>
+      <Link to={"/"} aria-label="link to home" className={styles.cart_link}>
+        {" "}
+        <button type="button" className="">
+          STRONA GŁÓWNA
+        </button>
+      </Link>
       <div className={styles.container}>
         {reservations.map((reservation) => (
           <div className={styles.ul} key={reservation._id}>
