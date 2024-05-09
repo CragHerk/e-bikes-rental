@@ -21,24 +21,9 @@ import Complete from "./Components/Complete/Complete";
 import UnderPoster from "./Components/UnderPoster/UnderPoster";
 import Panel from "./Components/Panel/Panel";
 import Login from "./Components/Login/Login";
-import { ProtectedRoute } from "./Components/ProtectedRoute/ProtectedRoute";
-import { selectIsRefreshing } from "./State/Session/selectors";
-import { refreshUser } from "./State/Session/operations";
-import { useDispatch, useSelector } from "react-redux";
+
 function App() {
-  const dispatch = useDispatch();
-  const isRefreshing = useSelector(selectIsRefreshing);
-
-  useEffect(() => {
-    const func = async () => {
-      dispatch(refreshUser());
-    };
-    func();
-  }, [dispatch]);
-
-  return isRefreshing ? (
-    <div>loading...</div>
-  ) : (
+  return (
     <Router>
       <ScrollToTop />
       <Routes>
@@ -48,10 +33,7 @@ function App() {
         <Route path="/complete" element={<Complete />} />
         <Route path="/service" element={<Service />} />
         <Route path="/login" element={<Login />} />
-        <Route
-          path="/admin"
-          element={<ProtectedRoute redirectTo="/login" component={<Panel />} />}
-        />
+        <Route path="/xxxlll" element={<Panel />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
