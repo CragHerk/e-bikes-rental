@@ -1,7 +1,7 @@
 import styles from "./Service.module.css";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
-import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -17,89 +17,6 @@ const Service = () => {
   const [ref9, inView9] = useInView();
   const [ref10, inView10] = useInView();
 
-  const [isVisible1, setIsVisible1] = useState(false);
-  const [isVisible2, setIsVisible2] = useState(false);
-  const [isVisible3, setIsVisible3] = useState(false);
-  const [isVisible4, setIsVisible4] = useState(false);
-  const [isVisible5, setIsVisible5] = useState(false);
-  const [isVisible6, setIsVisible6] = useState(false);
-  const [isVisible7, setIsVisible7] = useState(false);
-  const [isVisible8, setIsVisible8] = useState(false);
-  const [isVisible9, setIsVisible9] = useState(false);
-  const [isVisible10, setIsVisible10] = useState(false);
-
-  useEffect(() => {
-    if (inView1) {
-      setIsVisible1(true);
-    } else {
-      setIsVisible1(false);
-    }
-  }, [inView1]);
-
-  useEffect(() => {
-    if (inView2) {
-      setIsVisible2(true);
-    } else {
-      setIsVisible2(false);
-    }
-  }, [inView2]);
-
-  useEffect(() => {
-    if (inView3) {
-      setIsVisible3(true);
-    } else {
-      setIsVisible3(false);
-    }
-  }, [inView3]);
-  useEffect(() => {
-    if (inView4) {
-      setIsVisible4(true);
-    } else {
-      setIsVisible4(false);
-    }
-  }, [inView4]);
-  useEffect(() => {
-    if (inView5) {
-      setIsVisible5(true);
-    } else {
-      setIsVisible5(false);
-    }
-  }, [inView5]);
-  useEffect(() => {
-    if (inView6) {
-      setIsVisible6(true);
-    } else {
-      setIsVisible6(false);
-    }
-  }, [inView6]);
-  useEffect(() => {
-    if (inView7) {
-      setIsVisible7(true);
-    } else {
-      setIsVisible7(false);
-    }
-  }, [inView7]);
-  useEffect(() => {
-    if (inView8) {
-      setIsVisible8(true);
-    } else {
-      setIsVisible8(false);
-    }
-  }, [inView8]);
-  useEffect(() => {
-    if (inView9) {
-      setIsVisible9(true);
-    } else {
-      setIsVisible9(false);
-    }
-  }, [inView9]);
-  useEffect(() => {
-    if (inView10) {
-      setIsVisible10(true);
-    } else {
-      setIsVisible10(false);
-    }
-  }, [inView10]);
   return (
     <>
       <Nav />
@@ -141,8 +58,8 @@ const Service = () => {
                     ref={ref1}
                     initial={{ opacity: 0, x: -100 }}
                     animate={{
-                      opacity: isVisible1 ? 1 : 0,
-                      x: isVisible1 ? 0 : -100,
+                      opacity: inView1 ? 1 : 0,
+                      x: inView1 ? 0 : -100,
                     }}
                     transition={{
                       duration: 0.7,
@@ -159,8 +76,8 @@ const Service = () => {
                     ref={ref2}
                     initial={{ opacity: 0, x: 100 }}
                     animate={{
-                      opacity: isVisible2 ? 1 : 0,
-                      x: isVisible2 ? 0 : 100,
+                      opacity: inView2 ? 1 : 0,
+                      x: inView2 ? 0 : 100,
                     }}
                     transition={{
                       duration: 0.7,
@@ -186,8 +103,8 @@ const Service = () => {
                     ref={ref3}
                     initial={{ opacity: 0, x: -100 }}
                     animate={{
-                      opacity: isVisible3 ? 1 : 0,
-                      x: isVisible3 ? 0 : -100,
+                      opacity: inView3 ? 1 : 0,
+                      x: inView3 ? 0 : -100,
                     }}
                     transition={{
                       duration: 0.7,
@@ -202,8 +119,8 @@ const Service = () => {
                     ref={ref4}
                     initial={{ opacity: 0, x: 100 }}
                     animate={{
-                      opacity: isVisible4 ? 1 : 0,
-                      x: isVisible4 ? 0 : 100,
+                      opacity: inView4 ? 1 : 0,
+                      x: inView4 ? 0 : 100,
                     }}
                     transition={{
                       duration: 0.7,
@@ -218,8 +135,8 @@ const Service = () => {
                     ref={ref5}
                     initial={{ opacity: 0, x: -100 }}
                     animate={{
-                      opacity: isVisible5 ? 1 : 0,
-                      x: isVisible5 ? 0 : -100,
+                      opacity: inView5 ? 1 : 0,
+                      x: inView5 ? 0 : -100,
                     }}
                     transition={{
                       duration: 0.7,
@@ -243,8 +160,8 @@ const Service = () => {
                     ref={ref6}
                     initial={{ opacity: 0, x: 100 }}
                     animate={{
-                      opacity: isVisible6 ? 1 : 0,
-                      x: isVisible6 ? 0 : 100,
+                      opacity: inView6 ? 1 : 0,
+                      x: inView6 ? 0 : 100,
                     }}
                     transition={{
                       duration: 0.7,
@@ -259,8 +176,8 @@ const Service = () => {
                     ref={ref7}
                     initial={{ opacity: 0, x: -100 }}
                     animate={{
-                      opacity: isVisible7 ? 1 : 0,
-                      x: isVisible7 ? 0 : -100,
+                      opacity: inView7 ? 1 : 0,
+                      x: inView7 ? 0 : -100,
                     }}
                     transition={{
                       duration: 0.7,
@@ -275,8 +192,8 @@ const Service = () => {
                     ref={ref8}
                     initial={{ opacity: 0, x: 100 }}
                     animate={{
-                      opacity: isVisible8 ? 1 : 0,
-                      x: isVisible8 ? 0 : 100,
+                      opacity: inView8 ? 1 : 0,
+                      x: inView8 ? 0 : 100,
                     }}
                     transition={{
                       duration: 0.7,
@@ -300,8 +217,8 @@ const Service = () => {
                     ref={ref9}
                     initial={{ opacity: 0, x: -100 }}
                     animate={{
-                      opacity: isVisible9 ? 1 : 0,
-                      x: isVisible9 ? 0 : -100,
+                      opacity: inView9 ? 1 : 0,
+                      x: inView9 ? 0 : -100,
                     }}
                     transition={{
                       duration: 0.7,
@@ -316,8 +233,8 @@ const Service = () => {
                     ref={ref10}
                     initial={{ opacity: 0, x: 100 }}
                     animate={{
-                      opacity: isVisible10 ? 1 : 0,
-                      x: isVisible10 ? 0 : 100,
+                      opacity: inView10 ? 1 : 0,
+                      x: inView10 ? 0 : 100,
                     }}
                     transition={{
                       duration: 0.7,
