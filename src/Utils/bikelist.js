@@ -2,7 +2,7 @@ const bikeList = [
   {
     name: "Cube-1",
 
-    price: 250,
+    price: 230,
     size: "M",
     bounce: "140mm",
     battery: "625wh",
@@ -12,7 +12,7 @@ const bikeList = [
   {
     name: "Cube-2",
 
-    price: 250,
+    price: 230,
     size: "L",
     bounce: "160mm",
     battery: "625wh",
@@ -23,7 +23,7 @@ const bikeList = [
   {
     name: "Cube-3",
 
-    price: 270,
+    price: 250,
     size: "L",
     bounce: "160mm",
     battery: "750wh",
@@ -34,7 +34,7 @@ const bikeList = [
   {
     name: "Cube-4",
 
-    price: 250,
+    price: 230,
     size: "L",
     bounce: "140mm",
     battery: "750wh",
@@ -45,7 +45,7 @@ const bikeList = [
   {
     name: "Radon",
 
-    price: 270,
+    price: 250,
     size: "L",
     bounce: "160mm",
     battery: "750wh",
