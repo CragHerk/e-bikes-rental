@@ -1,6 +1,9 @@
 import styles from "./Offer.module.css";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Offer = () => {
+  const [ref1, inView1] = useInView();
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -11,7 +14,20 @@ const Offer = () => {
         </div>
       </div>
       <h1>Oferujemy</h1>
-      <div className={styles.el}>
+      <motion.div
+        ref={ref1}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{
+          opacity: inView1 ? 1 : 0,
+          y: inView1 ? 0 : 0,
+        }}
+        transition={{
+          duration: 0.7,
+          delay: 0.2,
+          ease: "easeInOut",
+        }}
+        className={styles.el}
+      >
         {" "}
         <div className={styles.el1}>
           -Serwis rowerów analogowych i elektrycznych
@@ -24,7 +40,7 @@ const Offer = () => {
         <div className={styles.el1}>
           -Organizacja wyjazdów firmowych, wieczorow kawalerskich itp
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
