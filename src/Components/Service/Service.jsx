@@ -56,10 +56,10 @@ const Service = () => {
                 <div className={styles.li_1}>
                   <motion.div
                     ref={ref1}
-                    initial={{ opacity: 0, x: -100 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{
                       opacity: inView1 ? 1 : 0,
-                      x: inView1 ? 0 : -100,
+                      y: inView1 ? 0 : 0,
                     }}
                     transition={{
                       duration: 0.7,
@@ -74,10 +74,10 @@ const Service = () => {
 
                   <motion.div
                     ref={ref2}
-                    initial={{ opacity: 0, x: 100 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{
                       opacity: inView2 ? 1 : 0,
-                      x: inView2 ? 0 : 100,
+                      y: inView2 ? 0 : 0,
                     }}
                     transition={{
                       duration: 0.7,
@@ -101,10 +101,10 @@ const Service = () => {
                 <div className={styles.li_2}>
                   <motion.div
                     ref={ref3}
-                    initial={{ opacity: 0, x: -100 }}
+                    initial={{ opacity: 0, y: -20 }}
                     animate={{
                       opacity: inView3 ? 1 : 0,
-                      x: inView3 ? 0 : -100,
+                      y: inView3 ? 0 : 0,
                     }}
                     transition={{
                       duration: 0.7,
@@ -117,10 +117,10 @@ const Service = () => {
                   </motion.div>
                   <motion.div
                     ref={ref4}
-                    initial={{ opacity: 0, x: 100 }}
+                    initial={{ opacity: 0, y: -20 }}
                     animate={{
                       opacity: inView4 ? 1 : 0,
-                      x: inView4 ? 0 : 100,
+                      y: inView4 ? 0 : 0,
                     }}
                     transition={{
                       duration: 0.7,
@@ -133,10 +133,10 @@ const Service = () => {
                   </motion.div>
                   <motion.div
                     ref={ref5}
-                    initial={{ opacity: 0, x: -100 }}
+                    initial={{ opacity: 0, y: -20 }}
                     animate={{
                       opacity: inView5 ? 1 : 0,
-                      x: inView5 ? 0 : -100,
+                      y: inView5 ? 0 : 0,
                     }}
                     transition={{
                       duration: 0.7,
@@ -158,10 +158,10 @@ const Service = () => {
                 <div className={styles.li_3}>
                   <motion.div
                     ref={ref6}
-                    initial={{ opacity: 0, x: 100 }}
+                    initial={{ opacity: 0, y: -20 }}
                     animate={{
                       opacity: inView6 ? 1 : 0,
-                      x: inView6 ? 0 : 100,
+                      y: inView6 ? 0 : 0,
                     }}
                     transition={{
                       duration: 0.7,
@@ -174,10 +174,10 @@ const Service = () => {
                   </motion.div>
                   <motion.div
                     ref={ref7}
-                    initial={{ opacity: 0, x: -100 }}
+                    initial={{ opacity: 0, y: -20 }}
                     animate={{
                       opacity: inView7 ? 1 : 0,
-                      x: inView7 ? 0 : -100,
+                      y: inView7 ? 0 : 0,
                     }}
                     transition={{
                       duration: 0.7,
@@ -190,10 +190,10 @@ const Service = () => {
                   </motion.div>
                   <motion.div
                     ref={ref8}
-                    initial={{ opacity: 0, x: 100 }}
+                    initial={{ opacity: 0, y: -20 }}
                     animate={{
                       opacity: inView8 ? 1 : 0,
-                      x: inView8 ? 0 : 100,
+                      y: inView8 ? 0 : 0,
                     }}
                     transition={{
                       duration: 0.7,
@@ -215,10 +215,10 @@ const Service = () => {
                 <div className={styles.li_4}>
                   <motion.div
                     ref={ref9}
-                    initial={{ opacity: 0, x: -100 }}
+                    initial={{ opacity: 0, y: -20 }}
                     animate={{
                       opacity: inView9 ? 1 : 0,
-                      x: inView9 ? 0 : -100,
+                      y: inView9 ? 0 : 0,
                     }}
                     transition={{
                       duration: 0.7,
@@ -231,10 +231,10 @@ const Service = () => {
                   </motion.div>
                   <motion.div
                     ref={ref10}
-                    initial={{ opacity: 0, x: 100 }}
+                    initial={{ opacity: 0, y: -20 }}
                     animate={{
                       opacity: inView10 ? 1 : 0,
-                      x: inView10 ? 0 : 100,
+                      y: inView10 ? 0 : 0,
                     }}
                     transition={{
                       duration: 0.7,

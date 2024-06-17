@@ -21,6 +21,7 @@ import Complete from "./Components/Complete/Complete";
 import UnderPoster from "./Components/UnderPoster/UnderPoster";
 import Panel from "./Components/Panel/Panel";
 import Login from "./Components/Login/Login";
+import Offer from "./Components/Offer/Offer";
 
 function App() {
   return (
@@ -33,7 +34,9 @@ function App() {
         <Route path="/complete" element={<Complete />} />
         <Route path="/service" element={<Service />} />
         <Route path="/login" element={<Login />} />
+
         <Route path="/xxxlll" element={<Panel />} />
+
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
@@ -56,6 +59,7 @@ const Home = () => {
       <Nav />
       <Poster />
       <UnderPoster />
+      <Offer />
       <BikesList />
       <Gallery images={images} />
       <Footer />
